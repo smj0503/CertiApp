@@ -5,9 +5,8 @@ import IconKlip from "../public/assets/icon-klip.svg";
 
 export default function ()
 {
-    const onClick = () =>
+    const onClick = async () =>
     {
-        console.log('sign in');
     };
 
     return (
