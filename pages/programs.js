@@ -25,6 +25,11 @@ export default function ()
                         <span className={ styles.description }>{ "We will recommend programs that you might like" }</span>
                     </div>
 
+                    <div className={ styles.programs } style={{ marginBottom: 48 }}>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                    </div>
                     <div className={ styles.programs }>
                         <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
                         <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
