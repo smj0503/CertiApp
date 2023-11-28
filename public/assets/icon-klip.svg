@@ -1,0 +1,12 @@
+<svg width="27" height="16" viewBox="0 0 27 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="cignature" clip-path="url(#clip0_305_10)">
+<g id="logo">
+<path id="Vector" d="M22.1786 0H4.82143C2.15846 0 0 2.2384 0 5V11C0 13.7616 2.15846 16 4.82143 16H17.3571V6H15.4286V14H4.82143C3.22303 14 1.92857 12.6576 1.92857 11V5C1.92857 3.3424 3.22303 2 4.82143 2H22.1786C23.777 2 25.0714 3.3424 25.0714 5V11C25.0714 12.6576 23.777 14 22.1786 14H19.2857V16H22.1786C24.8415 16 27 13.7616 27 11V5C27 2.2384 24.8415 0 22.1786 0Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_305_10">
+<rect width="27" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
