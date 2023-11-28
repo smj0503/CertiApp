@@ -35,3 +35,9 @@
     font-weight: 300;
     line-height: 100%;
 }
+
+.programs
+{
+    display: flex;
+    gap: 24px;
+}

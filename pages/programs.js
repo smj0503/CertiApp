@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import TopBar from "@/components/TopBar";
+import Collection from "@/components/Collection";
 
 import styles from "../styles/Programs.module.css";
 
@@ -23,7 +24,12 @@ export default function ()
                         <h1 className={ styles.title }>{ "Recommended for you" }</h1>
                         <span className={ styles.description }>{ "We will recommend programs that you might like" }</span>
                     </div>
-                    <Image src={ "/assets/photo/photo-klayton.png" } priority={true} width={1440} height={560} alt="klayton bootcamp"/>
+
+                    <div className={ styles.programs }>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                        <Collection image="/assets/photo/photo-blockchain-school.png" category="Education Program" date="2023.05.31" publisher="Gwangju ICT Innovation Square-Goorm">{ "A Blockchain Education" }</Collection>
+                    </div>
                 </div>
 
                 <div>
