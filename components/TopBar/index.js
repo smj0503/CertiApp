@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 import styles from "./TopBar.module.css";
@@ -6,22 +7,23 @@ import IconLogout from "../../public/assets/icon-logout.svg";
 
 export default function ({ children })
 {
+    const router = useRouter();
+    console.log(router.asPath);
+
     return (
         <div className={ styles.backgroundContainer }>
             <div className={ styles.topBar }>
                 <div className={ styles.menus }>
                     <Logo/>
                     <div>
-                        <Link href="/certificates" className={ styles.linkbutton }>{ "MY CERTIFICATE" }</Link>
-                        <Link href="/programs" className={ styles.linkbutton }>{ "OTHER PROGRAMS" }</Link>
+                        <Link href="/certificates" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
+                        <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
                     </div>
                 </div>
-
                 <button type="button" className={ styles.logout }>
                     { "Log out" }<IconLogout/>
                 </button>
             </div>
-
             <main className={ styles.body }>
                 { children }
             </main>
