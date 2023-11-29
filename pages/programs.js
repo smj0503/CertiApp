@@ -17,7 +17,9 @@ export default function ()
                         <h1 className={ styles.title }>{ "Popular Program" }</h1>
                         <span className={ styles.description }>{ "Let's meet the popular programs now!" }</span>
                     </div>
-                    <Link href="https://lu.ma/7r8laggy"><Image src={ "/assets/photo/photo-klayton.png" } priority={true} width={1440} height={560} alt="klayton bootcamp"/></Link>
+                    <Link href="https://lu.ma/7r8laggy">
+                        <Image src={ "/assets/photo/photo-klaytn-bootcamp.png" } priority={true} width={1440} height={560} alt="klayton bootcamp" style={{ borderRadius: 6 }}/>
+                    </Link>
                 </div>
 
                 <div>
