@@ -40,6 +40,16 @@
     background: #D0FFC4;
 }
 
+.category[data-color="Contest"]
+{
+    background-color: #C4F4FF;
+}
+
+.category[data-color="License"]
+{
+    background-color: #FFD9C4;
+}
+
 .category > label
 {
     font-size: 14px;

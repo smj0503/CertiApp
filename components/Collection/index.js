@@ -10,7 +10,7 @@ export default function ({ href, category, date, image, publisher, title })
             <Image src={ image } alt="image" width={464} height={517} className={ styles.image }/>
             <div className={ styles.info }>
                 <div className={ styles.head }>
-                    <div className={ styles.category }>
+                    <div className={ styles.category } data-color={ category }>
                         <label>{ category }</label>
                     </div>
                     <span className={ styles.date }>{ date }</span>
