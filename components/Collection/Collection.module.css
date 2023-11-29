@@ -7,6 +7,11 @@
     width: 464px;
 }
 
+.image
+{
+    border-radius: 6px;
+}
+
 .info
 {
     display: flex;

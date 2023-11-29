@@ -3,11 +3,11 @@ import Image from "next/image";
 
 import styles from "./Collection.module.css";
 
-export default function ({ category, date, image, publisher, children })
+export default function ({ href, category, date, image, publisher, title })
 {
     return (
-        <div className={ styles.container }>
-            <Image src={ image } alt="image" width={464} height={517}/>
+        <Link href={ href } className={ styles.container }>
+            <Image src={ image } alt="image" width={464} height={517} className={ styles.image }/>
             <div className={ styles.info }>
                 <div className={ styles.head }>
                     <div className={ styles.category }>
@@ -16,10 +16,10 @@ export default function ({ category, date, image, publisher, children })
                     <span className={ styles.date }>{ date }</span>
                 </div>
                 <div className={ styles.description }>
-                    <span className={ styles.name }>{ children }</span>
+                    <span className={ styles.name }>{ title }</span>
                     <span className={ styles.publisher }>{ publisher }</span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
