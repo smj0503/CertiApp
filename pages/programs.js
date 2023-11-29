@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import TopBar from "@/components/TopBar";
 import Collection from "@/components/Collection";
+import JobOpenings from "@/components/JobOpenings";
 
 import styles from "../styles/Programs.module.css";
 
@@ -16,7 +17,7 @@ export default function ()
                         <h1 className={ styles.title }>{ "Popular Program" }</h1>
                         <span className={ styles.description }>{ "Let's meet the popular programs now!" }</span>
                     </div>
-                    <Image src={ "/assets/photo/photo-klayton.png" } priority={true} width={1440} height={560} alt="klayton bootcamp"/>
+                    <Link href="/"><Image src={ "/assets/photo/photo-klayton.png" } priority={true} width={1440} height={560} alt="klayton bootcamp"/></Link>
                 </div>
 
                 <div>
@@ -42,7 +43,11 @@ export default function ()
                         <h1 className={ styles.title }>{ "Recommended Job Openings" }</h1>
                         <span className={ styles.description }>{ "Job openings that fits your certificate" }</span>
                     </div>
-                    <Image src={ "/assets/photo/photo-klayton.png" } priority={true} width={1440} height={560} alt="klayton bootcamp"/>
+                    <div className={ styles.programs }>
+                        <JobOpenings image="/assets/photo/photo-coov.png" href="/" publisher="Blockchain Labs">{ "Blockchain Product Manager" }</JobOpenings>
+                        <JobOpenings image="/assets/photo/photo-bithumb.png" href="/" publisher="bithumb">{ "[bithumb] Blockchain Techn Developer" }</JobOpenings>
+                        <JobOpenings image="/assets/photo/photo-wemade.png" href="/" publisher="WEMADE">{ "WemixPlay Blockchain Platform Dev" }</JobOpenings>
+                    </div>
                 </div>
             </div>
         </TopBar>
