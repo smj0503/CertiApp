@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { getAddress } from "@/apis/klip.signin.api";
+import { asyncEffect } from "@/common/utils";
 
 import QRCode from "@/components/QRCode";
 
@@ -17,10 +18,15 @@ export default function ()
     const [address, setAddress] = useState('');
     const [status, setStatus] = useState('');
 
-    useEffect(() =>
+    asyncEffect(async () =>
     {
         console.log('address : ', address);
         console.log('status : ', status);
+
+        if(address && status)
+        {
+            await router.push('/programs');
+        }
     }, [address, status]);
 
     const onClick = async () =>
