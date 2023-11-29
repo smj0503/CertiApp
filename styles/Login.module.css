@@ -3,6 +3,8 @@
     width: 100vw;
     height: 100vh;
 
+    position: relative;
+
     background-color: #FFFFFF;
 }
 
@@ -81,3 +83,4 @@
     font-weight: 500;
     line-height: 100%;
 }
+

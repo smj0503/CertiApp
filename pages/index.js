@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as KlipAPI from "@/apis/klip.signin.api";
-import QRCode from "qrcode.react";
+import QRCode from "@/components/QRCode";
 
 import styles from "../styles/Login.module.css";
 import Logo from "../public/assets/logo/logo-homepage.svg";
@@ -45,6 +45,7 @@ export default function ()
                         </button>
                     )
                 }
+                <QRCode/>
             </div>
         </div>
     )

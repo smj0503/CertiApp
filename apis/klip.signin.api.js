@@ -18,11 +18,12 @@
 //klip_test.js
 
 import axios from "axios";
-const A2P_API_PREPARE_URL = "https://a2a-api.klipwallet.com/v2/a2a/prepare";	//prepare url
-const APP_NAME = "GIMMEDUCK";
+const A2P_API_PREPARE_URL = "https://a2a-api.klipwallet.com/v2/a2a/prepare";
+const APP_NAME = "nftime";
 
 //QR 생성 링크 만드는 함수
-const getKlipAccessUrl = (request_key) => {
+const getKlipAccessUrl = (request_key) =>
+{
     return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
 };
 
