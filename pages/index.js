@@ -1,5 +1,7 @@
-import { useState } from "react";
-import * as KlipAPI from "@/apis/klip.signin.api";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { getAddress } from "@/apis/klip.signin.api";
+
 import QRCode from "@/components/QRCode";
 
 import styles from "../styles/Login.module.css";
@@ -9,16 +11,24 @@ import IconKlip from "../public/assets/icon-klip.svg";
 
 export default function ()
 {
-    // const [url, setUrl] = useState('');
-    const [qrvalue_auth, setQrvalue_auth] = useState('');
-    const [myAddress, setMyAddress] = useState('');
+    const router = useRouter();
+
+    const [url, setUrl] = useState('');
+    const [address, setAddress] = useState('');
+    const [status, setStatus] = useState('');
+
+    useEffect(() =>
+    {
+        console.log('address : ', address);
+        console.log('status : ', status);
+    }, [address, status]);
 
     const onClick = async () =>
     {
-        // const { request_key } = await getAddress();
-        // setUrl(`https://klipwallet.com/?target=/a2a?request_key=${request_key}`);
-        KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-            setMyAddress(address);	//사용자의 지갑 주소를 가져온다
+        getAddress(setUrl, async (address, status) =>
+        {
+            setAddress(address);
+            setStatus(status);
         });
     };
 
@@ -35,17 +45,13 @@ export default function ()
                     <h1 className={ styles.slogan }>{ "Remember that moment" }</h1>
                 </div>
                 <p dangerouslySetInnerHTML={{ __html: "you can easily and conveniently manage<br/>certificates such as diploma or awards" }} className={ styles. description }/>
+                <button type="button" className={ styles.loginButton } onClick={ onClick }>
+                    <IconKlip/>
+                    <label className={ styles.buttonLabel }>{ "Sign in with Klip" }</label>
+                </button>
                 {
-                    qrvalue_auth ? (
-                        <div style={{ marginTop: 48 }}><QRCode value={ qrvalue_auth } size={188}/></div>
-                    ): (
-                        <button type="button" className={ styles.loginButton } onClick={ onClick }>
-                            <IconKlip/>
-                            <label className={ styles.buttonLabel }>{ "Sign in with Klip" }</label>
-                        </button>
-                    )
+                    url && <QRCode url={ url }/>
                 }
-                <QRCode/>
             </div>
         </div>
     )
