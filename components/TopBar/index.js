@@ -5,7 +5,7 @@ import styles from "./TopBar.module.css";
 import Logo from "../../public/assets/logo/logo-top-bar.svg";
 import IconLogout from "../../public/assets/icon-logout.svg";
 
-export default function ({ children })
+export default function ({ hasSession = false, children })
 {
     const router = useRouter();
     console.log(router.asPath);
@@ -15,14 +15,22 @@ export default function ({ children })
             <div className={ styles.topBar }>
                 <div className={ styles.menus }>
                     <Logo/>
-                    <div>
-                        <Link href="/pages/archive" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
-                        <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
-                    </div>
+                    {
+                        hasSession && (
+                            <div>
+                                <Link href="/pages/archive" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
+                                <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
+                            </div>
+                        )
+                    }
                 </div>
-                <button type="button" className={ styles.logout }>
-                    { "Log out" }<IconLogout/>
-                </button>
+                {
+                    hasSession && (
+                        <button type="button" className={ styles.logout }>
+                            { "Log out" }<IconLogout/>
+                        </button>
+                    )
+                }
             </div>
             <main className={ styles.body }>
                 { children }
