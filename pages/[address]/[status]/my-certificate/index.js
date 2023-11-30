@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
 import TopBar from "@/components/TopBar";
-import SortButton from "@/components/SortButton";
-import Collection from "@/components/Collection";
+// import SortButton from "@/components/SortButton";
+// import Collection from "@/components/Collection";
 
 import styles from "../../../../styles/MyCertificate.module.css";
-import IconShare from "../../../../public/assets/icon-share.svg";
+// import IconShare from "../../../../public/assets/icon-share.svg";
 import IconEmpty from "../../../../public/assets/icon-empty.svg";
 
 export default function ()
