@@ -15,19 +15,3 @@
 
     width: 1440px;
 }
-
-.itemContainer
-{
-    display: flex;
-    justify-content: center;
-    gap: 98px;
-
-    width: 100%;
-
-    background-color: #FFD9C4;
-}
-
-.image
-{
-    border-radius: 12px;
-}

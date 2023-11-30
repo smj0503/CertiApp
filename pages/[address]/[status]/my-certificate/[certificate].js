@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Certificate/Header";
+import ItemContainer from "@/components/Certificate/ItemContainer";
 
 import styles from "../../../../styles/Certificate.module.css";
 
@@ -15,9 +16,7 @@ export default function ()
             <div className={ styles.container }>
                 <div>
                     <Header/>
-                    <div className={ styles.itemContainer }>
-                        <Image src="/assets/photo/photo-defi.png" alt="image" width={586} height={653} className={ styles.image } priority={true}/>
-                    </div>
+                    <ItemContainer/>
                 </div>
             </div>
         </TopBar>

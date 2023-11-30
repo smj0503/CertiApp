@@ -1,0 +1,68 @@
+.itemContainer
+{
+    display: flex;
+    justify-content: center;
+    gap: 98px;
+
+    width: 100%;
+
+    background-color: #FFD9C4;
+}
+
+.image
+{
+    border-radius: 12px;
+}
+
+.info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chips
+{
+    display: flex;
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.chips > div
+{
+    display: flex;
+    align-items: center;
+
+    height: 38px;
+    padding: 0 20px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.category
+{
+    background-color: #D0FFC4;
+    color: #072200;
+}
+
+.date
+{
+    border: 1px solid #DADADA;
+    background-color: #FFFFFF;
+    color: #3F3F3F;
+}
+
+.title
+{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+
+    margin-bottom: 36px;
+}
