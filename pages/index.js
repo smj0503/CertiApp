@@ -25,10 +25,7 @@ export default function ()
 
         if(address && status)
         {
-            await router.push({
-                pathname: '/certificate',
-                query: { address: address, status: status }
-            });
+            await router.push({ pathname: `/certificate/${address}/${status}` });
         }
     }, [address, status]);
 
