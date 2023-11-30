@@ -1,6 +1,6 @@
 import TopBar from "@/components/TopBar";
 
-import styles from "../../../styles/Archive.module.css";
+import styles from "../../../styles/MyCertificate.module.css";
 
 export default function ()
 {

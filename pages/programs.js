@@ -10,7 +10,7 @@ import styles from "../styles/Programs.module.css";
 export default function ()
 {
     return (
-        <TopBar>
+        <TopBar hasSession={true}>
             <div className={ styles.container }>
                 <div>
                     <div className={ styles.category }>
@@ -28,7 +28,7 @@ export default function ()
                         <span className={ styles.description }>{ "We will recommend programs that you might like" }</span>
                     </div>
 
-                    <div className={ styles.programs } style={{ marginBottom: 48 }}>
+                    <div className={ styles.programs }>
                         <Collection
                             image="/assets/photo/photo-ai-blockchain-education.png"
                             href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
@@ -53,8 +53,6 @@ export default function ()
                             publisher="Gwangju ICT Innovation Square"
                             title="ICT Innovation Square Blockchain Edu"
                         />
-                    </div>
-                    <div className={ styles.programs }>
                         <Collection
                             image="/assets/photo/photo-techit.png"
                             href="https://techit.education/school/kdt-blockchain-5th"

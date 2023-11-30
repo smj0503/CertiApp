@@ -18,7 +18,7 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link href="/pages/archive" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
+                                <Link href="/pages/my-certificate" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
                                 <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
                             </div>
                         )
