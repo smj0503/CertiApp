@@ -30,6 +30,24 @@ export default function ()
                             <SortButton>{ "Others" }</SortButton>
                         </div>
                     </div>
+                    <div className={ styles.certificates }>
+                        <Collection
+                            image="/assets/photo/photo-ai-blockchain-education.png"
+                            href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
+                            category="Education Program"
+                            date="2023.05.31"
+                            publisher="Gwangju ICT Innovation Square · Goorm"
+                            title="A Blockchain Education"
+                        />
+                        <Collection
+                            image="/assets/photo/photo-defi.png"
+                            href="https://fastcampus.co.kr/dev_online_defi"
+                            category="Education Program"
+                            date="2021.08.01"
+                            publisher="FastCampus"
+                            title="[Fast Campus] DeFi Deep Dive"
+                        />
+                    </div>
                 </div>
             </div>
         </TopBar>
