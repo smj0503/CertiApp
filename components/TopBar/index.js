@@ -8,7 +8,7 @@ import IconLogout from "../../public/assets/icon-logout.svg";
 export default function ({ hasSession = false, children })
 {
     const router = useRouter();
-    console.log(router.asPath);
+    const href = router.asPath.includes("my-certificate") ? router.asPath.replace('my-certificate', 'programs') : router.asPath.replace('programs', 'my-certificate');
 
     return (
         <div className={ styles.backgroundContainer }>
@@ -18,8 +18,8 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link href="/pages/my-certificate" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
-                                <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
+                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("my-certificate") }>{ "MY CERTIFICATE" }</Link>
+                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ "OTHER PROGRAMS" }</Link>
                             </div>
                         )
                     }
