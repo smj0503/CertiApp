@@ -16,6 +16,7 @@ export default function App({ Component, pageProps })
                 <link rel="icon" type="image/png" sizes="144x144" href="/favicon/ms-icon-144x144.png"/>
                 <link rel="icon" type="image/png" sizes="150x150" href="/favicon/ms-icon-150x150.png"/>
                 <link rel="icon" type="image/png" sizes="310x310" href="/favicon/ms-icon-310x310.png"/>
+                {/*<link rel="icon" href="/favicon.ico"/>*/}
             </Head>
             <Component {...pageProps} />
         </>

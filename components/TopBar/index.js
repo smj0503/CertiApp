@@ -16,7 +16,7 @@ export default function ({ children })
                 <div className={ styles.menus }>
                     <Logo/>
                     <div>
-                        <Link href="/certificates" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
+                        <Link href="/pages/archive" className={ styles.linkbutton } data-selected={ router.asPath === "/certificate" }>{ "MY CERTIFICATE" }</Link>
                         <Link href="/programs" className={ styles.linkbutton } data-selected={ router.asPath === "/programs" }>{ "OTHER PROGRAMS" }</Link>
                     </div>
                 </div>
