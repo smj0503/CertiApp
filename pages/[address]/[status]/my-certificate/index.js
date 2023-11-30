@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import TopBar from "@/components/TopBar";
 import SortButton from "@/components/SortButton";
 import Collection from "@/components/Collection";
@@ -7,6 +9,8 @@ import IconShare from "../../../../public/assets/icon-share.svg";
 
 export default function ()
 {
+    const router = useRouter();
+
     return (
         <TopBar hasSession={true}>
             <div className={ styles.container }>
