@@ -23,9 +23,9 @@ export default function ()
         console.log('address : ', address);
         console.log('status : ', status);
 
-        if(address && status)
+        if(address && status === "completed")
         {
-            await router.push({ pathname: `/my-certificate/${address}/${status}` });
+            await router.push({ pathname: `/${address}/${status}/my-certificate` });
         }
     }, [address, status]);
 
@@ -45,7 +45,6 @@ export default function ()
             </div>
             <div className={ styles.loginContainer }>
                 <IconHandShake/>
-
                 <div className={ styles.sloganContainer }>
                     <h1 className={ styles.slogan } data-color="blue">{ "Record your achievement" }</h1>
                     <h1 className={ styles.slogan }>{ "Remember that moment" }</h1>

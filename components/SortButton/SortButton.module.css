@@ -1,0 +1,23 @@
+.button
+{
+    display: flex;
+    padding: 0 24px;
+    align-items: center;
+
+    height: 48px;
+
+    border-radius: 24px;
+    background: #F5F5F5;
+}
+
+.button[data-selected=true]
+{
+    border: 1px solid #000;
+}
+
+.button > label
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+}

@@ -5,7 +5,7 @@ import TopBar from "@/components/TopBar";
 import Collection from "@/components/Collection";
 import JobOpenings from "@/components/JobOpenings";
 
-import styles from "../styles/Programs.module.css";
+import styles from "../../../styles/Programs.module.css";
 
 export default function ()
 {
