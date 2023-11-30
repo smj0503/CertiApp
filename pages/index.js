@@ -6,7 +6,7 @@ import { asyncEffect } from "@/common/utils";
 import QRCode from "@/components/QRCode";
 
 import styles from "../styles/Login.module.css";
-import Logo from "../public/assets/logo/logo-homepage.svg";
+import Logo from "../public/assets/logo/logo-signin.svg";
 import IconHandShake from "../public/assets/icon-hand-shake.svg";
 import IconKlip from "../public/assets/icon-klip.svg";
 

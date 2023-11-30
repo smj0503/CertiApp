@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import styles from "./TopBar.module.css";
-import Logo from "../../public/assets/logo/logo-dashboard.svg";
+import Logo from "../../public/assets/logo/logo-top-bar.svg";
 import IconLogout from "../../public/assets/icon-logout.svg";
 
 export default function ({ children })
