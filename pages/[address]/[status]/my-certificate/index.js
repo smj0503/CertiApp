@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 
 import TopBar from "@/components/TopBar";
+import EmptyContainer from "@/components/EmptyContainer";
 import SortButton from "@/components/SortButton";
 import Collection from "@/components/Collection";
 
 import styles from "../../../../styles/MyCertificate.module.css";
 import IconShare from "../../../../public/assets/icon-share.svg";
-import IconEmpty from "../../../../public/assets/icon-empty.svg";
 
 export default function ()
 {
@@ -15,13 +15,7 @@ export default function ()
     return (
         <TopBar hasSession={true}>
             <div className={ styles.container }>
-                <div className={ styles.emptyContainer }>
-                    <div>
-                        <IconEmpty/>
-                        <h1 className={ styles.emptyMessage }>{ "There's nothing" }</h1>
-                        <span className={ styles.emptyDescription}>{ "There are no certificate in this account" }</span>
-                    </div>
-                </div>
+                <EmptyContainer hasSession={true}/>
                 {/*<div>*/}
                 {/*    <div className={ styles.controller }>*/}
                 {/*        <div className={ styles.header }>*/}

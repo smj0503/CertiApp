@@ -16,39 +16,6 @@
     width: 1440px;
 }
 
-.emptyContainer
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.emptyContainer > div
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.emptyMessage
-{
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 100%;
-
-    margin-top: 32px;
-    margin-bottom: 20px;
-}
-
-.emptyDescription
-{
-    color: rgba(0, 0, 0, 0.40);
-
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 100%;
-}
-
 .controller
 {
     display: flex;
