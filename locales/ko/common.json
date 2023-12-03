@@ -23,7 +23,7 @@
     "contest": "Contest",
     "license": "License",
     "others": "Others",
-    "emptyMessage": "There are no certificate in this account",
+    "emptyMessage": "There are no certificates in this account",
     "addCertificate": "Add a certificate"
   },
   "otherPrograms": {
