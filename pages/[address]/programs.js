@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -5,17 +6,19 @@ import TopBar from "@/components/TopBar";
 import Collection from "@/components/Collection";
 import JobOpenings from "@/components/JobOpenings";
 
-import styles from "../../../styles/Programs.module.css";
+import styles from "../../styles/Programs.module.css";
 
 export default function ()
 {
+    const { t } = useTranslation("common");
+
     return (
         <TopBar hasSession={true}>
             <div className={ styles.container }>
                 <div>
                     <div className={ styles.category }>
-                        <h1 className={ styles.title }>{ "Popular Program" }</h1>
-                        <span className={ styles.description }>{ "Let's meet the popular programs now!" }</span>
+                        <h1 className={ styles.title }>{ t("otherPrograms.popularProgram") }</h1>
+                        <span className={ styles.description }>{ t("otherPrograms.popularProgramDescription") }</span>
                     </div>
                     <Link href="https://lu.ma/7r8laggy">
                         <Image src={ "/assets/photo/photo-klaytn-bootcamp.png" } priority={true} width={1440} height={560} alt="klayton bootcamp" style={{ borderRadius: 6 }}/>
@@ -24,8 +27,8 @@ export default function ()
 
                 <div>
                     <div className={ styles.category }>
-                        <h1 className={ styles.title }>{ "Recommended for you" }</h1>
-                        <span className={ styles.description }>{ "We will recommend programs that you might like" }</span>
+                        <h1 className={ styles.title }>{ t("otherPrograms.recommendedForYou") }</h1>
+                        <span className={ styles.description }>{ t("otherPrograms.recommendedForYouDescription") }</span>
                     </div>
 
                     <div className={ styles.programs }>
@@ -82,8 +85,8 @@ export default function ()
 
                 <div>
                     <div className={ styles.category }>
-                        <h1 className={ styles.title }>{ "Recommended Job Openings" }</h1>
-                        <span className={ styles.description }>{ "Job openings that fits your certificate" }</span>
+                        <h1 className={ styles.title }>{ t("otherPrograms.recommendedJobOpenings") }</h1>
+                        <span className={ styles.description }>{ t("otherPrograms.jobOpeningsDescription") }</span>
                     </div>
                     <div className={ styles.programs }>
                         <JobOpenings

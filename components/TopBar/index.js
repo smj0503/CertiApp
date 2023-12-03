@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -7,7 +8,9 @@ import IconLogout from "../../public/assets/icon-logout.svg";
 
 export default function ({ hasSession = false, children })
 {
+    const { t } = useTranslation("common");
     const router = useRouter();
+
     const href = router.asPath.includes("my-certificate") ? router.asPath.replace('my-certificate', 'programs') : router.asPath.replace('programs', 'my-certificate');
 
     return (
@@ -18,8 +21,8 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("my-certificate") }>{ "MY CERTIFICATE" }</Link>
-                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ "OTHER PROGRAMS" }</Link>
+                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("my-certificate") }>{ t("topBar.myCertificate") }</Link>
+                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
                             </div>
                         )
                     }
@@ -27,7 +30,7 @@ export default function ({ hasSession = false, children })
                 {
                     hasSession && (
                         <button type="button" className={ styles.logout }>
-                            { "Log out" }<IconLogout/>
+                            { t("topBar.logout") }<IconLogout/>
                         </button>
                     )
                 }

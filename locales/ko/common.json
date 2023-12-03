@@ -9,6 +9,11 @@
     "scanQRCode": "Scan the QR code<br/>with your phone",
     "pleaseWait": "After signing on Klip, please wait a moment<br/>for your request to be completed."
   },
+  "topBar": {
+    "myCertificate": "MY CERTIFICATE",
+    "otherPrograms": "OTHER PROGRAMS",
+    "logout": "Log out"
+  },
   "myCertificates": {
     "belongsTo": "{{username}}'s Digital Certificate",
     "count": "{{count}} pieces",
@@ -17,6 +22,16 @@
     "diploma": "Diploma",
     "contest": "Contest",
     "license": "License",
-    "others": "Others"
+    "others": "Others",
+    "emptyMessage": "There are no certificate in this account",
+    "addCertificate": "Add a certificate"
+  },
+  "otherPrograms": {
+    "popularProgram": "Popular Program",
+    "popularProgramDescription": "Let's meet the popular programs now!",
+    "recommendedForYou": "Recommended for you",
+    "recommendedForYouDescription": "We will recommend programs that you might like",
+    "recommendedJobOpenings": "Recommended Job Openings",
+    "jobOpeningsDescription": "Job openings that fits your certificate"
   }
 }
