@@ -12,6 +12,8 @@ export default function ()
 {
     const router = useRouter();
 
+    const myCertificates = [];
+
     return (
         <TopBar hasSession={true}>
             <div className={ styles.container }>
