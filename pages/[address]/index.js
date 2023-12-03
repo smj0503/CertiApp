@@ -29,7 +29,7 @@ export default function ()
                                         <span className={ styles.title }>{ t("myCertificates.belongsTo") }</span>
                                         <span className={ styles.count }>{ t("myCertificates.count") }</span>
                                     </div>
-                                    <button type="button" className={ styles.copyButton }>
+                                    <button data-button-animation={true} type="button" className={ styles.copyButton }>
                                         <span>{ t("myCertificates.shareYourList") }</span>
                                         <IconShare/>
                                     </button>

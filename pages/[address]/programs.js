@@ -20,7 +20,7 @@ export default function ()
                         <h1 className={ styles.title }>{ t("otherPrograms.popularProgram") }</h1>
                         <span className={ styles.description }>{ t("otherPrograms.popularProgramDescription") }</span>
                     </div>
-                    <Link href="https://lu.ma/7r8laggy">
+                    <Link data-button-animation={true} href="https://lu.ma/7r8laggy">
                         <Image src={ "/assets/photo/photo-klaytn-bootcamp.png" } priority={true} width={1440} height={560} alt="klayton bootcamp" style={{ borderRadius: 6 }}/>
                     </Link>
                 </div>

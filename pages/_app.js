@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import '../styles/global.css';
+import '../styles/design-system.css';
 
 export default function App({ Component, pageProps })
 {

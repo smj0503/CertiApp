@@ -21,15 +21,15 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link href={ href } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
-                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
+                                <Link data-button-animation={true} href={ href } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
+                                <Link data-button-animation={true} href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
                             </div>
                         )
                     }
                 </div>
                 {
                     hasSession && (
-                        <button type="button" className={ styles.logout }>
+                        <button data-button-animation={true} type="button" className={ styles.logout }>
                             { t("topBar.logout") }<IconLogout/>
                         </button>
                     )

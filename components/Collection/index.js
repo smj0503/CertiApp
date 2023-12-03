@@ -6,7 +6,7 @@ import styles from "./Collection.module.css";
 export default function ({ href, category, date, image, publisher, title })
 {
     return (
-        <Link href={ href } className={ styles.container }>
+        <Link data-button-animation={true} href={ href } className={ styles.container }>
             <Image src={ image } alt="image" width={464} height={517} className={ styles.image } priority={true}/>
             <div className={ styles.info }>
                 <div className={ styles.head }>

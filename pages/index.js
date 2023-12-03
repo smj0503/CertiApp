@@ -61,7 +61,7 @@ export default function ()
                     <h1 className={ styles.slogan }>{ t("signIn.rememberThatMoment") }</h1>
                 </div>
                 <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles. description }/>
-                <button type="button" className={ styles.loginButton } onClick={ onClick }>
+                <button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>
                     <IconKlip/>
                     <label className={ styles.buttonLabel }>{ t("signIn.signInWithKlip") }</label>
                 </button>

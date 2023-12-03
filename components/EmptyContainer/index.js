@@ -15,7 +15,7 @@ export default function ({ hasSession })
                 <h1 className={ styles.emptyMessage }>{ t("myCertificates.emptyMessage") }</h1>
                 {
                     hasSession && (
-                        <Link href={ "https://forms.gle/asGbSi2xF4rTqsNt9" } className={ styles.addButton }>
+                        <Link data-button-animation={true} href={ "https://forms.gle/asGbSi2xF4rTqsNt9" } className={ styles.addButton }>
                             <label>{ t("myCertificates.addCertificate") }</label>
                         </Link>
                     )

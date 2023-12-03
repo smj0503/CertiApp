@@ -14,7 +14,7 @@ export default function ({ url, close })
             <div className={ styles.container }>
                 <div className={ styles.head }>
                     <span>{ t("signIn.signIn") }</span>
-                    <button type="button" className={ styles.closeButton } onClick={ close }><IconClose/></button>
+                    <button type="button" data-button-animation={true} className={ styles.closeButton } onClick={ close }><IconClose/></button>
                 </div>
                 <div className={ styles.body }>
                     <Klip/>
