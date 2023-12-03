@@ -1,0 +1,33 @@
+.container
+{
+    width: 48px;
+    height: 30px;
+    background-color: #C8C8C8;
+    opacity: 0.16;
+    border-radius: 999px;
+
+    padding: 2px;
+}
+
+.thumb
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06);
+
+    transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.container[data-active=true]
+{
+    background-color: #5CDA30;
+    opacity: 1;
+}
+
+.container[data-active=true] .thumb
+{
+    transform: translateX(20px);
+}
