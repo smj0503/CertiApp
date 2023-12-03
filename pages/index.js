@@ -29,7 +29,7 @@ export default function ()
 
         if(address && status === "completed")
         {
-            await router.push({ pathname: `/${address}/${status}/my-certificate` });
+            await router.push({ pathname: `/${address}` });
         }
     }, [address, status]);
 

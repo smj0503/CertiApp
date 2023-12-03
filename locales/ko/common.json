@@ -8,5 +8,15 @@
     "signIn": "Sign in",
     "scanQRCode": "Scan the QR code<br/>with your phone",
     "pleaseWait": "After signing on Klip, please wait a moment<br/>for your request to be completed."
+  },
+  "myCertificates": {
+    "belongsTo": "{{username}}'s Digital Certificate",
+    "count": "{{count}} pieces",
+    "shareYourList": "Share your list",
+    "all": "All",
+    "diploma": "Diploma",
+    "contest": "Contest",
+    "license": "License",
+    "others": "Others"
   }
 }
