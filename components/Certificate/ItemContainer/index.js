@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 
 import Switch from "@/components/Switch";
@@ -6,6 +7,8 @@ import styles from "./ItemContainer.module.css";
 
 export default function ({ hasSession })
 {
+    const { t } = useTranslation("common");
+
     return (
         <div className={ styles.itemContainer }>
             <Image src="/assets/photo/photo-protocol-camp.png" alt="image" width={586} height={653} className={ styles.image } priority={true}/>
@@ -28,16 +31,16 @@ export default function ({ hasSession })
 
                     <div>
                         <div className={ styles.descriptionContainer }>
-                            <h1>{ "Program Description" }</h1>
+                            <h1>{ t("details.programDescription") }</h1>
                             <p>{ "Congratulations on the completion of the blockchain boot camp protocol camp with Dream Plus and Hashed." }</p>
                         </div>
-                        <span className={ styles.details }>{ "More details about program >" }</span>
+                        <span className={ styles.details }>{ t("details.moreDetails") }</span>
                     </div>
                 </div>
                 <div className={ styles.openToThePublic }>
                     <div>
-                        <label>{ "open to the public" }</label>
-                        <span>{ "You can set whether or not to disclose a certificate outside" }</span>
+                        <label>{ t("details.openToThePublic") }</label>
+                        <span>{ t("details.openPublicDescription") }</span>
                     </div>
                     <Switch/>
                 </div>

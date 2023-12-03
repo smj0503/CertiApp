@@ -33,5 +33,12 @@
     "recommendedForYouDescription": "We will recommend programs that you might like",
     "recommendedJobOpenings": "Recommended Job Openings",
     "jobOpeningsDescription": "Job openings that fits your certificate"
+  },
+  "details": {
+    "myCertificate": "MY CERTIFICATE",
+    "programDescription": "Program Description",
+    "moreDetails": "More details about program >",
+    "openToThePublic": "open to the public",
+    "openPublicDescription": "You can set whether or not to disclose a certificate outside"
   }
 }

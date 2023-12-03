@@ -1,13 +1,17 @@
+import useTranslation from "next-translate/useTranslation";
+
 import styles from "./Header.module.css";
 import IconChevronRight from "@/public/assets/icon-chevron-right.svg";
 
-export default function ({})
+export default function ({ category, title })
 {
+    const { t } = useTranslation("common");
+
     return (
         <div className={ styles.header }>
-            <span>{ "MY CERTIFICATE" }</span><IconChevronRight/>
-            <span>{ "PROGRAM" }</span><IconChevronRight/>
-            <span className={ styles.certificateName }>{ "[작심 30일] 인공지능 블록체인 교육" }</span>
+            <span>{ t("details.myCertificate") }</span><IconChevronRight/>
+            <span>{ category }</span><IconChevronRight/>
+            <span className={ styles.certificateName }>{ title }</span>
         </div>
     )
 }
