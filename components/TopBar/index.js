@@ -13,6 +13,11 @@ export default function ({ hasSession = false, children })
 
     const href = router.asPath.includes("programs") ? router.asPath.replace('programs', '') : `${router.asPath}/programs`;
 
+    const Logout = async () =>
+    {
+        await router.push('/');
+    };
+
     return (
         <div className={ styles.backgroundContainer }>
             <div className={ styles.topBar }>
@@ -29,7 +34,7 @@ export default function ({ hasSession = false, children })
                 </div>
                 {
                     hasSession && (
-                        <button data-button-animation={true} type="button" className={ styles.logout }>
+                        <button data-button-animation={true} type="button" className={ styles.logout } onClick={ Logout }>
                             { t("topBar.logout") }<IconLogout/>
                         </button>
                     )
