@@ -11,7 +11,7 @@ export default function ({ hasSession = false, children })
     const { t } = useTranslation("common");
     const router = useRouter();
 
-    const href = router.asPath.includes("my-certificate") ? router.asPath.replace('my-certificate', 'programs') : router.asPath.replace('programs', 'my-certificate');
+    const href = router.asPath.includes("programs") ? router.asPath.replace('programs', '') : `${router.asPath}/programs`;
 
     return (
         <div className={ styles.backgroundContainer }>
@@ -21,7 +21,7 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("my-certificate") }>{ t("topBar.myCertificate") }</Link>
+                                <Link href={ href } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
                                 <Link href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
                             </div>
                         )
