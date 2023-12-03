@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import QRCode from "qrcode.react";
 
 import styles from "./QRCode.module.css";
@@ -6,11 +7,13 @@ import IconClose from "../../public/assets/icon-close.svg";
 
 export default function ({ url, close })
 {
+    const { t } = useTranslation("common");
+
     return (
         <div className={ styles.dim }>
             <div className={ styles.container }>
                 <div className={ styles.head }>
-                    <span>{ "Sign in" }</span>
+                    <span>{ t("signIn.signIn") }</span>
                     <button type="button" className={ styles.closeButton } onClick={ close }><IconClose/></button>
                 </div>
                 <div className={ styles.body }>
@@ -18,8 +21,8 @@ export default function ({ url, close })
                     <div className={ styles.qrContainer }>
                         <QRCode value={ url } size={188}/>
                         <div className={ styles.description }>
-                            <span dangerouslySetInnerHTML={{ __html: "Scan the QR code<br/>with your phone" }} className={ styles.guide }/>
-                            <span dangerouslySetInnerHTML={{ __html: "After signing on Klip, please wait a moment<br/>for your request to be completed." }} className={ styles.notion }/>
+                            <span dangerouslySetInnerHTML={{ __html: t("signIn.scanQRCode") }} className={ styles.guide }/>
+                            <span dangerouslySetInnerHTML={{ __html: t("signIn.pleaseWait") }} className={ styles.notion }/>
                         </div>
                     </div>
                 </div>

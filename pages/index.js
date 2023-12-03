@@ -1,5 +1,6 @@
-import { useState } from "react";
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { getAddress } from "@/apis/klip.signin.api";
 import { asyncEffect } from "@/common/utils";
 
@@ -12,11 +13,14 @@ import IconKlip from "../public/assets/icon-klip.svg";
 
 export default function ()
 {
+    const { t } = useTranslation("common");
     const router = useRouter();
 
     const [url, setUrl] = useState('');
     const [address, setAddress] = useState('');
     const [status, setStatus] = useState('');
+
+    const [open, setOpen] = useState(false);
 
     asyncEffect(async () =>
     {
@@ -36,6 +40,13 @@ export default function ()
             setAddress(address);
             setStatus(status);
         });
+
+        setOpen(true);
+    };
+
+    const onClose = () =>
+    {
+        setOpen(false);
     };
 
     return (
@@ -46,16 +57,16 @@ export default function ()
             <div className={ styles.loginContainer }>
                 <IconHandShake/>
                 <div className={ styles.sloganContainer }>
-                    <h1 className={ styles.slogan } data-color="blue">{ "Record your achievement" }</h1>
-                    <h1 className={ styles.slogan }>{ "Remember that moment" }</h1>
+                    <h1 className={ styles.slogan } data-color="blue">{ t("signIn.recordYourAchievement") }</h1>
+                    <h1 className={ styles.slogan }>{ t("signIn.rememberThatMoment") }</h1>
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: "you can easily and conveniently manage<br/>certificates such as diploma or awards" }} className={ styles. description }/>
+                <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles. description }/>
                 <button type="button" className={ styles.loginButton } onClick={ onClick }>
                     <IconKlip/>
-                    <label className={ styles.buttonLabel }>{ "Sign in with Klip" }</label>
+                    <label className={ styles.buttonLabel }>{ t("signIn.signInWithKlip") }</label>
                 </button>
                 {
-                    url && <QRCode url={ url }/>
+                    url && open && <QRCode url={ url } close={ onClose }/>
                 }
             </div>
         </div>

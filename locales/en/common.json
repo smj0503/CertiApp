@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "signIn": {
+    "recordYourAchievement": "Record your achievement",
+    "rememberThatMoment": "Remember that moment",
+    "opengraph": "you can easily and conveniently manage<br/>certificates such as diploma or awards",
+    "signInWithKlip": "Sign in with Klip",
+    "signIn": "Sign in",
+    "scanQRCode": "Scan the QR code<br/>with your phone",
+    "pleaseWait": "After signing on Klip, please wait a moment<br/>for your request to be completed."
+  }
+}
