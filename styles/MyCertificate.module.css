@@ -21,6 +21,9 @@
     display: flex;
     flex-direction: column;
     gap: 36px;
+
+    position: relative;
+    background-color: #0A91DD;
 }
 
 .header
