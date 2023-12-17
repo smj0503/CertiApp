@@ -8,7 +8,7 @@ import QRCode from "@/components/QRCode";
 
 import styles from "../styles/Login.module.css";
 import Logo from "../public/assets/logo/logo-signin.svg";
-import IconHandShake from "../public/assets/icon-hand-shake.svg";
+import IconCheck from "../public/assets/icon-check.svg";
 import IconKlip from "../public/assets/icon-klip.svg";
 
 export default function ()
@@ -20,7 +20,7 @@ export default function ()
     const [address, setAddress] = useState('');
     const [status, setStatus] = useState('');
 
-    const [open, setOpen] = useState(false);
+    const [isOpened, setIsOpened] = useState(false);
 
     asyncEffect(async () =>
     {
@@ -41,34 +41,33 @@ export default function ()
             setStatus(status);
         });
 
-        setOpen(true);
+        setIsOpened(true);
     };
 
-    const onClose = () =>
+    const close = () =>
     {
-        setOpen(false);
+        setIsOpened(false);
     };
 
     return (
         <div className={ styles.container }>
-            <div className={ styles.logo }>
-                <Logo/>
-            </div>
             <div className={ styles.loginContainer }>
-                <IconHandShake/>
-                <div className={ styles.sloganContainer }>
-                    <h1 className={ styles.slogan } data-color="blue">{ t("signIn.recordYourAchievement") }</h1>
-                    <h1 className={ styles.slogan }>{ t("signIn.rememberThatMoment") }</h1>
+                <Logo/>
+                <div className={ styles.slogan }>
+                    <h1 data-color="blue">{ t("signIn.recordYourAchievement") }</h1>
+                    <h1>{ t("signIn.rememberThatMoment") }</h1>
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles. description }/>
+                <IconCheck/>
+                <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles.description }/>
                 <button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>
                     <IconKlip/>
-                    <label className={ styles.buttonLabel }>{ t("signIn.signInWithKlip") }</label>
+                    <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
                 </button>
-                {
-                    url && open && <QRCode url={ url } close={ onClose }/>
-                }
             </div>
+            {/*{*/}
+            {/*    url && isOpened && <QRCode url={ url } close={ close } isOpened={ isOpened }/>*/}
+            {/*}*/}
+            <QRCode url={ url } close={ close } isOpened={ isOpened }/>
         </div>
     )
 }

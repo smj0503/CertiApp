@@ -10,6 +10,16 @@
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.50);
+
+    transition: opacity 700ms var(--animation-function);
+    opacity: 0;
+    z-index: 0;
+}
+
+.dim[data-show=true]
+{
+    opacity: 1;
+    z-index: 3;
 }
 
 .container
