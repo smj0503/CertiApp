@@ -18,6 +18,13 @@ export default function ()
 
     const [myCertificates, setMyCertificates] = useState([]);
 
+    const [isCopied, setIsCopied] = useState(false);
+
+    const share = () =>
+    {
+        setIsCopied(true);
+    };
+
     return (
         <TopBar hasSession={true}>
             <div className={ styles.container }>
@@ -28,7 +35,7 @@ export default function ()
                                 <span className={ styles.title }>{ t("myCertificates.belongsTo") }</span>
                                 <span className={ styles.count }>{ t("myCertificates.count") }</span>
                             </div>
-                            <button data-button-animation={true} type="button" className={ styles.copyButton }>
+                            <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>
                                 <span>{ t("myCertificates.shareYourList") }</span>
                                 <IconShare/>
                             </button>
@@ -40,6 +47,7 @@ export default function ()
                             <SortButton>{ t("myCertificates.license") }</SortButton>
                             <SortButton>{ t("myCertificates.others") }</SortButton>
                         </div>
+                        <Toast show={ isCopied }/>
                     </div>
                     <div className={ styles.certificates }>
                         <Collection

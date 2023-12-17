@@ -7,28 +7,44 @@
 
     height: 66px;
 
-    padding: 24px 0;
+    padding: 0 24px;
 
     background-color: #000000;
     border-radius: 12px;
     border: 1px solid rgba(28, 28, 28, 0.10);
 
-    /*opacity: 0;*/
-    transition: opacity var(--animation-time) var(--animation-function);
+    opacity: 0;
+    transition: opacity 800ms var(--animation-function);
 
     position: absolute;
     right: 0;
     bottom: 6px;
 }
 
-/*.toast[data-show=true]*/
-/*{*/
-/*    opacity: 1;*/
-/*}*/
+.toast[data-show=true]
+{
+    opacity: 1;
+}
 
 .toast > div
 {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.title
+{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #FFF;
+}
+
+.subTitle
+{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 0.60);
 }

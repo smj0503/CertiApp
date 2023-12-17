@@ -64,9 +64,6 @@ export default function ()
                     <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
                 </button>
             </div>
-            {/*{*/}
-            {/*    url && isOpened && <QRCode url={ url } close={ close } isOpened={ isOpened }/>*/}
-            {/*}*/}
             <QRCode url={ url } close={ close } isOpened={ isOpened }/>
         </div>
     )
