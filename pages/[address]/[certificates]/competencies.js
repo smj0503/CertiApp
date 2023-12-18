@@ -1,9 +1,10 @@
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TopBar from "@/components/TopBar";
 import KeywordBadge from "@/components/KeywordBadge";
+import Counter from "@/components/Counter";
 
 import styles from "../../../styles/Competencies.module.css";
 import IconCompetency from "../../../public/assets/icon-competencies.svg";
@@ -15,6 +16,15 @@ export default function ()
 
     const [badge, setBadge] = useState('');
     const [keywords, setKeywords] = useState([]);
+    const [experience, setExperience] = useState('');
+
+    const [totalLength, setLength] = useState(0);
+
+    useEffect(() =>
+    {
+        const totalLength = keywords.reduce((accumulator, currentValue) => accumulator + currentValue.length, 0);
+        setLength(totalLength);
+    }, [keywords]);
 
     const isEmptyValue = (value) =>
     {
@@ -71,9 +81,14 @@ export default function ()
         }
     };
 
-    const onChange = (e) =>
+    const onChangeKeyword = (e) =>
     {
         setBadge(e.target.value);
+    };
+
+    const onChangeExperience = (e) =>
+    {
+        setExperience(e.target.value);
     };
 
     const onSubmit = (e) =>
@@ -86,7 +101,7 @@ export default function ()
         router.back();
     }
 
-    console.log('keywords : ', keywords);
+    // console.log('keywords : ', keywords);
 
     return (
         <TopBar hasSession={true}>
@@ -109,14 +124,16 @@ export default function ()
                                     })
                                 }
                                 <input
+                                    type="text"
                                     placeholder="ex. Communication"
                                     value={ badge }
-                                    onChange={ onChange }
+                                    onChange={ onChangeKeyword }
                                     onKeyUp={ onKeyUp }
                                     onKeyDown={ onKeyDown }
+                                    maxLength={30}
                                 />
                             </div>
-                            <span className={ styles.counter }>{ "0/30" }</span>
+                            <Counter length={ totalLength } maxLength={30}/>
                         </div>
 
                     </div>
@@ -125,9 +142,15 @@ export default function ()
                         <label>{ "My Experience" }</label>
                         <div className={ styles.inputArea }>
                             <div className={ styles.input }>
-                                <input placeholder="ex. I developed my ability to collaborate with designers."/>
+                                <input
+                                    type="text"
+                                    placeholder="ex. I developed my ability to collaborate with designers."
+                                    onChange={ onChangeExperience }
+                                    data-fill={true}
+                                    maxLength={300}
+                                />
                             </div>
-                            <span className={ styles.counter }>{ "0/300" }</span>
+                            <Counter length={ experience.length } maxLength={300}/>
                         </div>
                     </div>
                 </div>

@@ -80,28 +80,21 @@
     display: flex;
     align-items: center;
 
-    /*width: 100%;*/
     padding-left: 10px;
 
     font-size: 16px;
     font-weight: 500;
     line-height: 100%;
+}
 
-    background-color: #5CDA30;
+.input > input[data-fill=true]
+{
+    width: 100%;
 }
 
 .input > input::placeholder
 {
     color: rgba(0, 0, 0, 0.20);
-}
-
-.counter
-{
-    color: rgba(28, 28, 28, 0.30);
-    font-size: 13px;
-    font-weight: 400;
-
-    padding: 4px 2px;
 }
 
 .buttonGroup
