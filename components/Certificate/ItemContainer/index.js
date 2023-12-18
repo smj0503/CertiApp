@@ -34,32 +34,33 @@ export default function ({ hasSession, edited })
                     </div>
 
                     <div>
-                        {
-                            hasSession && (
-                                <div className={ styles.acquisitionContainer }>
+                        <div className={ styles.acquisitionContainer }>
+                            {
+                                hasSession && (
                                     <div className={ styles.acquire }>
                                         <h1>{ "Acquired Competencies" }</h1>
                                         <Link href={ `${router.asPath}/competencies` } className={ styles.editButton } data-button-animation={true}>{ "Edit >" }</Link>
                                     </div>
-                                    {
-                                        edited ? (
-                                            <div className={ styles.competencies }>
-                                                <div className={ styles.keywords }>
-                                                    <KeywordBadge keyword="Blockchain"/>
-                                                    <KeywordBadge keyword="Solidity"/>
-                                                    <KeywordBadge keyword="Communication"/>
-                                                    <KeywordBadge keyword="dApp"/>
-                                                    <KeywordBadge keyword="bussiness"/>
-                                                </div>
-                                                <p className={ styles.experience }>{ "Planning an ART NFT project and developing it into a commercial project." }</p>
-                                            </div>
-                                        ) : (
-                                            <p>{ "Please write about the skills you gained from the program or award." }</p>
-                                        )
-                                    }
-                                </div>
-                            )
-                        }
+                                )
+                            }
+                            {
+                                edited && (
+                                    <div className={ styles.competencies }>
+                                        <div className={ styles.keywords }>
+                                            <KeywordBadge keyword="Blockchain"/>
+                                            <KeywordBadge keyword="Solidity"/>
+                                            <KeywordBadge keyword="Communication"/>
+                                            <KeywordBadge keyword="dApp"/>
+                                            <KeywordBadge keyword="bussiness"/>
+                                        </div>
+                                        <p className={ styles.experience }>{ "Planning an ART NFT project and developing it into a commercial project." }</p>
+                                    </div>
+                                )
+                            }
+                            {
+                                hasSession && !edited && <p>{ "Please write about the skills you gained from the program or award." }</p>
+                            }
+                        </div>
                         <span className={ styles.details }>{ t("details.moreDetails") }</span>
                     </div>
                 </div>
