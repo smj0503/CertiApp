@@ -112,31 +112,69 @@
     line-height: 100%;
 }
 
-.descriptionContainer
+.acquisitionContainer
 {
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    width: 400px;
-    padding: 32px 0;
+    width: 100%;
+    padding: 32px 0 36px;
 }
 
-.descriptionContainer > h1
+.acquire
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acquire > h1
 {
     font-size: 16px;
     font-weight: 600;
     line-height: 100%;
     letter-spacing: -0.25px;
+    color: #000000;
 }
 
-.descriptionContainer > p
+.acquisitionContainer > p
+{
+    color: rgba(0, 0, 0, 0.40);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.25px;
+}
+
+.editButton
+{
+    color: rgba(0, 0, 0, 0.40);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.competencies
+{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.keywords
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.experience
 {
     color: #525252;
-
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 28px;
     letter-spacing: -0.25px;
 }
 

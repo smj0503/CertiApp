@@ -37,7 +37,7 @@ export default function ()
                     <div className={ styles.controller }>
                         <div className={ styles.header }>
                             <div>
-                                <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: "Sony" }) }</span>
+                                <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: "Minki Park" }) }</span>
                                 <span className={ styles.count }>{ t("myCertificates.count", { count: 3 }) }</span>
                             </div>
                             <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>

@@ -1,13 +1,17 @@
-import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
+import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
+import { useRouter } from "next/router";
 
+import KeywordBadge from "@/components/KeywordBadge";
 import Switch from "@/components/Switch";
 
 import styles from "./ItemContainer.module.css";
 
-export default function ({ hasSession })
+export default function ({ hasSession, edited })
 {
     const { t } = useTranslation("common");
+    const router = useRouter();
 
     return (
         <div className={ styles.itemContainer }>
@@ -17,7 +21,7 @@ export default function ({ hasSession })
                     <div className={ styles.head }>
                         <div className={ styles.chips }>
                             <div className={ styles.category }>{ "Diploma" }</div>
-                            <div className={ styles.date }>{ "2023.01.06" }</div>
+                            <div className={ styles.date }>{ "2022/09/06 - Completion" }</div>
                         </div>
                         <h1 className={ styles.title }>{ "Protocol Camp 2nd" }</h1>
                         <div className={ styles.company }>
@@ -30,20 +34,46 @@ export default function ({ hasSession })
                     </div>
 
                     <div>
-                        <div className={ styles.descriptionContainer }>
-                            <h1>{ t("details.programDescription") }</h1>
-                            <p>{ "Congratulations on the completion of the blockchain boot camp protocol camp with Dream Plus and Hashed." }</p>
-                        </div>
+                        {
+                            hasSession && (
+                                <div className={ styles.acquisitionContainer }>
+                                    <div className={ styles.acquire }>
+                                        <h1>{ "Acquired Competencies" }</h1>
+                                        <Link href={ `${router.asPath}/competencies` } className={ styles.editButton }>{ "Edit >" }</Link>
+                                    </div>
+                                    {
+                                        edited ? (
+                                            <div className={ styles.competencies }>
+                                                <div className={ styles.keywords }>
+                                                    <KeywordBadge keyword="Blockchain"/>
+                                                    <KeywordBadge keyword="Solidity"/>
+                                                    <KeywordBadge keyword="Communication"/>
+                                                    <KeywordBadge keyword="dApp"/>
+                                                    <KeywordBadge keyword="bussiness"/>
+                                                </div>
+                                                <p className={ styles.experience }>{ "Planning an ART NFT project and developing it into a commercial project." }</p>
+                                            </div>
+                                        ) : (
+                                            <p>{ "Please write about the skills you gained from the program or award." }</p>
+                                        )
+                                    }
+                                </div>
+                            )
+                        }
                         <span className={ styles.details }>{ t("details.moreDetails") }</span>
                     </div>
                 </div>
-                <div className={ styles.openToThePublic }>
-                    <div>
-                        <label>{ t("details.openToThePublic") }</label>
-                        <span>{ t("details.openPublicDescription") }</span>
-                    </div>
-                    <Switch/>
-                </div>
+                {
+                    hasSession && (
+                        <div className={ styles.openToThePublic }>
+                            <div>
+                                <label>{ t("details.openToThePublic") }</label>
+                                <span>{ t("details.openPublicDescription") }</span>
+                            </div>
+                            <Switch/>
+                        </div>
+                    )
+                }
             </div>
         </div>
     )
