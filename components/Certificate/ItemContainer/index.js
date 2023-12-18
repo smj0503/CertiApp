@@ -15,7 +15,7 @@ export default function ({ hasSession, edited })
 
     return (
         <div className={ styles.itemContainer }>
-            <Image src="/assets/photo/photo-protocol-camp.png" alt="image" width={586} height={653} className={ styles.image } priority={true}/>
+            <Image src="/assets/photo/photo-certificate-1.png" alt="image" width={586} height={653} className={ styles.image } priority={true}/>
             <div className={ styles.info }>
                 <div>
                     <div className={ styles.head }>

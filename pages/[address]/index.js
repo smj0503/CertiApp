@@ -58,7 +58,7 @@ export default function ()
                     <div className={ styles.certificates }>
                         <Collection
                             image="/assets/photo/photo-certificate-1.png"
-                            href="http://localhost:3000/0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c/ProtocolCamp2nd"
+                            href={ `${router.asPath}/ProtocolCamp2nd` }
                             category="Diploma"
                             date="2022.09.06"
                             publisher="Hanhwa Dreamplus X Hashed"
