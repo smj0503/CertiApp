@@ -39,7 +39,7 @@ export default function ({ hasSession, edited })
                                 <div className={ styles.acquisitionContainer }>
                                     <div className={ styles.acquire }>
                                         <h1>{ "Acquired Competencies" }</h1>
-                                        <Link href={ `${router.asPath}/competencies` } className={ styles.editButton }>{ "Edit >" }</Link>
+                                        <Link href={ `${router.asPath}/competencies` } className={ styles.editButton } data-button-animation={true}>{ "Edit >" }</Link>
                                     </div>
                                     {
                                         edited ? (

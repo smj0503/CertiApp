@@ -91,9 +91,13 @@ export default function ()
         setExperience(e.target.value);
     };
 
-    const onSubmit = (e) =>
+    const onSubmit = async (e) =>
     {
         e.preventDefault();
+
+        const pathname = router.asPath.replace('competencies', 'edited');
+
+        await router.push(pathname);
     };
 
     const cancel = () =>
@@ -155,7 +159,7 @@ export default function ()
 
                 <div className={ styles.buttonGroup }>
                     <button type="button" className={ styles.button } data-action="cancel" data-button-animation={true} onClick={ cancel }>{ "Cancel" }</button>
-                    <button type="submit" className={ styles.button } data-action="confirm" data-button-animation={true} disabled={true}>{ "Confirm" }</button>
+                    <button type="submit" className={ styles.button } data-action="confirm" data-button-animation={true} disabled={ !(!!keywords && !!experience) }>{ "Confirm" }</button>
                 </div>
             </form>
         </TopBar>

@@ -11,7 +11,7 @@ export default function ()
             <div className={ styles.container }>
                 <div>
                     <Header/>
-                    <ItemContainer hasSession={true} edited={false}/>
+                    <ItemContainer hasSession={true} edited={true}/>
                 </div>
             </div>
         </TopBar>
