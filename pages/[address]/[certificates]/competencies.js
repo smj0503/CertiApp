@@ -101,8 +101,6 @@ export default function ()
         router.back();
     }
 
-    // console.log('keywords : ', keywords);
-
     return (
         <TopBar hasSession={true}>
             <form className={ styles.container } onSubmit={ onSubmit }>
