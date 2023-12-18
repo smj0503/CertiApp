@@ -37,8 +37,8 @@ export default function ()
                     <div className={ styles.controller }>
                         <div className={ styles.header }>
                             <div>
-                                <span className={ styles.title }>{ t("myCertificates.belongsTo") }</span>
-                                <span className={ styles.count }>{ t("myCertificates.count") }</span>
+                                <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: "Sony" }) }</span>
+                                <span className={ styles.count }>{ t("myCertificates.count", { count: 3 }) }</span>
                             </div>
                             <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>
                                 <span>{ t("myCertificates.shareYourList") }</span>
@@ -58,7 +58,7 @@ export default function ()
                     <div className={ styles.certificates }>
                         <Collection
                             image="/assets/photo/photo-certificate-1.png"
-                            href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
+                            href="http://localhost:3000/0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c/ProtocolCamp2nd"
                             category="Diploma"
                             date="2022.09.06"
                             publisher="Hanhwa Dreamplus X Hashed"

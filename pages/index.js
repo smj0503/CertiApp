@@ -29,7 +29,7 @@ export default function ()
 
         if(address && status === "completed")
         {
-            await router.push({ pathname: `/${address}` });
+            await router.replace({ pathname: `/${address}` });
         }
     }, [address, status]);
 
@@ -64,7 +64,7 @@ export default function ()
                     <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
                 </button>
             </div>
-            <QRCode url={ url } close={ close } isOpened={ isOpened }/>
+            <QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>
         </div>
     )
 }
