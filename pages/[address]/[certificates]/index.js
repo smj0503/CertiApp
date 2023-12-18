@@ -4,7 +4,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Certificate/Header";
 import ItemContainer from "@/components/Certificate/ItemContainer";
 
-import styles from "../../styles/Certificate.module.css";
+import styles from "../../../styles/Certificate.module.css";
 
 export default function ()
 {
