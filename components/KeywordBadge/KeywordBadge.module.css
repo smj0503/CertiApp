@@ -1,0 +1,18 @@
+.badge
+{
+    display: flex;
+    padding: 0 12px;
+    align-items: center;
+
+    height: 36px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 104, 198, 0.20);
+    background: rgba(255, 104, 198, 0.10);
+
+    color: #FF68C6;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.25px;
+}
