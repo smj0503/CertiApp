@@ -13,21 +13,34 @@ export default function ()
 
     return (
         <TopBar hasSession={true}>
-            <div className={ styles.container }>
+            <form className={ styles.container }>
                 <div className={ styles.title }>
                     <IconCompetency/>
                     <h1>{ "Acquired Competencies" }</h1>
                 </div>
 
-                <div className={ styles.textField }>
-                    <label>{ "Competency Keywords" }</label>
-                    <input placeholder="ex. Communication"/>
+                <div className={ styles.inputContainer }>
+                    <div className={ styles.textField }>
+                        <label>{ "Competency Keywords" }</label>
+                        <div className={ styles.inputArea }>
+                            <input placeholder="ex. Communication"/>
+                            <span className={ styles.counter }>{ "0/30" }</span>
+                        </div>
+                    </div>
+                    <div className={ styles.textField }>
+                        <label>{ "My Experience" }</label>
+                        <div className={ styles.inputArea }>
+                            <input placeholder="ex. I developed my ability to collaborate with designers."/>
+                            <span className={ styles.counter }>{ "0/300" }</span>
+                        </div>
+                    </div>
                 </div>
-                <div className={ styles.textField }>
-                    <label>{ "My Experience" }</label>
-                    <input placeholder="ex. I developed my ability to collaborate with designers."/>
+
+                <div className={ styles.buttonGroup }>
+                    <button type="button" className={ styles.button } data-action="cancel" data-button-animation={true}>{ "Cancel" }</button>
+                    <button type="submit" className={ styles.button } data-action="confirm" data-button-animation={true}>{ "Confirm" }</button>
                 </div>
-            </div>
+            </form>
         </TopBar>
     )
 }
