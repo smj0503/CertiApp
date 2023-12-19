@@ -77,8 +77,8 @@ export default function ()
                             href="https://www.dreamplus.asia/programs/hackathon"
                             category="Contest"
                             date="2023.05.31"
-                            publisher="TECH!T"
-                            title="[TECH!T] Blockchain School 5th"
+                            publisher="Hanwha Dreamplus"
+                            title="[Hanwha] BLOCKCHAIN HACKATHON"
                         />
                     </div>
                 </div>
