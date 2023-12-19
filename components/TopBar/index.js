@@ -15,7 +15,7 @@ export default function ({ hasSession = false, children })
 
     const Logout = async () =>
     {
-        await router.push('/');
+        await router.replace('/');
     };
 
     return (
