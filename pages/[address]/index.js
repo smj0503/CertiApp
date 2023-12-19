@@ -1,6 +1,10 @@
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { asyncEffect } from "@/common/utils";
+
+import useAccountModule from "@/apis/account.api";
+import useCertificateModule from "@/apis/certificate.api";
 
 import TopBar from "@/components/TopBar";
 import EmptyContainer from "@/components/EmptyContainer";
@@ -13,13 +17,30 @@ import IconShare from "../../public/assets/icon-share.svg";
 
 export default function ()
 {
+    /* Local Fields */
     const { t } = useTranslation("common");
     const router = useRouter();
 
+    const [username, setName] = useState('');
     const [myCertificates, setMyCertificates] = useState([]);
-
     const [isCopied, setIsCopied] = useState(false);
 
+    /* APIs */
+    const { getUsername } = useAccountModule();
+    const { getMyCertificateList } = useCertificateModule();
+
+    /* Life Cycle */
+    asyncEffect(async () =>
+    {
+        const username = getUsername("0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c");
+        console.log('username : ', username);
+
+        const myCertificates = await getMyCertificateList("0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c");
+        console.log('mine : ', myCertificates);
+        setMyCertificates(myCertificates);
+    }, []);
+
+    /* User Actions */
     const share = () =>
     {
         setIsCopied(true);
