@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://13.125.30.25:9200";
+const baseUrl = "https://api.certi.live";
 
 export default function useCertificateModule()
 {
