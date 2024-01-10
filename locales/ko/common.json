@@ -23,16 +23,16 @@
     "contest": "Contest",
     "license": "License",
     "others": "Others",
-    "emptyMessage": "There are no certificates in this account",
-    "addCertificate": "Add a certificate"
+    "emptyMessage": "이 계정에는 증명서가 없습니다",
+    "addCertificate": "증명서 추가하기"
   },
   "otherPrograms": {
-    "popularProgram": "Popular Program",
-    "popularProgramDescription": "Let's meet the popular programs now!",
-    "recommendedForYou": "Recommended for you",
-    "recommendedForYouDescription": "We will recommend programs that you might like",
-    "recommendedJobOpenings": "Recommended Job Openings",
-    "jobOpeningsDescription": "Job openings that fits your certificate"
+    "popularProgram": "인기 프로그램",
+    "popularProgramDescription": "지금 인기있는 프로그램들을 만나보세요!",
+    "recommendedForYou": "당신을 위한 추천 프로그램",
+    "recommendedForYouDescription": "좋아하실만한 프로그램들을 추천해드릴게요",
+    "recommendedJobOpenings": "당신을 위한 채용 공고",
+    "jobOpeningsDescription": "획득한 증명서들을 기반으로 그에 맞는 채용 공고를 추천해드릴게요"
   },
   "details": {
     "myCertificate": "MY CERTIFICATE",
