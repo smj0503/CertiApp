@@ -1,3 +1,4 @@
+import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import QRCode from "@/components/QRCode";
 
 import styles from "../styles/Login.module.css";
 import Logo from "../public/assets/logo/logo-signin.svg";
+import Certi from "../public/assets/photo/photo-certi.png";
 import IconCheck from "../public/assets/icon-check.svg";
 import IconKlip from "../public/assets/icon-klip.svg";
 
@@ -64,6 +66,8 @@ export default function ()
                     <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
                 </button>
             </div>
+            <span className={ styles.certi }>{ "©2024 Certi" }</span>
+            <Image src={ Certi } alt="certi logo" className={ styles.certiBackground }/>
             <QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>
         </div>
     )

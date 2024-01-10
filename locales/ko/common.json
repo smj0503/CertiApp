@@ -1,10 +1,10 @@
 {
   "locale": "en",
   "signIn": {
-    "recordYourAchievement": "Record your achievement",
-    "rememberThatMoment": "Remember that moment",
-    "opengraph": "you can easily and conveniently manage<br/>certificates such as diploma or awards",
-    "signInWithKlip": "Sign in with Klip",
+    "recordYourAchievement": "성취한 결과를 기록하고",
+    "rememberThatMoment": "성공의 순간을 기억하세요",
+    "opengraph": "상장, 수료증과 같은 증명서들을<br/>손쉽고 편리하게 관리하세요",
+    "signInWithKlip": "Klip으로 로그인",
     "signIn": "Sign in",
     "scanQRCode": "Scan the QR code<br/>with your phone",
     "pleaseWait": "After signing on Klip, please wait a moment<br/>for your request to be completed."
