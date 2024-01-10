@@ -24,7 +24,9 @@
     "license": "License",
     "others": "Others",
     "emptyMessage": "There are no certificates in this account",
-    "addCertificate": "Add a certificate"
+    "addCertificate": "Add a certificate",
+    "copied": "Link copied to clipboard",
+    "share": "Share with your partners"
   },
   "otherPrograms": {
     "popularProgram": "Popular Program",

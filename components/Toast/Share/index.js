@@ -23,8 +23,8 @@ export default function ({ show, close })
         <div className={ styles.toast } data-show={ show }>
             <IconCopy/>
             <div>
-                <span className={ styles.title }>{ "Link copied to clipboard" }</span>
-                <span className={ styles.subTitle }>{ "Share with your partners" }</span>
+                <span className={ styles.title }>{ t("myCertificates.copied") }</span>
+                <span className={ styles.subTitle }>{ t("myCertificates.share") }</span>
             </div>
         </div>
     )

@@ -15,16 +15,18 @@
     "logout": "로그아웃"
   },
   "myCertificates": {
-    "belongsTo": "{{username}}'s Digital Certificate",
-    "count": "{{count}} pieces",
-    "shareYourList": "Share your list",
+    "belongsTo": "{{username}}의 디지털 증명서",
+    "count": "{{count}} 개",
+    "shareYourList": "증명서 공유하기",
     "all": "All",
     "diploma": "Diploma",
     "contest": "Contest",
     "license": "License",
     "others": "Others",
     "emptyMessage": "이 계정에는 증명서가 없습니다",
-    "addCertificate": "증명서 추가하기"
+    "addCertificate": "증명서 추가하기",
+    "copied": "클립보드에 복사됐어요",
+    "share": "다른 사람들에게 공유해보세요!"
   },
   "otherPrograms": {
     "popularProgram": "인기 프로그램",
