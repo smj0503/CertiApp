@@ -37,10 +37,16 @@
     "jobOpeningsDescription": "획득한 증명서들을 기반으로 그에 맞는 채용 공고를 추천해드릴게요"
   },
   "details": {
-    "myCertificate": "MY CERTIFICATE",
-    "programDescription": "Program Description",
+    "myCertificate": "나의 증명서",
+    "acquiredCompetencies": "Acquired Competencies",
+    "edit": "Edit >",
+    "pleaseWrite": "Please write about the skills you gained from the program or award.",
     "moreDetails": "More details about program >",
     "openToThePublic": "open to the public",
-    "openPublicDescription": "You can set whether or not to disclose a certificate outside"
+    "openPublicDescription": "You can set whether or not to disclose a certificate outside",
+    "competencyKeywords": "Competency Keywords",
+    "myExperience": "My Experience",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   }
 }

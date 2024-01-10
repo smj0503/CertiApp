@@ -38,9 +38,15 @@
   },
   "details": {
     "myCertificate": "MY CERTIFICATE",
-    "programDescription": "Program Description",
+    "acquiredCompetencies": "Acquired Competencies",
+    "edit": "Edit >",
+    "pleaseWrite": "Please write about the skills you gained from the program or award.",
     "moreDetails": "More details about program >",
     "openToThePublic": "open to the public",
-    "openPublicDescription": "You can set whether or not to disclose a certificate outside"
+    "openPublicDescription": "You can set whether or not to disclose a certificate outside",
+    "competencyKeywords": "Competency Keywords",
+    "myExperience": "My Experience",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   }
 }

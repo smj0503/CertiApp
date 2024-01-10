@@ -110,12 +110,12 @@ export default function ()
             <form className={ styles.container } onSubmit={ onSubmit }>
                 <div className={ styles.title }>
                     <IconCompetency/>
-                    <h1>{ "Acquired Competencies" }</h1>
+                    <h1>{ t("details.acquiredCompetencies") }</h1>
                 </div>
                 <div className={ styles.inputContainer }>
 
                     <div className={ styles.textField }>
-                        <label>{ "Competency Keywords" }</label>
+                        <label>{ t("details.competencyKeywords") }</label>
 
                         <div className={ styles.inputArea }>
                             <div className={ styles.input }>
@@ -141,7 +141,7 @@ export default function ()
                     </div>
 
                     <div className={ styles.textField }>
-                        <label>{ "My Experience" }</label>
+                        <label>{ t("details.myExperience") }</label>
                         <div className={ styles.inputArea }>
                             <div className={ styles.input }>
                                 <input
@@ -158,8 +158,8 @@ export default function ()
                 </div>
 
                 <div className={ styles.buttonGroup }>
-                    <button type="button" className={ styles.button } data-action="cancel" data-button-animation={true} onClick={ cancel }>{ "Cancel" }</button>
-                    <button type="submit" className={ styles.button } data-action="confirm" data-button-animation={true} disabled={ !(!!keywords && !!experience) }>{ "Confirm" }</button>
+                    <button type="button" className={ styles.button } data-action="cancel" data-button-animation={true} onClick={ cancel }>{ t("details.cancel") }</button>
+                    <button type="submit" className={ styles.button } data-action="confirm" data-button-animation={true} disabled={ !(!!keywords && !!experience) }>{ t("details.confirm") }</button>
                 </div>
             </form>
         </TopBar>
