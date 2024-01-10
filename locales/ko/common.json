@@ -10,9 +10,9 @@
     "pleaseWait": "Klip에서 서명한 후 요청이 완료될 때까지<br/>잠시만 기다려 주세요."
   },
   "topBar": {
-    "myCertificate": "MY CERTIFICATE",
-    "otherPrograms": "OTHER PROGRAMS",
-    "logout": "Log out"
+    "myCertificate": "나의 증명서",
+    "otherPrograms": "다른 프로그램들",
+    "logout": "로그아웃"
   },
   "myCertificates": {
     "belongsTo": "{{username}}'s Digital Certificate",
