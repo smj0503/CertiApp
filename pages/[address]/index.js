@@ -45,6 +45,14 @@ export default function ()
     }, []);
 
     /* User Actions */
+    const onClick = async (id) =>
+    {
+        await router.push({
+            pathname: `${router.asPath}/${id}`,
+            query: { id: id, walletAddress: router.asPath.replace('/', '') },
+        });
+    };
+
     const share = async () =>
     {
         const url = `https://app.certi.world/${router.asPath}`;
@@ -94,7 +102,7 @@ export default function ()
                                             <Collection
                                                 key={ index }
                                                 image={ certificate.certificate_image }
-                                                href={ `${router.asPath}/${certificate.certificate_name}`}
+                                                onClick={ onClick(certificate.id) }
                                                 category={ certificate.certificate_category }
                                                 date={ certificate.certificate_end_date.substring(10, -1) }
                                                 publisher={ certificate.company_name }

@@ -17,5 +17,16 @@ export default function useCertificateModule()
         return data;
     };
 
+    apis.getCertificateInfo = async (id, address) =>
+    {
+        const { data } = await axios.get(`${baseUrl}/user/certificate?id=${id}&wallet_address=${address}`);
+        return data;
+    };
+
+    apis.editCertificate = async () =>
+    {
+        const { data } = await axios.post(`${baseUrl}/competency/info`);
+    };
+
     return apis;
 }

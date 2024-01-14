@@ -1,11 +1,9 @@
-import Link from "next/link";
-
 import styles from "./Collection.module.css";
 
-export default function ({ href, category, date, image, publisher, title })
+export default function ({ category, date, image, publisher, title, onClick })
 {
     return (
-        <Link data-button-animation={true} href={ href } className={ styles.container }>
+        <button data-button-animation={true} className={ styles.container } onClick={ onClick }>
             <img src={ image } alt="certificate image" width={464} height={517} className={ styles.image }/>
             <div className={ styles.info }>
                 <div className={ styles.head }>
@@ -19,6 +17,6 @@ export default function ({ href, category, date, image, publisher, title })
                     <span className={ styles.publisher }>{ publisher }</span>
                 </div>
             </div>
-        </Link>
+        </button>
     )
 }

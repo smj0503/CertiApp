@@ -7,7 +7,7 @@ import Switch from "@/components/Switch";
 
 import styles from "./ItemContainer.module.css";
 
-export default function ({ hasSession, edited })
+export default function ({ hasSession })
 {
     const { t } = useTranslation("common");
     const router = useRouter();
@@ -43,7 +43,7 @@ export default function ({ hasSession, edited })
                                 )
                             }
                             {
-                                hasSession && !edited && <p>{ t("details.pleaseWrite") }</p>
+                                hasSession && <p>{ t("details.pleaseWrite") }</p>
                             }
                         </div>
                         <span className={ styles.details }>{ t("details.moreDetails") }</span>
