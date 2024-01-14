@@ -46,13 +46,11 @@ export default function ()
     }, []);
 
     /* User Actions */
-    // const share = () =>
-    // {
-    //     setIsCopied(true);
-    // };
     const share = async () =>
     {
         const url = `https://app.certi.world/${router.asPath}`;
+        await navigator.clipboard.writeText(url);
+        setIsCopied(true);
     };
 
     const close = () =>
@@ -87,6 +85,9 @@ export default function ()
                                 {/*    <SortButton>{ t("myCertificates.others") }</SortButton>*/}
                                 {/*</div>*/}
                             </div>
+                            {
+                                isCopied && <Toast show={ isCopied } close={ close }/>
+                            }
                             <div className={ styles.certificates }>
                                 {
                                     myCertificates.map((certificate, index) => {
