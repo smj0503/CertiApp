@@ -21,7 +21,7 @@ export default function ()
     /* Local Fields */
     const { t } = useTranslation("common");
     const router = useRouter();
-    const walletAddress = LocalStorage.shared.getItem('walletAddress') || null;
+    const walletAddress = LocalStorage.shared.getItem('walletAddress');
 
     const [hasSession, setSession] = useState(false);
     const [username, setName] = useState('');
@@ -41,7 +41,6 @@ export default function ()
         setName(result.user_name);
 
         const myCertificates = await getMyCertificateList(router.asPath.replace('/', ''));
-        console.log('certificates : ', myCertificates);
         setMyCertificates(myCertificates);
     }, []);
 
@@ -77,17 +76,17 @@ export default function ()
                                         <IconShare/>
                                     </button>
                                 </div>
-                                {/*<div className={ styles.category }>*/}
-                                {/*    <SortButton>{ t("myCertificates.all") }</SortButton>*/}
-                                {/*    <SortButton>{ t("myCertificates.diploma") }</SortButton>*/}
-                                {/*    <SortButton>{ t("myCertificates.contest") }</SortButton>*/}
-                                {/*    <SortButton>{ t("myCertificates.license") }</SortButton>*/}
-                                {/*    <SortButton>{ t("myCertificates.others") }</SortButton>*/}
-                                {/*</div>*/}
+                                {
+                                    isCopied && <Toast show={ isCopied } close={ close }/>
+                                }
+                                <div className={ styles.category }>
+                                    <SortButton>{ t("myCertificates.all") }</SortButton>
+                                    <SortButton>{ t("myCertificates.diploma") }</SortButton>
+                                    <SortButton>{ t("myCertificates.contest") }</SortButton>
+                                    <SortButton>{ t("myCertificates.license") }</SortButton>
+                                    <SortButton>{ t("myCertificates.others") }</SortButton>
+                                </div>
                             </div>
-                            {
-                                isCopied && <Toast show={ isCopied } close={ close }/>
-                            }
                             <div className={ styles.certificates }>
                                 {
                                     myCertificates.map((certificate, index) => {

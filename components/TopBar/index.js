@@ -11,8 +11,7 @@ export default function ({ hasSession = false, children })
 {
     const { t } = useTranslation("common");
     const router = useRouter();
-
-    const href = router.asPath.includes("programs") ? router.asPath.replace('programs', '') : `${router.asPath}/programs`;
+    const walletAddress = LocalStorage.shared.getItem('walletAddress');
 
     const Logout = async () =>
     {
@@ -28,8 +27,8 @@ export default function ({ hasSession = false, children })
                     {
                         hasSession && (
                             <div>
-                                <Link data-button-animation={true} href={ href } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
-                                <Link data-button-animation={true} href={ href } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
+                                <Link data-button-animation={true} href={ `/${walletAddress}` } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
+                                <Link data-button-animation={true} href={ `/${walletAddress}/programs` } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
                             </div>
                         )
                     }

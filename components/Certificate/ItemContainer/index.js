@@ -3,7 +3,6 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 
-import KeywordBadge from "@/components/KeywordBadge";
 import Switch from "@/components/Switch";
 
 import styles from "./ItemContainer.module.css";
@@ -27,7 +26,7 @@ export default function ({ hasSession, edited })
                         <div className={ styles.company }>
                             <Image src="/assets/photo/photo-protocol-camp.png" alt="company image" width={45} height={45} priority={true} className={ styles.companyImage }/>
                             <div>
-                                <span className={ styles.gray }>{ "company" }</span>
+                                <span className={ styles.gray }>{ t('details.company') }</span>
                                 <span className={ styles.companyName }>{ "Hanwha Dreamplus X Hashed" }</span>
                             </div>
                         </div>
@@ -38,27 +37,13 @@ export default function ({ hasSession, edited })
                             {
                                 hasSession && (
                                     <div className={ styles.acquire }>
-                                        <h1>{ "Acquired Competencies" }</h1>
+                                        <h1>{ t('details.acquiredCompetencies') }</h1>
                                         <Link href={ `${router.asPath}/competencies` } className={ styles.editButton } data-button-animation={true}>{ "Edit >" }</Link>
                                     </div>
                                 )
                             }
                             {
-                                edited && (
-                                    <div className={ styles.competencies }>
-                                        <div className={ styles.keywords }>
-                                            <KeywordBadge keyword="Blockchain"/>
-                                            <KeywordBadge keyword="Solidity"/>
-                                            <KeywordBadge keyword="Communication"/>
-                                            <KeywordBadge keyword="dApp"/>
-                                            <KeywordBadge keyword="bussiness"/>
-                                        </div>
-                                        <p className={ styles.experience }>{ "Planning an ART NFT project and developing it into a commercial project." }</p>
-                                    </div>
-                                )
-                            }
-                            {
-                                hasSession && !edited && <p>{ "Please write about the skills you gained from the program or award." }</p>
+                                hasSession && !edited && <p>{ t("details.pleaseWrite") }</p>
                             }
                         </div>
                         <span className={ styles.details }>{ t("details.moreDetails") }</span>
