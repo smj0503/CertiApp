@@ -7,7 +7,7 @@ export default function ({ href, category, date, image, publisher, title })
 {
     return (
         <Link data-button-animation={true} href={ href } className={ styles.container }>
-            <Image src={ image } alt="certificate image" width={464} height={517} className={ styles.image } priority={true}/>
+            <img src={ image } alt="certificate image" width={464} height={517} className={ styles.image }/>
             <div className={ styles.info }>
                 <div className={ styles.head }>
                     <div className={ styles.category } data-color={ category }>

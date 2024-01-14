@@ -1,4 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { asyncEffect } from "@/common/utils";
 import LocalStorage from "@/common/localstorage.manager";
@@ -19,8 +20,8 @@ export default function ()
 {
     /* Local Fields */
     const { t } = useTranslation("common");
+    const router = useRouter();
     const walletAddress = LocalStorage.shared.getItem('walletAddress') || null;
-    console.log('허 ? : ', walletAddress);
 
     const [hasSession, setSession] = useState(false);
     const [username, setName] = useState('');
@@ -34,12 +35,12 @@ export default function ()
     /* Life Cycle */
     asyncEffect(async () =>
     {
-        setSession(!!walletAddress);
+        setSession(walletAddress === router.asPath.replace('/', ''));
 
-        const result = await getUsername(walletAddress);
+        const result = await getUsername(router.asPath.replace('/', ''));
         setName(result.user_name);
 
-        const myCertificates = await getMyCertificateList(walletAddress);
+        const myCertificates = await getMyCertificateList(router.asPath.replace('/', ''));
         console.log('certificates : ', myCertificates);
         setMyCertificates(myCertificates);
     }, []);
@@ -61,7 +62,7 @@ export default function ()
         <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
                 {
-                    myCertificates.length > 0 ? (
+                    myCertificates && myCertificates.length > 0 ? (
                         <div>
                             <div className={ styles.controller }>
                                 <div className={ styles.header }>
@@ -74,7 +75,7 @@ export default function ()
                                         <IconShare/>
                                     </button>
                                 </div>
-                                <div className={ styles. category }>
+                                <div className={ styles.category }>
                                     <SortButton>{ t("myCertificates.all") }</SortButton>
                                     <SortButton>{ t("myCertificates.diploma") }</SortButton>
                                     <SortButton>{ t("myCertificates.contest") }</SortButton>
@@ -88,12 +89,12 @@ export default function ()
                                         return (
                                             <Collection
                                                 key={ index }
-                                                image="/assets/photo/photo-ai-blockchain-education.png"
-                                                href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
-                                                category="Education Program"
-                                                date="2023.05.31"
-                                                publisher="Gwangju ICT Innovation Square · Goorm"
-                                                title="A Blockchain Education"
+                                                image={ certificate.certificate_image }
+                                                href={ `${router.asPath}/${certificate.certificate_name}`}
+                                                category={ certificate.certificate_category }
+                                                date={ certificate.certificate_end_date.substring(10, -1) }
+                                                publisher={ certificate.company_name }
+                                                title={ certificate.certificate_name }
                                             />
                                         )
                                     })
