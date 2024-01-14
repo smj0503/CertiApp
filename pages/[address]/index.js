@@ -1,5 +1,4 @@
 import useTranslation from "next-translate/useTranslation";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { asyncEffect } from "@/common/utils";
 import LocalStorage from "@/common/localstorage.manager";
@@ -20,7 +19,6 @@ export default function ()
 {
     /* Local Fields */
     const { t } = useTranslation("common");
-    const router = useRouter();
     const walletAddress = LocalStorage.shared.getItem('walletAddress');
 
     console.log('허 ? : ', walletAddress);
@@ -36,10 +34,12 @@ export default function ()
     /* Life Cycle */
     asyncEffect(async () =>
     {
-        const result = await getUsername("0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c");
-        setName(result.user_name)
+        const result = await getUsername(walletAddress);
+        console.log('name : ', result.user_name);
+        setName(result.user_name);
 
-        const myCertificates = await getMyCertificateList("0x2716150Ceb632D6a3C46DC5F577E0B1248CB008c");
+        const myCertificates = await getMyCertificateList(walletAddress);
+        console.log('certificates : ', myCertificates);
         setMyCertificates(myCertificates);
     }, []);
 
@@ -80,14 +80,14 @@ export default function ()
                                 </div>
                             </div>
                             <div className={ styles.certificates }>
-                                <Collection
-                                    image="/assets/photo/photo-ai-blockchain-education.png"
-                                    href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
-                                    category="Education Program"
-                                    date="2023.05.31"
-                                    publisher="Gwangju ICT Innovation Square · Goorm"
-                                    title="A Blockchain Education"
-                                />
+                                {/*<Collection*/}
+                                {/*    image="/assets/photo/photo-ai-blockchain-education.png"*/}
+                                {/*    href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"*/}
+                                {/*    category="Education Program"*/}
+                                {/*    date="2023.05.31"*/}
+                                {/*    publisher="Gwangju ICT Innovation Square · Goorm"*/}
+                                {/*    title="A Blockchain Education"*/}
+                                {/*/>*/}
                             </div>
                         </div>
                     ) : (
