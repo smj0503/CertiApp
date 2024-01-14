@@ -46,9 +46,13 @@ export default function ()
     }, []);
 
     /* User Actions */
-    const share = () =>
+    // const share = () =>
+    // {
+    //     setIsCopied(true);
+    // };
+    const share = async () =>
     {
-        setIsCopied(true);
+        const url = `https://app.certi.world/${router.asPath}`;
     };
 
     const close = () =>
@@ -70,18 +74,18 @@ export default function ()
                                         <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: username }) }</span>
                                         <span className={ styles.count }>{ t("myCertificates.count", { count: myCertificates.length }) }</span>
                                     </div>
-                                    <button data-button-animation={true} type="button" className={ styles.copyButton }>
+                                    <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>
                                         <span>{ t("myCertificates.shareYourList") }</span>
                                         <IconShare/>
                                     </button>
                                 </div>
-                                <div className={ styles.category }>
-                                    <SortButton>{ t("myCertificates.all") }</SortButton>
-                                    <SortButton>{ t("myCertificates.diploma") }</SortButton>
-                                    <SortButton>{ t("myCertificates.contest") }</SortButton>
-                                    <SortButton>{ t("myCertificates.license") }</SortButton>
-                                    <SortButton>{ t("myCertificates.others") }</SortButton>
-                                </div>
+                                {/*<div className={ styles.category }>*/}
+                                {/*    <SortButton>{ t("myCertificates.all") }</SortButton>*/}
+                                {/*    <SortButton>{ t("myCertificates.diploma") }</SortButton>*/}
+                                {/*    <SortButton>{ t("myCertificates.contest") }</SortButton>*/}
+                                {/*    <SortButton>{ t("myCertificates.license") }</SortButton>*/}
+                                {/*    <SortButton>{ t("myCertificates.others") }</SortButton>*/}
+                                {/*</div>*/}
                             </div>
                             <div className={ styles.certificates }>
                                 {
