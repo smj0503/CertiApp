@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { getAddress } from "@/apis/klip.signin.api";
 import { asyncEffect } from "@/common/utils";
+import LocalStorage from "@/common/localstorage.manager";
 
 import QRCode from "@/components/QRCode";
 
@@ -31,6 +32,7 @@ export default function ()
 
         if(address && status === "completed")
         {
+            LocalStorage.shared.setItem('walletAddress', address);
             await router.replace({ pathname: `/${address}` });
         }
     }, [address, status]);
