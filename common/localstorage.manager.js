@@ -1,22 +1,8 @@
-import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
-
-const PRIVATE_KEY = '1234567890';
-
-function signData(data)
-{
-    return jwt.sign({ data: data }, PRIVATE_KEY);
-}
 
 function signKey(key)
 {
     return crypto.createHash('sha256').update(key).digest('hex');
-}
-
-function verify(signedData)
-{
-    const decoded = jwt.verify(signedData, PRIVATE_KEY);
-    return decoded.data;
 }
 
 class LocalStorage
@@ -29,7 +15,7 @@ class LocalStorage
     {
         if (typeof window !== 'undefined' && key)
         {
-            window.localStorage.setItem(signKey(`@secured.${key}`), signData(item));
+            window.localStorage.setItem(signKey(`@secured.${key}`), item);
         }
     }
 
@@ -42,7 +28,7 @@ class LocalStorage
                 const signedData = window.localStorage.getItem(signKey(`@secured.${key}`));
                 if(signedData)
                 {
-                    return verify(signedData);
+                    return signedData;
                 }
             }
             catch(err)
