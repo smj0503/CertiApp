@@ -19,10 +19,10 @@ export default function ()
 {
     /* Local Fields */
     const { t } = useTranslation("common");
-    const walletAddress = LocalStorage.shared.getItem('walletAddress');
-
+    const walletAddress = LocalStorage.shared.getItem('walletAddress') || null;
     console.log('허 ? : ', walletAddress);
 
+    const [hasSession, setSession] = useState(false);
     const [username, setName] = useState('');
     const [myCertificates, setMyCertificates] = useState([]);
     const [isCopied, setIsCopied] = useState(false);
@@ -34,8 +34,9 @@ export default function ()
     /* Life Cycle */
     asyncEffect(async () =>
     {
+        setSession(!!walletAddress);
+
         const result = await getUsername(walletAddress);
-        console.log('name : ', result.user_name);
         setName(result.user_name);
 
         const myCertificates = await getMyCertificateList(walletAddress);
@@ -54,8 +55,10 @@ export default function ()
         setIsCopied(false);
     };
 
+    console.log('session : ', hasSession);
+
     return (
-        <TopBar hasSession={true}>
+        <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
                 {
                     myCertificates.length > 0 ? (
@@ -80,18 +83,25 @@ export default function ()
                                 </div>
                             </div>
                             <div className={ styles.certificates }>
-                                {/*<Collection*/}
-                                {/*    image="/assets/photo/photo-ai-blockchain-education.png"*/}
-                                {/*    href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"*/}
-                                {/*    category="Education Program"*/}
-                                {/*    date="2023.05.31"*/}
-                                {/*    publisher="Gwangju ICT Innovation Square · Goorm"*/}
-                                {/*    title="A Blockchain Education"*/}
-                                {/*/>*/}
+                                {
+                                    myCertificates.map((certificate, index) => {
+                                        return (
+                                            <Collection
+                                                key={ index }
+                                                image="/assets/photo/photo-ai-blockchain-education.png"
+                                                href="https://honamict.kr/front/M0000151/program/programRequest.do?pgmId=PM000091"
+                                                category="Education Program"
+                                                date="2023.05.31"
+                                                publisher="Gwangju ICT Innovation Square · Goorm"
+                                                title="A Blockchain Education"
+                                            />
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     ) : (
-                        <EmptyContainer hasSession={true}/>
+                        <EmptyContainer hasSession={ hasSession }/>
                     )
                 }
             </div>
