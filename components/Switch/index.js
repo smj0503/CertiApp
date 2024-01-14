@@ -4,7 +4,7 @@ import styles from "./Switch.module.css";
 
 export default function ()
 {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
 
     const onToggle = () =>
     {
