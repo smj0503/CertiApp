@@ -43,8 +43,10 @@
     "pleaseWrite": "Please write about the skills you gained from the program or award.",
     "moreDetails": "More details about program >",
     "openToThePublic": "open to the public",
-    "openPublicDescription": "You can set whether or not to disclose a certificate outside",
+    "openPublicDescription": "You can set whether or not to disclose a certificate outside.",
     "competencyKeywords": "Competency Keywords",
+    "keywordsPlaceholder": "ex. Communication",
+    "experiencePlaceholder": "ex. I developed my ability to collaborate with designers.",
     "myExperience": "My Experience",
     "cancel": "Cancel",
     "confirm": "Confirm"

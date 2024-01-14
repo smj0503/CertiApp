@@ -38,15 +38,17 @@
   },
   "details": {
     "myCertificate": "나의 증명서",
-    "acquiredCompetencies": "Acquired Competencies",
-    "edit": "Edit >",
-    "pleaseWrite": "Please write about the skills you gained from the program or award.",
-    "moreDetails": "More details about program >",
-    "openToThePublic": "open to the public",
-    "openPublicDescription": "You can set whether or not to disclose a certificate outside",
-    "competencyKeywords": "Competency Keywords",
-    "myExperience": "My Experience",
-    "cancel": "Cancel",
-    "confirm": "Confirm"
+    "acquiredCompetencies": "획득한 역량",
+    "edit": "입력하기 >",
+    "pleaseWrite": "해당 프로그램을 통해서 획득한 역량들을 작성해주세요.",
+    "moreDetails": "프로그램 세부 정보 >",
+    "openToThePublic": "외부 공개 여부",
+    "openPublicDescription": "증명서를 외부에 공개하고 싶지 않다면 비공개로 전환할 수 있습니다.",
+    "competencyKeywords": "획득한 역량 키워드",
+    "keywordsPlaceholder": "ex. 커뮤니케이션",
+    "experiencePlaceholder": "ex. 저는 디자이너들과 협업하는 능력을 기를 수 있었습니다.",
+    "myExperience": "나의 활동",
+    "cancel": "취소",
+    "confirm": "확인"
   }
 }

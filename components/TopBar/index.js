@@ -1,6 +1,7 @@
+import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import LocalStorage from "@/common/localstorage.manager";
 
 import styles from "./TopBar.module.css";
 import Logo from "../../public/assets/logo/logo-top-bar.svg";
@@ -15,6 +16,7 @@ export default function ({ hasSession = false, children })
 
     const Logout = async () =>
     {
+        LocalStorage.shared.removeItem('walletAddress');
         await router.replace('/');
     };
 

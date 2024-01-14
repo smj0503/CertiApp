@@ -127,7 +127,7 @@ export default function ()
                                 }
                                 <input
                                     type="text"
-                                    placeholder="ex. Communication"
+                                    placeholder={ t("details.keywordsPlaceholder") }
                                     value={ badge }
                                     onChange={ onChangeKeyword }
                                     onKeyUp={ onKeyUp }
@@ -146,7 +146,7 @@ export default function ()
                             <div className={ styles.input }>
                                 <input
                                     type="text"
-                                    placeholder="ex. I developed my ability to collaborate with designers."
+                                    placeholder={ t("details.experiencePlaceholder") }
                                     onChange={ onChangeExperience }
                                     data-fill={true}
                                     maxLength={300}
