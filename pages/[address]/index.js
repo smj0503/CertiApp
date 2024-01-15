@@ -119,7 +119,7 @@ export default function ()
                                     href={ `${router.asPath}/1` }
                                     category="Diploma"
                                     date="2021.08.30"
-                                    publisher="광주 ICT Innovation · goorm"
+                                    publisher="광주 ICT Innovation"
                                     title="[ICT 이노베이션 스퀘어] 블록체인 교육 과정"
                                 />
                                 <Collection

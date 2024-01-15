@@ -29,7 +29,7 @@ export default function ()
                         image="/assets/photo/photo-certificate-1.png"
                         category="Diploma"
                         date="2021.08.30"
-                        publisher="광주 ICT Innovation · goorm"
+                        publisher="광주 ICT Innovation"
                         title="[ICT 이노베이션 스퀘어] 블록체인 교육 과정"
                     />
                 </div>
