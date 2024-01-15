@@ -30,7 +30,7 @@ export default function ()
 
     /* APIs */
     const { getUsername } = useAccountModule();
-    const { getMyCertificateList } = useCertificateModule();
+    // const { getMyCertificateList } = useCertificateModule();
 
     /* Life Cycle */
     asyncEffect(async () =>
@@ -40,8 +40,8 @@ export default function ()
         const result = await getUsername(router.asPath.replace('/', ''));
         setName(result.user_name);
 
-        const myCertificates = await getMyCertificateList(router.asPath.replace('/', ''));
-        setMyCertificates(myCertificates);
+        // const myCertificates = await getMyCertificateList(router.asPath.replace('/', ''));
+        // setMyCertificates(myCertificates);
     }, []);
 
     /* User Actions */
@@ -71,7 +71,7 @@ export default function ()
         <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
                 {
-                    myCertificates && myCertificates.length > 0 ? (
+                    // myCertificates && myCertificates.length > 0 ? (
                         <div>
                             <div className={ styles.controller }>
                                 <div className={ styles.header }>
@@ -96,29 +96,53 @@ export default function ()
                                 </div>
                             </div>
                             <div className={ styles.certificates }>
-                                {
-                                    myCertificates && myCertificates.length > 0 && (
-                                        myCertificates.map((certificate, index) => {
-                                            return (
-                                                <Collection
-                                                    key={ index }
-                                                    id={ certificate.id }
-                                                    image={ certificate.certificate_image }
-                                                    onClick={ onClick }
-                                                    category={ certificate.certificate_category }
-                                                    date={ certificate.certificate_end_date.substring(10, -1) }
-                                                    publisher={ certificate.company_name }
-                                                    title={ certificate.certificate_name }
-                                                />
-                                            )
-                                        })
-                                    )
-                                }
+                                {/*{*/}
+                                {/*    myCertificates && myCertificates.length > 0 && (*/}
+                                {/*        myCertificates.map((certificate, index) => {*/}
+                                {/*            return (*/}
+                                {/*                <Collection*/}
+                                {/*                    key={ index }*/}
+                                {/*                    id={ certificate.id }*/}
+                                {/*                    image={ certificate.certificate_image }*/}
+                                {/*                    onClick={ onClick }*/}
+                                {/*                    category={ certificate.certificate_category }*/}
+                                {/*                    date={ certificate.certificate_end_date.substring(10, -1) }*/}
+                                {/*                    publisher={ certificate.company_name }*/}
+                                {/*                    title={ certificate.certificate_name }*/}
+                                {/*                />*/}
+                                {/*            )*/}
+                                {/*        })*/}
+                                {/*    )*/}
+                                {/*}*/}
+                                <Collection
+                                    image="/assets/photo/photo-certificate-1.png"
+                                    href={ `${router.asPath}/1` }
+                                    category="Diploma"
+                                    date="2021.08.30"
+                                    publisher="광주 ICT Innovation · goorm"
+                                    title="[ICT 이노베이션 스퀘어] 블록체인 교육 과정"
+                                />
+                                <Collection
+                                    image="/assets/photo/photo-certificate-2.png"
+                                    href={ `${router.asPath}/2` }
+                                    category="Diploma"
+                                    date="2023.01.06"
+                                    publisher="한화 드림플러스 X Hashed"
+                                    title="프로토콜 캠프 2기 수료증"
+                                />
+                                <Collection
+                                    image="/assets/photo/photo-certificate-3.png"
+                                    href={ `${router.asPath}/2` }
+                                    category="Contest"
+                                    date="2023.09.05"
+                                    publisher="광주정보문화산업진흥원"
+                                    title="디지털 신기술 지역 문제 해결 아이디어 공모전"
+                                />
                             </div>
                         </div>
-                    ) : (
-                        <EmptyContainer hasSession={ hasSession }/>
-                    )
+                    // ) : (
+                    //     <EmptyContainer hasSession={ hasSession }/>
+                    // )
                 }
             </div>
         </TopBar>

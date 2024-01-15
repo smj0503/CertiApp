@@ -74,6 +74,10 @@
     letter-spacing: -0.25px;
 
     margin-bottom: 36px;
+
+    /*text-overflow: ellipsis;*/
+    /*overflow: hidden;*/
+    white-space: nowrap;
 }
 
 .company

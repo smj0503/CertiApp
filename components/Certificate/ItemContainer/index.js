@@ -7,27 +7,27 @@ import Switch from "@/components/Switch";
 
 import styles from "./ItemContainer.module.css";
 
-export default function ({ hasSession })
+export default function ({ hasSession, image, category, date, publisher, title })
 {
     const { t } = useTranslation("common");
     const router = useRouter();
 
     return (
         <div className={ styles.itemContainer }>
-            <Image src="/assets/photo/photo-certificate-1.png" alt="image" width={586} height={653} className={ styles.image } priority={true}/>
+            <Image src={ image } alt="image" width={586} height={653} className={ styles.image } priority={true}/>
             <div className={ styles.info }>
                 <div>
                     <div className={ styles.head }>
                         <div className={ styles.chips }>
-                            <div className={ styles.category }>{ "Diploma" }</div>
-                            <div className={ styles.date }>{ "2022/09/06 - Completion" }</div>
+                            <div className={ styles.category }>{ category }</div>
+                            <div className={ styles.date }>{ `${date} - 만료` }</div>
                         </div>
-                        <h1 className={ styles.title }>{ "Protocol Camp 2nd" }</h1>
+                        <h1 className={ styles.title }>{ title }</h1>
                         <div className={ styles.company }>
                             <Image src="/assets/photo/photo-protocol-camp.png" alt="company image" width={45} height={45} priority={true} className={ styles.companyImage }/>
                             <div>
                                 <span className={ styles.gray }>{ t('details.company') }</span>
-                                <span className={ styles.companyName }>{ "Hanwha Dreamplus X Hashed" }</span>
+                                <span className={ styles.companyName }>{ publisher }</span>
                             </div>
                         </div>
                     </div>
