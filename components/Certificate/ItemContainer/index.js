@@ -24,7 +24,7 @@ export default function ({ hasSession, image, category, date, publisher, title }
                         </div>
                         <h1 className={ styles.title }>{ title }</h1>
                         <div className={ styles.company }>
-                            <Image src="/assets/photo/photo-protocol-camp.png" alt="company image" width={45} height={45} priority={true} className={ styles.companyImage }/>
+                            {/*<Image src="/assets/photo/photo-protocol-camp.png" alt="company image" width={45} height={45} priority={true} className={ styles.companyImage }/>*/}
                             <div>
                                 <span className={ styles.gray }>{ t('details.company') }</span>
                                 <span className={ styles.companyName }>{ publisher }</span>
