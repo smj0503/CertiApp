@@ -18,6 +18,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    width: 100%;
+    /*background-color: #C4F4FF;*/
 }
 
 .head
@@ -69,6 +72,7 @@
 {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
 }
 

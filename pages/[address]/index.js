@@ -97,19 +97,22 @@ export default function ()
                             </div>
                             <div className={ styles.certificates }>
                                 {
-                                    myCertificates.map((certificate, index) => {
-                                        return (
-                                            <Collection
-                                                key={ index }
-                                                image={ certificate.certificate_image }
-                                                onClick={ onClick(certificate.id) }
-                                                category={ certificate.certificate_category }
-                                                date={ certificate.certificate_end_date.substring(10, -1) }
-                                                publisher={ certificate.company_name }
-                                                title={ certificate.certificate_name }
-                                            />
-                                        )
-                                    })
+                                    myCertificates && myCertificates.length > 0 && (
+                                        myCertificates.map((certificate, index) => {
+                                            return (
+                                                <Collection
+                                                    key={ index }
+                                                    id={ certificate.id }
+                                                    image={ certificate.certificate_image }
+                                                    onClick={ onClick }
+                                                    category={ certificate.certificate_category }
+                                                    date={ certificate.certificate_end_date.substring(10, -1) }
+                                                    publisher={ certificate.company_name }
+                                                    title={ certificate.certificate_name }
+                                                />
+                                            )
+                                        })
+                                    )
                                 }
                             </div>
                         </div>
