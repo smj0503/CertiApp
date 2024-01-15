@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useState } from "react";
 import { asyncEffect } from "@/common/utils";
 import LocalStorage from "@/common/localstorage.manager";
 
@@ -10,19 +10,22 @@ import styles from "../../styles/Certificate.module.css";
 
 export default function ()
 {
-    const router = useRouter();
+    const walletAddress = LocalStorage.shared.getItem('walletAddress');
+
+    const [hasSession, setSession] = useState(false);
 
     asyncEffect(async () =>
     {
+        setSession(!!walletAddress);
     }, []);
 
     return (
-        <TopBar hasSession={true}>
+        <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
                 <div>
-                    <Header/>
+                    <Header title="디지털 신기술 지역 문제 해결 아이디어 공모전"/>
                     <ItemContainer
-                        hasSession={true}
+                        hasSession={ hasSession }
                         image="/assets/photo/photo-certificate-3.png"
                         category="Diploma"
                         date="2023.09.05"

@@ -38,7 +38,7 @@ export default function ({ hasSession, image, category, date, publisher, title }
                                 hasSession && (
                                     <div className={ styles.acquire }>
                                         <h1>{ t('details.acquiredCompetencies') }</h1>
-                                        <Link href={ `${router.asPath}/competencies` } className={ styles.editButton } data-button-animation={true}>{ "Edit >" }</Link>
+                                        <Link href={ `${router.asPath}/competencies` } className={ styles.editButton } data-button-animation={true}>{ t('details.edit') }</Link>
                                     </div>
                                 )
                             }

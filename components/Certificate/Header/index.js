@@ -10,8 +10,7 @@ export default function ({ title })
     return (
         <div className={ styles.header }>
             <span>{ t("details.myCertificate") }</span><IconChevronRight/>
-            {/*<span className={ styles.certificateName }>{ title }</span>*/}
-            <span className={ styles.certificateName }>{ "Protocol Camp 2nd" }</span>
+            <span className={ styles.certificateName }>{ title }</span>
         </div>
     )
 }

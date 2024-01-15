@@ -76,8 +76,8 @@ export default function ()
                             <div className={ styles.controller }>
                                 <div className={ styles.header }>
                                     <div>
-                                        <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: username }) }</span>
-                                        <span className={ styles.count }>{ t("myCertificates.count", { count: myCertificates.length }) }</span>
+                                        <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: "박민기" }) }</span>
+                                        <span className={ styles.count }>{ t("myCertificates.count", { count: 3 }) }</span>
                                     </div>
                                     <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>
                                         <span>{ t("myCertificates.shareYourList") }</span>
@@ -132,7 +132,7 @@ export default function ()
                                 />
                                 <Collection
                                     image="/assets/photo/photo-certificate-3.png"
-                                    href={ `${router.asPath}/2` }
+                                    href={ `${router.asPath}/3` }
                                     category="Contest"
                                     date="2023.09.05"
                                     publisher="광주정보문화산업진흥원"
