@@ -70,7 +70,7 @@ export default function ()
     return (
         <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
-                <EmptyContainer hasSession={false}/>
+                <EmptyContainer hasSession={ hasSession }/>
                 {/*{*/}
                 {/*    myCertificates && myCertificates.length > 0 ? (*/}
                 {/*        <div>*/}

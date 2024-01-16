@@ -28,7 +28,7 @@ export default function ({ hasSession = false, children })
                         hasSession && (
                             <div>
                                 <Link data-button-animation={true} href={ `/${walletAddress}` } className={ styles.linkbutton } data-selected={ !router.asPath.includes("programs") }>{ t("topBar.myCertificate") }</Link>
-                                <Link data-button-animation={true} href={ `/${walletAddress}/programs` } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>
+                                {/*<Link data-button-animation={true} href={ `/${walletAddress}/programs` } className={ styles.linkbutton } data-selected={ router.asPath.includes("programs") }>{ t("topBar.otherPrograms") }</Link>*/}
                             </div>
                         )
                     }
