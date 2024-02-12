@@ -53,6 +53,8 @@ export default function ()
         setIsOpened(false);
     };
 
+    console.log('url : ', url);
+
     return (
         <div className={ styles.container }>
             <div className={ styles.loginContainer }>

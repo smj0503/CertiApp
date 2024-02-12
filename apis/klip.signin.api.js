@@ -10,7 +10,9 @@ export const getAddress = (setUrl, callback) => {
         .then((response) =>
         {
             const { request_key } = response.data;
-            setUrl(getKlipAccessUrl(request_key));
+            // setUrl(getKlipAccessUrl(request_key));
+
+            location.replace(getKlipAccessUrl(request_key));
 
             let timerId = setInterval(() =>
             {
