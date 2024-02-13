@@ -72,7 +72,7 @@ export default function ()
             </div>
             <span className={ styles.certi }>{ "©2024 Certi" }</span>
             <Image src={ Certi } alt="certi logo" className={ styles.certiBackground } priority={true}/>
-            <QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>
+            {/*<QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>*/}
         </div>
     )
 }
