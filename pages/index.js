@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getAddress } from "@/apis/klip.signin.api";
 import { asyncEffect } from "@/common/utils";
 import LocalStorage from "@/common/localstorage.manager";
@@ -25,6 +26,15 @@ export default function ()
 
     const [isOpened, setIsOpened] = useState(false);
 
+    useEffect(() =>
+    {
+        getAddress(setUrl, async (address, status) =>
+        {
+            setAddress(address);
+            setStatus(status);
+        });
+    }, []);
+
     asyncEffect(async () =>
     {
         console.log('address : ', address);
@@ -37,16 +47,16 @@ export default function ()
         }
     }, [address, status]);
 
-    const onClick = async () =>
-    {
-        getAddress(setUrl, async (address, status) =>
-        {
-            setAddress(address);
-            setStatus(status);
-        });
-
-        setIsOpened(true);
-    };
+    // const onClick = async () =>
+    // {
+    //     getAddress(setUrl, async (address, status) =>
+    //     {
+    //         setAddress(address);
+    //         setStatus(status);
+    //     });
+    //
+    //     setIsOpened(true);
+    // };
 
     const close = () =>
     {
@@ -65,10 +75,14 @@ export default function ()
                 </div>
                 <IconCheck/>
                 <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles.description }/>
-                <button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>
+                {/*<button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>*/}
+                {/*    <IconKlip/>*/}
+                {/*    <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>*/}
+                {/*</button>*/}
+                <Link href={ url } data-button-animation={true} className={ styles.loginButton }>
                     <IconKlip/>
                     <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
-                </button>
+                </Link>
             </div>
             <span className={ styles.certi }>{ "©2024 Certi" }</span>
             <Image src={ Certi } alt="certi logo" className={ styles.certiBackground } priority={true}/>

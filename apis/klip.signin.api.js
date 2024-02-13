@@ -2,17 +2,16 @@ import axios from "axios";
 
 const getKlipAccessUrl = (request_key) =>
 {
-    return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+    return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
 };
 
-export const getAddress = (setUrl, callback) => {
+export const getAddress = (setUrl, callback) =>
+{
     axios.post("https://a2a-api.klipwallet.com/v2/a2a/prepare", { bapp: { name: "nftime" }, type: "auth" })
         .then((response) =>
         {
             const { request_key } = response.data;
-            // setUrl(getKlipAccessUrl(request_key));
-
-            location.replace(getKlipAccessUrl(request_key));
+            setUrl(getKlipAccessUrl(request_key));
 
             let timerId = setInterval(() =>
             {
