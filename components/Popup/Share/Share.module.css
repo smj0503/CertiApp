@@ -32,7 +32,7 @@
     z-index: 12;
 }
 
-.partners
+.share
 {
     display: flex;
     flex-direction: column;
@@ -59,4 +59,9 @@
 .subTitle > b
 {
     font-weight: 600;
+}
+
+.partners
+{
+    display: flex;
 }
