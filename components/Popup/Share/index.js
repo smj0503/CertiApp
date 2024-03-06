@@ -25,7 +25,7 @@ export default function ()
                         <LinkButton href="https://www.linkedin.com" name="링크드인" logo={ <LinkedIn/> }/>
                     </div>
                 </div>
-                <UrlCopy url={ }/>
+                <UrlCopy url="https://app.certi.world/"/>
             </div>
         </div>
     )

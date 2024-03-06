@@ -10,3 +10,27 @@
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.12);
 }
+
+.url
+{
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.copyButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+    background: #2756FF;
+
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+}
