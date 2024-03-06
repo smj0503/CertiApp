@@ -26,14 +26,15 @@ export default function ()
 
     const [isOpened, setIsOpened] = useState(false);
 
-    useEffect(() =>
-    {
-        getAddress(setUrl, async (address, status) =>
-        {
-            setAddress(address);
-            setStatus(status);
-        });
-    }, []);
+    // For Mobile Login
+    // useEffect(() =>
+    // {
+    //     getAddress(setUrl, async (address, status) =>
+    //     {
+    //         setAddress(address);
+    //         setStatus(status);
+    //     });
+    // }, []);
 
     asyncEffect(async () =>
     {
@@ -47,16 +48,16 @@ export default function ()
         }
     }, [address, status]);
 
-    // const onClick = async () =>
-    // {
-    //     getAddress(setUrl, async (address, status) =>
-    //     {
-    //         setAddress(address);
-    //         setStatus(status);
-    //     });
-    //
-    //     setIsOpened(true);
-    // };
+    const onClick = async () =>
+    {
+        getAddress(setUrl, async (address, status) =>
+        {
+            setAddress(address);
+            setStatus(status);
+        });
+
+        setIsOpened(true);
+    };
 
     const close = () =>
     {
@@ -75,18 +76,19 @@ export default function ()
                 </div>
                 <IconCheck/>
                 <p dangerouslySetInnerHTML={{ __html: t("signIn.opengraph") }} className={ styles.description }/>
-                {/*<button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>*/}
-                {/*    <IconKlip/>*/}
-                {/*    <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>*/}
-                {/*</button>*/}
-                <Link href={ url } data-button-animation={true} className={ styles.loginButton }>
+                <button data-button-animation={true} type="button" className={ styles.loginButton } onClick={ onClick }>
                     <IconKlip/>
                     <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>
-                </Link>
+                </button>
+                {/*For Mobile Login*/}
+                {/*<Link href={ url } data-button-animation={true} className={ styles.loginButton }>*/}
+                {/*    <IconKlip/>*/}
+                {/*    <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>*/}
+                {/*</Link>*/}
             </div>
             <span className={ styles.certi }>{ "©2024 Certi" }</span>
             <Image src={ Certi } alt="certi logo" className={ styles.certiBackground } priority={true}/>
-            {/*<QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>*/}
+            <QRCode url={ !!url && url } close={ close } isOpened={ isOpened }/>
         </div>
     )
 }
