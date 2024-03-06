@@ -20,8 +20,11 @@ export default function ()
         <div className={ styles.dim }>
             <div className={ styles.popup }>
                 <div className={ styles.share }>
-                    <span className={ styles.title }>{ "증명서 공유하기" }</span>
-                    <button type="button" className={ styles.closeButton } data-button-animation={true} onClick={ close }><IconClose/></button>
+                    <div className={ styles.header }>
+                        <div className={ styles.closeButton }/>
+                        <span className={ styles.title }>{ "증명서 공유하기" }</span>
+                        <button type="button" className={ styles.closeButton } data-button-animation={true} onClick={ close }><IconClose/></button>
+                    </div>
                     <p className={ styles.subTitle } dangerouslySetInnerHTML={{ __html: "아래 채용 플랫폼의 이력서에<br/>증명서 링크를 첨부해서 <b>스펙을 손쉽게 증빙하세요!</b>" }}/>
                     <div className={ styles.partners }>
                         <LinkButton href="https://www.wanted.co.kr/cv/list" name="원티드" logo={ <Wanted/> }/>
