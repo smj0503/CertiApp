@@ -70,6 +70,28 @@ export default function ()
     return (
         <TopBar hasSession={ hasSession }>
             <div className={ styles.container }>
+                <div className={ styles.controller }>
+                    <div className={ styles.header }>
+                        <div>
+                            <span className={ styles.title }>{ t("myCertificates.belongsTo", { username: "박민기" }) }</span>
+                            <span className={ styles.count }>{ t("myCertificates.count", { count: 3 }) }</span>
+                        </div>
+                        <button data-button-animation={true} type="button" className={ styles.copyButton } onClick={ share }>
+                            <span>{ t("myCertificates.shareYourList") }</span>
+                            <IconShare/>
+                        </button>
+                    </div>
+                    {
+                        isCopied && <Toast show={ isCopied } close={ close }/>
+                    }
+                    <div className={ styles.category }>
+                        <SortButton>{ t("myCertificates.all") }</SortButton>
+                        <SortButton>{ t("myCertificates.diploma") }</SortButton>
+                        <SortButton>{ t("myCertificates.contest") }</SortButton>
+                        <SortButton>{ t("myCertificates.license") }</SortButton>
+                        <SortButton>{ t("myCertificates.others") }</SortButton>
+                    </div>
+                </div>
                 <EmptyContainer hasSession={ hasSession }/>
                 {/*{*/}
                 {/*    myCertificates && myCertificates.length > 0 ? (*/}
