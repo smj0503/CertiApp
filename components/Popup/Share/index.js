@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import LinkButton from "./LinkButton";
 import UrlCopy from "./UrlCopy";
 
@@ -11,6 +13,8 @@ import LinkedIn from "@/public/assets/partners/linkedin.svg";
 
 export default function ()
 {
+    const router = useRouter();
+
     const close = () =>
     {
 
@@ -27,14 +31,14 @@ export default function ()
                     </div>
                     <p className={ styles.subTitle } dangerouslySetInnerHTML={{ __html: "아래 채용 플랫폼의 이력서에<br/>증명서 링크를 첨부해서 <b>스펙을 손쉽게 증빙하세요!</b>" }}/>
                     <div className={ styles.partners }>
-                        <LinkButton href="https://www.wanted.co.kr/cv/list" name="원티드" logo={ <Wanted/> }/>
-                        <LinkButton href="https://www.saramin.co.kr/zf_user/resume/resume-manage" name="사람인" logo={ <SaramIn/> }/>
-                        <LinkButton href="https://www.jobkorea.co.kr/User/Resume/Write" name="잡코리아" logo={ <JobKorea/> }/>
-                        <LinkButton href="https://profile.rememberapp.co.kr" name="리멤버" logo={ <Remember/> }/>
-                        <LinkButton href="https://www.linkedin.com" name="링크드인" logo={ <LinkedIn/> }/>
+                        <LinkButton href={ process.env.NEXT_PUBLIC_WANTED_HOST } name="원티드" logo={ <Wanted/> }/>
+                        <LinkButton href={ process.env.NEXT_PUBLIC_SARAMIN_HOST } name="사람인" logo={ <SaramIn/> }/>
+                        <LinkButton href={ process.env.NEXT_PUBLIC_JOBKOREA_HOST } name="잡코리아" logo={ <JobKorea/> }/>
+                        <LinkButton href={ process.env.NEXT_PUBLIC_REMEMBER_HOST } name="리멤버" logo={ <Remember/> }/>
+                        <LinkButton href={ process.env.NEXT_PUBLIC_LINKEDIN_HOST } name="링크드인" logo={ <LinkedIn/> }/>
                     </div>
                 </div>
-                <UrlCopy url="https://app.certi.world/"/>
+                <UrlCopy url={ `${process.env.NEXT_PUBLIC_HOST}${router.asPath}` }/>
             </div>
         </div>
     )
