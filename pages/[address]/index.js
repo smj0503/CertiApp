@@ -21,7 +21,6 @@ import EmptyContainer from "@/components/EmptyContainer";
 import SortButton from "@/components/SortButton";
 import Collection from "@/components/Collection";
 import SharePopup from "@/components/Popup/Share";
-import Toast from "@/components/Toast/Share";
 
 /**
  * Styles & Resources
@@ -39,7 +38,7 @@ export default function ()
     const [hasSession, setSession] = useState(false);
     const [username, setName] = useState('');
     const [myCertificates, setMyCertificates] = useState([]);
-    const [isCopied, setIsCopied] = useState(false);
+    const [open, setOpen] = useState(false);
 
     /* APIs */
     const { getUsername } = useAccountModule();
@@ -68,12 +67,12 @@ export default function ()
 
     const share = async () =>
     {
-        setIsCopied(true);
+        setOpen(true);
     };
 
     const close = () =>
     {
-        setIsCopied(false);
+        setOpen(false);
     };
 
     console.log('session : ', hasSession);
@@ -81,7 +80,7 @@ export default function ()
     return (
         <>
             {
-                isCopied && <SharePopup close={ close }/>
+                open && <SharePopup close={ close }/>
             }
             <TopBar hasSession={ hasSession }>
                 <div className={ styles.container }>
@@ -96,9 +95,6 @@ export default function ()
                                 <IconShare/>
                             </button>
                         </div>
-                        {/*{*/}
-                        {/*    isCopied && <Toast show={ isCopied } close={ close }/>*/}
-                        {/*}*/}
                         <div className={ styles.category }>
                             <SortButton>{ t("myCertificates.all") }</SortButton>
                             <SortButton>{ t("myCertificates.diploma") }</SortButton>
