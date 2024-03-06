@@ -38,6 +38,8 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
+
+    position: relative;
 }
 
 .title
@@ -45,6 +47,21 @@
     font-size: 16px;
     font-weight: 600;
     color: #000;
+}
+
+.closeButton
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+    background-color: #2D6AFF;
+
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .subTitle
