@@ -1,10 +1,15 @@
+import { useRouter } from "next/router";
+
 import styles from "./UrlCopy.module.css";
 
-export default function ({ url })
+export default function ()
 {
-    const copy = () =>
-    {
+    const router = useRouter();
+    const url = `${process.env.NEXT_PUBLIC_HOST}${router.asPath}`;
 
+    const copy = async () =>
+    {
+        await navigator.clipboard.writeText(url);
     };
 
     return (

@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 import LinkButton from "./LinkButton";
 import UrlCopy from "./UrlCopy";
 
@@ -11,15 +9,8 @@ import JobKorea from "@/public/assets/partners/jobkorea.svg";
 import Remember from "@/public/assets/partners/remember.svg";
 import LinkedIn from "@/public/assets/partners/linkedin.svg";
 
-export default function ()
+export default function ({ close })
 {
-    const router = useRouter();
-
-    const close = () =>
-    {
-
-    };
-
     return (
         <div className={ styles.dim }>
             <div className={ styles.popup }>
@@ -38,7 +29,7 @@ export default function ()
                         <LinkButton href={ process.env.NEXT_PUBLIC_LINKEDIN_HOST } name="링크드인" logo={ <LinkedIn/> }/>
                     </div>
                 </div>
-                <UrlCopy url={ `${process.env.NEXT_PUBLIC_HOST}${router.asPath}` }/>
+                <UrlCopy/>
             </div>
         </div>
     )

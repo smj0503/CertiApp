@@ -68,8 +68,6 @@ export default function ()
 
     const share = async () =>
     {
-        const url = `https://app.certi.world/${router.asPath}`;
-        await navigator.clipboard.writeText(url);
         setIsCopied(true);
     };
 
@@ -82,6 +80,9 @@ export default function ()
 
     return (
         <>
+            {
+                isCopied && <SharePopup close={ close }/>
+            }
             <TopBar hasSession={ hasSession }>
                 <div className={ styles.container }>
                     <div className={ styles.controller }>
@@ -95,9 +96,9 @@ export default function ()
                                 <IconShare/>
                             </button>
                         </div>
-                        {
-                            isCopied && <Toast show={ isCopied } close={ close }/>
-                        }
+                        {/*{*/}
+                        {/*    isCopied && <Toast show={ isCopied } close={ close }/>*/}
+                        {/*}*/}
                         <div className={ styles.category }>
                             <SortButton>{ t("myCertificates.all") }</SortButton>
                             <SortButton>{ t("myCertificates.diploma") }</SortButton>
@@ -185,7 +186,6 @@ export default function ()
                     {/*}*/}
                 </div>
             </TopBar>
-            <SharePopup/>
         </>
     );
 }
