@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Toast from "@/components/Toast/Share";
 import LinkButton from "./LinkButton";
 import UrlCopy from "./UrlCopy";
@@ -12,9 +14,14 @@ import LinkedIn from "@/public/assets/partners/linkedin.svg";
 
 export default function ({ close })
 {
+    const [isCopied, setIsCopied] = useState(false);
+
     return (
         <div className={ styles.dim }>
             <div className={ styles.popup }>
+                {
+                    isCopied && <Toast show={ isCopied } setIsCopied={ setIsCopied }/>
+                }
                 <div className={ styles.share }>
                     <div className={ styles.header }>
                         <div className={ styles.closeButton }/>
@@ -30,7 +37,7 @@ export default function ({ close })
                         <LinkButton href={ process.env.NEXT_PUBLIC_LINKEDIN_HOST } name="링크드인" logo={ <LinkedIn/> }/>
                     </div>
                 </div>
-                <UrlCopy/>
+                <UrlCopy setIsCopied={ setIsCopied }/>
             </div>
         </div>
     )

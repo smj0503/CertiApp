@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 import styles from "./UrlCopy.module.css";
 
-export default function ()
+export default function ({ setIsCopied })
 {
     const router = useRouter();
     const url = `${process.env.NEXT_PUBLIC_HOST}${router.asPath}`;
@@ -10,6 +10,7 @@ export default function ()
     const copy = async () =>
     {
         await navigator.clipboard.writeText(url);
+        setIsCopied(true);
     };
 
     return (

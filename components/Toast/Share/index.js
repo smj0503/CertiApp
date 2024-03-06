@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import styles from "./Share.module.css";
 import IconCopy from "../../../public/assets/icon-copy.svg";
 
-export default function ({ show, close })
+export default function ({ show, setIsCopied })
 {
     const { t } = useTranslation("common");
 
@@ -14,18 +14,15 @@ export default function ({ show, close })
         {
             setTimeout(() =>
             {
-                close();
+                setIsCopied(false);
             }, 3000);
         }
     }, [show]);
 
     return (
-        <div className={ styles.toast } data-show={ show }>
+        <div className={ styles.toast }>
             <IconCopy/>
-            <div>
-                <span className={ styles.title }>{ t("myCertificates.copied") }</span>
-                <span className={ styles.subTitle }>{ t("myCertificates.share") }</span>
-            </div>
+            <span className={ styles.message }>{ "증명서 링크가 복사되었습니다." }</span>
         </div>
     )
 }
