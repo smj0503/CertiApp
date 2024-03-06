@@ -1,15 +1,13 @@
-import Link from "next/link";
-
 import styles from "./LinkButton.module.css";
 
 export default function ({ href, name, logo })
 {
     return (
-        <Link href={ href } className={ styles.button }>
+        <a href={ href } className={ styles.button } target="_blank" rel="noopener noreferrer">
             <div className={ styles.logo }>
                 { logo }
             </div>
             <span className={ styles.name }>{ name }</span>
-        </Link>
+        </a>
     )
 }
