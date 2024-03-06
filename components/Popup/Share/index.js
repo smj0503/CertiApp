@@ -1,5 +1,10 @@
 import styles from "./Share.module.css";
 import IconClose from "@/public/assets/icon-xmark.svg";
+import Wanted from "@/public/assets/partners/wanted.svg";
+import SaramIn from "@/public/assets/partners/saramin.svg";
+import JobKorea from "@/public/assets/partners/jobkorea.svg";
+import Remember from "@/public/assets/partners/remember.svg";
+import LinkedIn from "@/public/assets/partners/linkedin.svg";
 
 export default function ()
 {
