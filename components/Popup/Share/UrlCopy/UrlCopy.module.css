@@ -1,36 +1,33 @@
-.urlContainer
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
+.urlContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
 
-    padding: 8px 8px 8px 16px;
+  padding: 8px 8px 8px 16px;
 
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.url
-{
-    font-size: 14px;
-    font-weight: 500;
-    color: #000;
+.url {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
 }
 
-.copyButton
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.copyButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    padding: 12px 20px;
+  padding: 12px 20px;
 
-    border-radius: 8px;
-    background: #2756FF;
+  border-radius: 8px;
+  background: #2756ff;
 
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
 }

@@ -1,138 +1,122 @@
-.container
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 64px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
 
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 
-    padding-top: 124px;
+  padding-top: 124px;
 }
 
-.title
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
-.title > h1
-{
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: -0.25px;
+.title > h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.25px;
 }
 
-.inputContainer
-{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.textField
-{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.textField {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
-    width: 708px;
+  width: 708px;
 }
 
-.textField > label
-{
-    font-size: 14px;
-    font-weight: 400;
+.textField > label {
+  font-size: 14px;
+  font-weight: 400;
 
-    padding: 4px 8px;
+  padding: 4px 8px;
 }
 
-.inputArea
-{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
 }
 
-.input
-{
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
-    width: 100%;
-    height: 56px;
+  width: 100%;
+  height: 56px;
 
-    padding: 0 10px;
+  padding: 0 10px;
 
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.input > input
-{
-    display: flex;
-    align-items: center;
+.input > input {
+  display: flex;
+  align-items: center;
 
-    padding-left: 10px;
+  padding-left: 10px;
 
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
-.input > input[data-fill=true]
-{
-    width: 100%;
+.input > input[data-fill='true'] {
+  width: 100%;
 }
 
-.input > input::placeholder
-{
-    color: rgba(0, 0, 0, 0.20);
+.input > input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
 }
 
-.buttonGroup
-{
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.button
-{
-    display: flex;
-    padding: 0 28px;
-    align-items: center;
+.button {
+  display: flex;
+  padding: 0 28px;
+  align-items: center;
 
-    height: 48px;
+  height: 48px;
 
-    border-radius: 100px;
+  border-radius: 100px;
 
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
 }
 
-.button[data-action="cancel"]
-{
-    background-color: rgba(0, 0, 0, 0.10);
-    color: rgba(0, 0, 0, 0.80);
+.button[data-action='cancel'] {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.button[data-action="confirm"]
-{
-    background-color: #2756FF;
-    color: #FFFFFF;
+.button[data-action='confirm'] {
+  background-color: #2756ff;
+  color: #ffffff;
 }
 
-.button[disabled]
-{
-    background: rgba(39, 86, 255, 0.10);
-    color: #FFFFFF;
+.button[disabled] {
+  background: rgba(39, 86, 255, 0.1);
+  color: #ffffff;
 }

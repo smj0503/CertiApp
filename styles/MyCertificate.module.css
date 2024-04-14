@@ -1,85 +1,75 @@
-.container
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    padding: 108px 0;
+  padding: 108px 0;
 }
 
-.container > div
-{
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
+.container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
 
-    width: 1440px;
+  width: 1440px;
 }
 
-.controller
-{
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
+.controller {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 
-    position: relative;
+  position: relative;
 }
 
-.header
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header > div
-{
-    display: flex;
-    align-items: flex-end;
-    gap: 24px;
+.header > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
 }
 
-.title
-{
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 100%;
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 100%;
 }
 
-.count
-{
-    color: #666;
+.count {
+  color: #666;
 
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 120%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 120%;
 }
 
-.copyButton
-{
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-    padding: 0 8px 0 20px;
-    height: 44px;
+  padding: 0 8px 0 20px;
+  height: 44px;
 
-    border-radius: 99px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 99px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.category
-{
-    display: flex;
-    gap: 12px;
+.category {
+  display: flex;
+  gap: 12px;
 }
 
-.certificates
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 24px;
-    row-gap: 64px;
+.certificates {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 64px;
 
-    width: 1440px;
+  width: 1440px;
 }

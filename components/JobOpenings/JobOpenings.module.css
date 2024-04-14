@@ -1,36 +1,31 @@
-.container
-{
-    display: flex;
-    flex-direction: column;
-    gap: 34px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 
-    width: 464px;
+  width: 464px;
 }
 
-.image
-{
-    border-radius: 6px;
+.image {
+  border-radius: 6px;
 }
 
-.description
-{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.name
-{
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 24px;
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
-.publisher
-{
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 100%;
+.publisher {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
 
-    color: rgba(0, 0, 0, 0.40);
+  color: rgba(0, 0, 0, 0.4);
 }

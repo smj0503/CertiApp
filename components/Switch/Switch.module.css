@@ -1,35 +1,31 @@
-.container
-{
-    width: 48px;
-    height: 30px;
-    background-color: #C8C8C8;
-    opacity: 0.16;
-    border-radius: 999px;
+.container {
+  width: 48px;
+  height: 30px;
+  background-color: #c8c8c8;
+  opacity: 0.16;
+  border-radius: 999px;
 
-    padding: 2px;
+  padding: 2px;
 
-    transition: background-color 1000ms var(--animation-function);
+  transition: background-color 1000ms var(--animation-function);
 }
 
-.thumb
-{
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+.thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
 
-    background-color: #FFFFFF;
-    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06);
 
-    transition: transform var(--animation-time) var(--animation-function);
+  transition: transform var(--animation-time) var(--animation-function);
 }
 
-.container[data-active=true]
-{
-    background-color: #5CDA30;
-    opacity: 1;
+.container[data-active='true'] {
+  background-color: #5cda30;
+  opacity: 1;
 }
 
-.container[data-active=true] .thumb
-{
-    transform: translateX(20px);
+.container[data-active='true'] .thumb {
+  transform: translateX(20px);
 }
