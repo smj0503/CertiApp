@@ -1,14 +1,14 @@
 .container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    position: relative;
+  position: relative;
 }
 
 .mobileContainer {
-    max-width: 500px;
-    min-height: 100vh;
-    width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  width: 100%;
 
-    background-color: #F3F2F7;
+  background-color: #f3f2f7;
 }
