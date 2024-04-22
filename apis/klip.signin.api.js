@@ -2,8 +2,9 @@ import axios from 'axios';
 
 const getKlipAccessUrl = (request_key) => {
   // For Mobile Login
-  // return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
-  return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+  return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+  // For PC Login
+  // return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
 };
 
 export const getAddress = (setUrl, callback) => {

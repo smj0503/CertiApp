@@ -9,6 +9,8 @@ import LocalStorage from '@/common/localstorage.manager';
 
 import QRCode from '@/components/QRCode';
 
+import MobileContainer from "@/components/MobileContainer";
+
 import styles from '../styles/Login.module.css';
 import Logo from '../public/assets/logo/logo-signin.svg';
 import Certi from '../public/assets/photo/photo-certi.png';
@@ -61,7 +63,7 @@ export default function () {
   console.log('url : ', url);
 
   return (
-    <div className={styles.container}>
+    <MobileContainer>
       <div className={styles.loginContainer}>
         <Logo />
         <div className={styles.slogan}>
@@ -90,14 +92,7 @@ export default function () {
         {/*    <label className={ styles.buttonTitle }>{ t("signIn.signInWithKlip") }</label>*/}
         {/*</Link>*/}
       </div>
-      <span className={styles.certi}>{'©2024 Certi'}</span>
-      <Image
-        src={Certi}
-        alt='certi logo'
-        className={styles.certiBackground}
-        priority={true}
-      />
-      <QRCode url={!!url && url} close={close} isOpened={isOpened} />
-    </div>
+      {/*<QRCode url={!!url && url} close={close} isOpened={isOpened} />*/}
+    </MobileContainer>
   );
 }
