@@ -6,10 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { getAddress } from '@/apis/klip.signin.api';
 import LocalStorage from '@/common/localstorage.manager';
 
-import { Flex, Button } from 'antd';
-
-import QRCode from '@/components/QRCode';
-
+import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
 
 import styles from '../styles/Login.module.css';
@@ -26,22 +23,14 @@ export default function () {
   const [address, setAddress] = useState('');
   const [status, setStatus] = useState('');
 
-  const [isOpened, setIsOpened] = useState(false);
-
-  // For Mobile Login
-  // useEffect(() =>
-  // {
-  //     getAddress(setUrl, async (address, status) =>
-  //     {
-  //         setAddress(address);
-  //         setStatus(status);
-  //     });
-  // }, []);
+  useEffect(() => {
+    getAddress(setUrl, async (address, status) => {
+      setAddress(address);
+      setStatus(status);
+    });
+  }, []);
 
   useEffect(() => {
-    console.log('address : ', address);
-    console.log('status : ', status);
-
     (async () => {
       if (address && status === 'completed') {
         LocalStorage.shared.setItem('walletAddress', address);
@@ -49,21 +38,6 @@ export default function () {
       }
     })();
   }, [address, status]);
-
-  const onClick = async () => {
-    getAddress(setUrl, async (address, status) => {
-      setAddress(address);
-      setStatus(status);
-    });
-
-    setIsOpened(true);
-  };
-
-  const close = () => {
-    setIsOpened(false);
-  };
-
-  console.log('url : ', url);
 
   return (
     <MobileContainer>
@@ -85,21 +59,6 @@ export default function () {
             className={styles.description}
           />
         </Flex>
-        {/*<button*/}
-        {/*  data-button-animation={true}*/}
-        {/*  type='button'*/}
-        {/*  className={styles.loginButton}*/}
-        {/*  onClick={onClick}*/}
-        {/*>*/}
-        {/*  <Flex align='center' justify='center' gap={16}>*/}
-        {/*    <IconKlip />*/}
-        {/*    <label className={styles.buttonTitle}>*/}
-        {/*      {t('signIn.signInWithKlip')}*/}
-        {/*    </label>*/}
-        {/*  </Flex>*/}
-        {/*</button>*/}
-
-        {/*For Mobile Login*/}
         <Link
           href={url}
           data-button-animation={true}
@@ -111,7 +70,6 @@ export default function () {
           </label>
         </Link>
       </Flex>
-      <QRCode url={!!url && url} close={close} isOpened={isOpened} />
     </MobileContainer>
   );
 }

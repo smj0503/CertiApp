@@ -10,7 +10,7 @@ const getKlipAccessUrl = (request_key) => {
 export const getAddress = (setUrl, callback) => {
   axios
     .post('https://a2a-api.klipwallet.com/v2/a2a/prepare', {
-      bapp: { name: 'nftime' },
+      bapp: { name: process.env.NEXT_PUBLIC_KLIP_BAPP_NAME },
       type: 'auth',
     })
     .then((response) => {
