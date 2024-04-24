@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation';
 import { useState } from 'react';
 
 import { Flex } from 'antd';
@@ -14,6 +15,7 @@ import Remember from '@/public/assets/partners/remember.svg';
 import LinkedIn from '@/public/assets/partners/linkedin.svg';
 
 export default function ({ close }) {
+  const { t } = useTranslation('common');
   const [isCopied, setIsCopied] = useState(false);
 
   const moveToPage = (page) => {
@@ -31,7 +33,9 @@ export default function ({ close }) {
             className={styles.header}
           >
             <div className={styles.closeButton} />
-            <span className={styles.title}>{'증명서 공유하기'}</span>
+            <span className={styles.title}>
+              {t('shareModal.shareCertificate')}
+            </span>
             <button
               type='button'
               className={styles.closeButton}
@@ -44,44 +48,43 @@ export default function ({ close }) {
           <p
             className={styles.subTitle}
             dangerouslySetInnerHTML={{
-              __html:
-                '아래 채용 플랫폼의 이력서에<br/>증명서 링크를 첨부해서 <b>스펙을 손쉽게 증빙하세요!</b>',
+              __html: t('shareModal.description'),
             }}
           />
           <div className={styles.partners}>
             <LinkButton
-              name='원티드'
+              name={t('shareModal.linkedin')}
+              logo={<LinkedIn />}
+              onClick={() =>
+                moveToPage(process.env.NEXT_PUBLIC_LINKEDIN_SHARE_LINK)
+              }
+            />
+            <LinkButton
+              name={t('shareModal.wanted')}
               logo={<Wanted />}
               onClick={() =>
                 moveToPage(process.env.NEXT_PUBLIC_WANTED_SHARE_LINK)
               }
             />
             <LinkButton
-              name='사람인'
+              name={t('shareModal.saramin')}
               logo={<SaramIn />}
               onClick={() =>
                 moveToPage(process.env.NEXT_PUBLIC_SARAMIN_SHARE_LINK)
               }
             />
             <LinkButton
-              name='잡코리아'
+              name={t('shareModal.jobkorea')}
               logo={<JobKorea />}
               onClick={() =>
                 moveToPage(process.env.NEXT_PUBLIC_JOBKOREA_SHARE_LINK)
               }
             />
             <LinkButton
-              name='리멤버'
+              name={t('shareModal.remember')}
               logo={<Remember />}
               onClick={() =>
                 moveToPage(process.env.NEXT_PUBLIC_REMEMBER_SHARE_LINK)
-              }
-            />
-            <LinkButton
-              name='링크드인'
-              logo={<LinkedIn />}
-              onClick={() =>
-                moveToPage(process.env.NEXT_PUBLIC_LINKEDIN_SHARE_LINK)
               }
             />
           </div>

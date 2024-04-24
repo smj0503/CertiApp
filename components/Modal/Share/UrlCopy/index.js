@@ -1,8 +1,10 @@
+import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Flex } from 'antd';
 import styles from './UrlCopy.module.css';
 
 export default function ({ setIsCopied }) {
+  const { t } = useTranslation('common');
   const router = useRouter();
   const url = `${process.env.NEXT_PUBLIC_CERTI_APP_HOST}${router.asPath}`;
 
@@ -24,7 +26,7 @@ export default function ({ setIsCopied }) {
         data-button-animation={true}
         onClick={copy}
       >
-        {'복사'}
+        {t('shareModal.copy')}
       </button>
     </Flex>
   );

@@ -14,6 +14,16 @@
     "otherPrograms": "다른 프로그램들",
     "logout": "로그아웃"
   },
+  "shareModal": {
+    "shareCertificate": "증명서 공유하기",
+    "description": "아래 채용 플랫폼의 이력서에<br/>증명서 링크를 첨부해서 <b>스펙을 손쉽게 증빙하세요!</b>",
+    "wanted": "원티드",
+    "saramin": "사람인",
+    "jobkorea": "잡코리아",
+    "remember": "리멤버",
+    "linkedin": "링크드인",
+    "copy": "복사"
+  },
   "myCertificates": {
     "belongsTo": "{{username}}의 디지털 증명서",
     "count": "{{count}} 개",
