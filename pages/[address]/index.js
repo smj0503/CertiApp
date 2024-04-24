@@ -22,13 +22,6 @@ export default function () {
   const [myCertificates, setMyCertificates] = useState([]);
   const [open, setOpen] = useState(false);
 
-  const onClick = async (id) => {
-    await router.push({
-      pathname: `${router.asPath}/${id}`,
-      query: { id: id, walletAddress: router.asPath.replace('/', '') },
-    });
-  };
-
   const openShareModal = async () => {
     setOpen(true);
   };
@@ -47,7 +40,7 @@ export default function () {
             justify='space-between'
             className={styles.header}
           >
-            <h1 className={styles.title}>디지털 배지</h1>
+            <h1 className={styles.title}>{t('certificate.digitalBadge')}</h1>
             <button onClick={openShareModal}>
               <IconShare />
             </button>

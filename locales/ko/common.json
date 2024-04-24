@@ -24,6 +24,20 @@
     "linkedin": "링크드인",
     "copy": "복사"
   },
+  "certificate": {
+    "digitalBadge": "디지털 배지",
+    "company": "발행기관",
+    "certificateInfo": "증명서 정보",
+    "detail": "프로그램 세부 정보 >"
+  },
+  "blockchain": {
+    "blockchainInfo": "블록체인 정보",
+    "certified": "검증 완료",
+    "transaction": "발행 트랜잭션",
+    "createdAt": "발행 일자",
+    "to": "To",
+    "from": "From"
+  },
   "myCertificates": {
     "belongsTo": "{{username}}의 디지털 증명서",
     "count": "{{count}} 개",

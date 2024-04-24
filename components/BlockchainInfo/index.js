@@ -4,7 +4,7 @@ import styles from './BlockchainInfo.module.css';
 import IconBlockchain from '@/public/assets/icon-blockchain.svg';
 import IconCertified from '@/public/assets/icon-certified.svg';
 
-export default function () {
+export default function ({ blockchainInfo }) {
   const { t } = useTranslation('common');
 
   return (
@@ -12,29 +12,29 @@ export default function () {
       <Flex align='center' justify='space-between'>
         <Flex align='center' gap={8}>
           <IconBlockchain />
-          <span className={styles.title}>{'블록체인 정보'}</span>
+          <span className={styles.title}>{t('blockchain.blockchainInfo')}</span>
         </Flex>
         <Flex align='center' gap={8}>
           <IconCertified />
-          <span className={styles.certified}>{'검증 완료'}</span>
+          <span className={styles.certified}>{t('blockchain.certified')}</span>
         </Flex>
       </Flex>
 
       <Flex vertical gap={16}>
         <Flex align='center' justify='space-between'>
-          <span className={styles.label}>{'발행 트랜잭션'}</span>
+          <span className={styles.label}>{t('blockchain.transaction')}</span>
           <span className={styles.blue}>{'transaction hash'}</span>
         </Flex>
         <Flex align='center' justify='space-between'>
-          <span className={styles.label}>{'발행 일자'}</span>
+          <span className={styles.label}>{t('blockchain.createdAt')}</span>
           <span className={styles.value}>{'created at'}</span>
         </Flex>
         <Flex align='center' justify='space-between'>
-          <span className={styles.label}>{'To'}</span>
+          <span className={styles.label}>{t('blockchain.to')}</span>
           <span className={styles.value}>{'user name'}</span>
         </Flex>
         <Flex align='center' justify='space-between'>
-          <span className={styles.label}>{'From'}</span>
+          <span className={styles.label}>{t('blockchain.from')}</span>
           <span className={styles.blue}>{'company name'}</span>
         </Flex>
       </Flex>
