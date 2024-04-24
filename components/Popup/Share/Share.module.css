@@ -12,7 +12,7 @@
 }
 
 .popup {
-  padding: 16px;
+  padding: 12px 14px 16px;
 
   background-color: #fff;
   border-radius: 8px;
@@ -31,9 +31,6 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   align-self: stretch;
 }
 
@@ -44,8 +41,8 @@
 }
 
 .closeButton {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
 }
 
 .subTitle {

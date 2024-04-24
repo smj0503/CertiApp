@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-
+import { Flex } from "antd";
 import styles from './UrlCopy.module.css';
 
 export default function ({ setIsCopied }) {
@@ -12,7 +12,7 @@ export default function ({ setIsCopied }) {
   };
 
   return (
-    <div className={styles.urlContainer}>
+    <Flex align='center' justify='space-between' className={styles.urlContainer}>
       <span className={styles.url}>{url}</span>
       <button
         type='button'
@@ -22,6 +22,6 @@ export default function ({ setIsCopied }) {
       >
         {'복사'}
       </button>
-    </div>
+    </Flex>
   );
 }
