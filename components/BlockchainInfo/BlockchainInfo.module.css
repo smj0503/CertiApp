@@ -1,0 +1,38 @@
+.container {
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.certified {
+  color: #2d6aff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.label {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.value,
+.blue {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.blue {
+  color: #2D6AFF;
+}

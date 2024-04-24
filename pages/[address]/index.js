@@ -6,7 +6,8 @@ import LocalStorage from '@/common/localstorage.manager';
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
 import SharePopup from '@/components/Modal/Share';
-import CertificateInfo from "@/components/CertificateInfo";
+import CertificateInfo from '@/components/CertificateInfo';
+import BlockchainInfo from '@/components/BlockchainInfo';
 
 import styles from '../../styles/MyCertificate.module.css';
 import IconShare from '../../public/assets/icon-share.svg';
@@ -51,7 +52,10 @@ export default function () {
               <IconShare />
             </button>
           </Flex>
-          <CertificateInfo />
+          <Flex vertical gap={36}>
+            <CertificateInfo />
+            <BlockchainInfo />
+          </Flex>
         </Flex>
       </MobileContainer>
     </>
