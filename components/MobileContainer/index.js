@@ -1,13 +1,13 @@
 import { Flex } from 'antd';
 import styles from './MobileContainer.module.css';
 
-export default function ({ children }) {
+export default function ({ align = 'center', justify = 'center', children }) {
   return (
     <Flex justify='center' align='center' className={styles.container}>
       <Flex
         vertical
-        align='center'
-        justify='center'
+        align={align}
+        justify={justify}
         className={styles.mobileContainer}
       >
         {children}

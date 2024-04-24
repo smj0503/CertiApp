@@ -1,15 +1,13 @@
+import { Flex } from 'antd';
 import styles from './LinkButton.module.css';
 
-export default function ({ href, name, logo }) {
+export default function ({ name, logo, onClick }) {
   return (
-    <a
-      href={href}
-      className={styles.button}
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      <div className={styles.logo}>{logo}</div>
-      <span className={styles.name}>{name}</span>
-    </a>
+    <button className={styles.button} onClick={onClick}>
+      <Flex vertical align='center' gap={7}>
+        <div className={styles.logo}>{logo}</div>
+        <span className={styles.name}>{name}</span>
+      </Flex>
+    </button>
   );
 }

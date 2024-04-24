@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { asyncEffect } from '@/common/utils';
 import LocalStorage from '@/common/localstorage.manager';
 
 import TopBar from '@/components/TopBar';
@@ -23,11 +22,6 @@ export default function () {
   const [certificate, setCertificate] = useState();
 
   const { getCertificateInfo } = useCertificateModule();
-
-  asyncEffect(async () => {
-    const result = await getCertificateInfo(id, walletAddress);
-    console.log('result : ', result);
-  }, []);
 
   return (
     <TopBar hasSession={true}>

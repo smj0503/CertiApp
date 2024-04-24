@@ -1,35 +1,16 @@
-/**
- * Core Libraries
- */
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { asyncEffect } from '@/common/utils';
 import LocalStorage from '@/common/localstorage.manager';
 
-/**
- * APIs
- */
-import useAccountModule from '@/apis/account.api';
-import useCertificateModule from '@/apis/certificate.api';
-
-/**
- * UI Components
- */
-import TopBar from '@/components/TopBar';
-import EmptyContainer from '@/components/EmptyContainer';
-import SortButton from '@/components/SortButton';
-import Collection from '@/components/Collection';
+import { Flex } from 'antd';
+import MobileContainer from '@/components/MobileContainer';
 import SharePopup from '@/components/Popup/Share';
 
-/**
- * Styles & Resources
- */
 import styles from '../../styles/MyCertificate.module.css';
 import IconShare from '../../public/assets/icon-share.svg';
 
 export default function () {
-  /* Local Fields */
   const { t } = useTranslation('common');
   const router = useRouter();
   const walletAddress = LocalStorage.shared.getItem('walletAddress');
@@ -39,22 +20,6 @@ export default function () {
   const [myCertificates, setMyCertificates] = useState([]);
   const [open, setOpen] = useState(false);
 
-  /* APIs */
-  const { getUsername } = useAccountModule();
-  // const { getMyCertificateList } = useCertificateModule();
-
-  /* Life Cycle */
-  asyncEffect(async () => {
-    setSession(walletAddress === router.asPath.replace('/', ''));
-
-    const result = await getUsername(router.asPath.replace('/', ''));
-    setName(result.user_name);
-
-    // const myCertificates = await getMyCertificateList(router.asPath.replace('/', ''));
-    // setMyCertificates(myCertificates);
-  }, []);
-
-  /* User Actions */
   const onClick = async (id) => {
     await router.push({
       pathname: `${router.asPath}/${id}`,
@@ -62,7 +27,7 @@ export default function () {
     });
   };
 
-  const share = async () => {
+  const openShareModal = async () => {
     setOpen(true);
   };
 
@@ -70,7 +35,23 @@ export default function () {
     setOpen(false);
   };
 
-  console.log('session : ', hasSession);
-
-  return <>{open && <SharePopup close={close} />}</>;
+  return (
+    <>
+      {open && <SharePopup close={close} />}
+      <MobileContainer justify='flex-start'>
+        <Flex vertical className={styles.container}>
+          <Flex
+            align='center'
+            justify='space-between'
+            className={styles.header}
+          >
+            <h1 className={styles.title}>디지털 배지</h1>
+            <button onClick={openShareModal}>
+              <IconShare />
+            </button>
+          </Flex>
+        </Flex>
+      </MobileContainer>
+    </>
+  );
 }

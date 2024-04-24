@@ -1,25 +1,26 @@
 import { useState } from 'react';
 
+import { Flex } from "antd";
 import Toast from '@/components/Toast/Share';
 import LinkButton from './LinkButton';
 import UrlCopy from './UrlCopy';
 
 import styles from './Share.module.css';
 import IconClose from '@/public/assets/icon-xmark.svg';
-import Wanted from '@/public/assets/partners/wanted.svg';
-import SaramIn from '@/public/assets/partners/saramin.svg';
-import JobKorea from '@/public/assets/partners/jobkorea.svg';
-import Remember from '@/public/assets/partners/remember.svg';
-import LinkedIn from '@/public/assets/partners/linkedin.svg';
+import Wanted from '@/public/assets/partners2/wanted.svg';
+import SaramIn from '@/public/assets/partners2/saramin.svg';
+import JobKorea from '@/public/assets/partners2/jobkorea.svg';
+import Remember from '@/public/assets/partners2/remember.svg';
+import LinkedIn from '@/public/assets/partners2/linkedin.svg';
 
 export default function ({ close }) {
   const [isCopied, setIsCopied] = useState(false);
 
   return (
     <div className={styles.dim}>
-      <div className={styles.popup}>
+      <Flex vertical align='center' gap={20} className={styles.popup}>
         {isCopied && <Toast show={isCopied} setIsCopied={setIsCopied} />}
-        <div className={styles.share}>
+        <Flex vertical align='center' gap={20}>
           <div className={styles.header}>
             <div className={styles.closeButton} />
             <span className={styles.title}>{'증명서 공유하기'}</span>
@@ -66,9 +67,9 @@ export default function ({ close }) {
               logo={<LinkedIn />}
             />
           </div>
-        </div>
+        </Flex>
         <UrlCopy setIsCopied={setIsCopied} />
-      </div>
+      </Flex>
     </div>
   );
 }
