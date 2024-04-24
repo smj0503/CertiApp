@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect } from 'react';
-import { Flex } from "antd";
+import { Flex } from 'antd';
 import styles from './Share.module.css';
 import IconCopy from '../../../public/assets/icon-copy.svg';
 
