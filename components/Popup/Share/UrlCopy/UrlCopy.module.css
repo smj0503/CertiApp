@@ -1,14 +1,14 @@
 .urlContainer {
   align-self: stretch;
 
-  padding: 8px 8px 8px 16px;
+  padding: 5px 5px 5px 10px;
 
-  border-radius: 12px;
+  border-radius: 7px;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .url {
-  font-size: 14px;
+  font-size: 8px;
   font-weight: 500;
   color: #000;
 }
@@ -18,13 +18,13 @@
   justify-content: center;
   align-items: center;
 
-  padding: 12px 20px;
+  padding: 7px 12px;
 
-  border-radius: 8px;
+  border-radius: 5px;
   background: #2756ff;
 
   color: #fff;
-  font-size: 14px;
+  font-size: 8px;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 8px;
 }

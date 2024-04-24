@@ -1,21 +1,16 @@
 .toast {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  padding: 10px 16px;
 
-  padding: 16px 24px;
-
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(28, 28, 28, 0.1);
   background: rgba(0, 0, 0, 0.68);
 
   position: absolute;
-  top: -76px;
+  top: -60px;
 }
 
 .message {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 100%;
   color: #fff;

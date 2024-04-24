@@ -16,6 +16,10 @@ import LinkedIn from '@/public/assets/partners/linkedin.svg';
 export default function ({ close }) {
   const [isCopied, setIsCopied] = useState(false);
 
+  const moveToPage = (page) => {
+    window.open(page, '_blank');
+  };
+
   return (
     <div className={styles.dim}>
       <Flex vertical align='center' gap={24} className={styles.popup}>
@@ -42,29 +46,29 @@ export default function ({ close }) {
           />
           <div className={styles.partners}>
             <LinkButton
-              href={process.env.NEXT_PUBLIC_WANTED_HOST}
               name='원티드'
               logo={<Wanted />}
+              onClick={() => moveToPage(process.env.NEXT_PUBLIC_WANTED_SHARE_LINK)}
             />
             <LinkButton
-              href={process.env.NEXT_PUBLIC_SARAMIN_HOST}
               name='사람인'
               logo={<SaramIn />}
+              onClick={() => moveToPage(process.env.NEXT_PUBLIC_SARAMIN_SHARE_LINK)}
             />
             <LinkButton
-              href={process.env.NEXT_PUBLIC_JOBKOREA_HOST}
               name='잡코리아'
               logo={<JobKorea />}
+              onClick={() => moveToPage(process.env.NEXT_PUBLIC_JOBKOREA_SHARE_LINK)}
             />
             <LinkButton
-              href={process.env.NEXT_PUBLIC_REMEMBER_HOST}
               name='리멤버'
               logo={<Remember />}
+              onClick={() => moveToPage(process.env.NEXT_PUBLIC_REMEMBER_SHARE_LINK)}
             />
             <LinkButton
-              href={process.env.NEXT_PUBLIC_LINKEDIN_HOST}
               name='링크드인'
               logo={<LinkedIn />}
+              onClick={() => moveToPage(process.env.NEXT_PUBLIC_LINKEDIN_SHARE_LINK)}
             />
           </div>
         </Flex>
