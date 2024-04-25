@@ -74,41 +74,44 @@ export default function () {
           </Flex>
           <Flex vertical style={{ position: 'relative' }}>
             <div style={{ position: 'relative' }}>
-              {certificates.map((certificate, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={styles.card}
-                    onClick={() => onSelect(index)}
-                    style={{
-                      top:
-                        item === -1
-                          ? top * index
-                          : item === index
-                            ? 0
-                            : position + 526 + 30 * index,
-                    }}
-                  >
+              {certificates.length > 0 &&
+                certificates.map((certificate, index) => {
+                  return (
                     <div
-                      className={styles.imageContainer}
-                      data-button-animation={true}
+                      key={index}
+                      className={styles.card}
+                      onClick={() => onSelect(index)}
+                      style={{
+                        top:
+                          item === -1
+                            ? top * index
+                            : item === index
+                              ? 0
+                              : position + 526 + 30 * index,
+                      }}
                     >
-                      <img src={certificate} alt='test image' />
+                      <div
+                        className={styles.imageContainer}
+                        data-button-animation={true}
+                      >
+                        <img src={certificate} alt='test image' />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
-            <Flex
-              vertical
-              gap={36}
-              className={styles.information}
-              style={{ top: item !== -1 ? position : '100vh' }}
-              data-shown={item !== -1}
-            >
-              <CertificateInfo />
-              <BlockchainInfo />
-            </Flex>
+            {certificates.length > 0 && (
+              <Flex
+                vertical
+                gap={36}
+                className={styles.information}
+                style={{ top: item !== -1 ? position : '100vh' }}
+                data-shown={item !== -1}
+              >
+                <CertificateInfo />
+                <BlockchainInfo />
+              </Flex>
+            )}
           </Flex>
         </Flex>
       </MobileContainer>
