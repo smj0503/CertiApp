@@ -17,6 +17,15 @@
   line-height: 43px;
 }
 
+.card {
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+
+  transition: top 800ms var(--animation-function);
+}
+
 .imageContainer {
   width: 100%;
   height: 0;
@@ -31,6 +40,8 @@
 .imageContainer > img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+
   position: absolute;
   top: 0;
   left: 0;
