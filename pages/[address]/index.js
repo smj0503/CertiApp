@@ -30,7 +30,8 @@ export default function () {
     'https://m.picturemall.co.kr/web/product/big/202011/9c418fbb88f4aa60a9780c7c871378db.jpg',
     'https://newsteacher.chosun.com/site/data/img_dir/2023/08/16/2023081603077_0.jpg',
     'https://m.picturemall.co.kr/web/product/big/202305/b5500a98457584ef495c9165d49fc0f6.jpg',
-    'https://m.kkongki.com/web/product/big/kkongkishop_13627.jpg',
+    'https://mblogthumb-phinf.pstatic.net/20091027_14/mimoffllffll_1256603384691rgPk8_jpg/%C1%F8%C1%D6_mimoffllffll.jpg?type=w800',
+    'https://www.penews.co.kr/news/photo/202105/19511_18138_1814.jpg',
   ];
 
   useEffect(() => {
