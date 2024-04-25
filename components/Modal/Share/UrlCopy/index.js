@@ -6,7 +6,7 @@ import styles from './UrlCopy.module.css';
 export default function ({ setIsCopied }) {
   const { t } = useTranslation('common');
   const router = useRouter();
-  const url = `${process.env.NEXT_PUBLIC_CERTI_APP_HOST}${router.asPath}`;
+  const url = `${process.env.NEXT_PUBLIC_CERTI_APP_SERVER_HOST}${router.asPath}`;
 
   const copy = async () => {
     await navigator.clipboard.writeText(url);
