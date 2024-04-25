@@ -1,6 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LocalStorage from '@/common/localstorage.manager';
 
 import { Flex } from 'antd';
@@ -16,8 +15,8 @@ const top = 100;
 
 export default function () {
   const { t } = useTranslation('common');
-  const router = useRouter();
-  const walletAddress = LocalStorage.shared.getItem('walletAddress');
+
+  const [position, setPosition] = useState(0);
 
   const [hasSession, setSession] = useState(false);
   const [myCertificates, setMyCertificates] = useState([]);
@@ -31,6 +30,10 @@ export default function () {
     'https://m.picturemall.co.kr/web/product/big/202305/b5500a98457584ef495c9165d49fc0f6.jpg',
     'https://m.kkongki.com/web/product/big/kkongkishop_13627.jpg',
   ];
+
+  useEffect(() => {
+    setPosition(window.innerWidth * 0.7 + 36);
+  });
 
   const openShareModal = async () => {
     setOpen(true);
@@ -63,32 +66,43 @@ export default function () {
               <IconShare />
             </button>
           </Flex>
-          <Flex vertical gap={36}>
-            <Flex vertical style={{ position: 'relative' }}>
+          <Flex vertical style={{ position: 'relative' }}>
+            <div style={{ position: 'relative' }}>
               {certificates.map((certificate, index) => {
                 return (
                   <div
+                    key={index}
                     className={styles.card}
                     onClick={() => onSelect(index)}
-                    style={{ top: item === -1 ? top * index : (
-                        item === index ? 0 : '100vh'
-                      ) }}
+                    style={{
+                      top:
+                        item === -1
+                          ? top * index
+                          : item === index
+                            ? 0
+                            : position + 526,
+                    }}
                   >
                     <div
                       className={styles.imageContainer}
                       data-button-animation={true}
                     >
-                      <img
-                        src={certificate}
-                        alt='test image'
-                      />
+                      <img src={certificate} alt='test image' />
                     </div>
                   </div>
                 );
               })}
+            </div>
+            <Flex
+              vertical
+              gap={36}
+              className={styles.information}
+              style={{ top: position }}
+              data-shown={item !== -1}
+            >
+              <CertificateInfo />
+              <BlockchainInfo />
             </Flex>
-            {/*<CertificateInfo />*/}
-            {/*<BlockchainInfo />*/}
           </Flex>
         </Flex>
       </MobileContainer>
