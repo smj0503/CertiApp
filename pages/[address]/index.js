@@ -1,5 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from "react-responsive";
 import LocalStorage from '@/common/localstorage.manager';
 
 import { Flex } from 'antd';
@@ -15,6 +16,7 @@ const top = 100;
 
 export default function () {
   const { t } = useTranslation('common');
+  const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
 
   const [position, setPosition] = useState(0);
 
@@ -32,7 +34,11 @@ export default function () {
   ];
 
   useEffect(() => {
-    setPosition(window.innerWidth * 0.7 + 36);
+    if (isMobile) {
+      setPosition((window.innerWidth - 32) * 0.7 + 36);
+    } else {
+      setPosition(468 * 0.7 + 36);
+    }
   });
 
   const openShareModal = async () => {
