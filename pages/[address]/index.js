@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
 
 import { Flex } from 'antd';
@@ -86,7 +86,7 @@ export default function () {
                           ? top * index
                           : item === index
                             ? 0
-                            : position + 526,
+                            : position + 526 + 30 * index,
                     }}
                   >
                     <div
@@ -103,7 +103,7 @@ export default function () {
               vertical
               gap={36}
               className={styles.information}
-              style={{ top: position }}
+              style={{ top: item !== -1 ? position : '100vh' }}
               data-shown={item !== -1}
             >
               <CertificateInfo />

@@ -47,13 +47,16 @@
 
 .information {
   width: 100%;
+
   position: absolute;
+  z-index: 0;
 
   opacity: 0;
-  transition: opacity 900ms var(--animation-function);
-  z-index: 0;
+  transition:
+    opacity 900ms var(--animation-function),
+    top 800ms var(--animation-function);
 }
 
-.information[data-shown=true] {
+.information[data-shown='true'] {
   opacity: 1;
 }
