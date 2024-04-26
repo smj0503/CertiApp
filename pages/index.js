@@ -38,7 +38,7 @@ export default function () {
 
   useEffect(() => {
     (async () => {
-      if (address && requestKey && status === 'completed') {
+      if (address && requestKey) {
         await certiLogin();
       }
     })();
