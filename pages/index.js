@@ -9,7 +9,7 @@ import { login } from '@/apis/auth.api';
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
-import QRCode from '@/components/QRCode';
+import QRCode from '@/components/Modal/QRCode';
 
 import styles from '../styles/Login.module.css';
 import Logo from '../public/assets/logo/logo-signin.svg';
@@ -28,28 +28,21 @@ export default function () {
   const [status, setStatus] = useState('');
   const [requestKey, setKey] = useState('');
 
-  // useEffect(() => {
-  //   (async () => {
-  //     await getAddress(
-  //       isMobile,
-  //       setUrl,
-  //       async (address, status, requestKey) => {
-  //         setAddress(address);
-  //         setStatus(status);
-  //         setKey(requestKey);
-  //       }
-  //     );
-  //   })();
-  // });
+  useEffect(() => {
+    (async () => {
+      if (isMobile) {
+        await klipLogin();
+      }
+    })();
+  }, []);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     if (address && status === 'completed') {
-  //       LocalStorage.shared.setItem('walletAddress', address);
-  //       await router.replace({ pathname: `/${address}` });
-  //     }
-  //   })();
-  // }, [address, status]);
+  useEffect(() => {
+    (async () => {
+      if (address && requestKey && status === 'completed') {
+        await certiLogin();
+      }
+    })();
+  }, [address, status, requestKey]);
 
   const callback = async (address, status, requestKey) => {
     setAddress(address);
@@ -57,17 +50,25 @@ export default function () {
     setKey(requestKey);
   };
 
-  const klipLogin = async (isMobile = false) => {
+  const klipLogin = async () => {
     await getAddress(setUrl, callback, isMobile);
-    setIsOpened(true);
+
+    if (!isMobile) {
+      setIsOpened(true);
+    }
+  };
+
+  const certiLogin = async () => {
+    const { data } = await login(address, requestKey);
+    LocalStorage.shared.setItem('accessToken', data.result.token);
+    await router.replace({ pathname: `/${address}` });
   };
 
   const closeModal = () => {
     setIsOpened(false);
   };
 
-  console.log('isOpened', isOpened);
-  console.log('isMobile', isMobile);
+  console.log('url', url);
 
   return (
     <>
@@ -115,7 +116,9 @@ export default function () {
           )}
         </Flex>
       </MobileContainer>
-      <QRCode url={url} close={closeModal} isOpened={isOpened} />
+      {isOpened && url && (
+        <QRCode url={url} close={closeModal} isOpened={isOpened} />
+      )}
     </>
   );
 }

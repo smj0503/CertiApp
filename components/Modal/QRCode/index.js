@@ -1,17 +1,17 @@
 import useTranslation from 'next-translate/useTranslation';
 import QRCode from 'qrcode.react';
-
+import { Flex } from 'antd';
 import styles from './QRCode.module.css';
-import Klip from '../../public/assets/logo/logo-klip.svg';
-import IconClose from '../../public/assets/icon-close.svg';
+import Klip from '@/public/assets/logo/logo-klip.svg';
+import IconClose from '@/public/assets/icon-close.svg';
 
 export default function ({ url, close }) {
   const { t } = useTranslation('common');
 
   return (
     <div className={styles.dim}>
-      <div className={styles.container}>
-        <div className={styles.head}>
+      <Flex vertical className={styles.modal}>
+        <Flex align='center' justify='center' className={styles.head}>
           <span>{t('signIn.signIn')}</span>
           <button
             type='button'
@@ -21,12 +21,12 @@ export default function ({ url, close }) {
           >
             <IconClose />
           </button>
-        </div>
-        <div className={styles.body}>
+        </Flex>
+        <Flex vertical gap={16} className={styles.body}>
           <Klip />
-          <div className={styles.qrContainer}>
+          <Flex vertical align='center' gap={24} className={styles.qrContainer}>
             <QRCode value={url} size={188} />
-            <div className={styles.description}>
+            <Flex vertical align='center' gap={12}>
               <span
                 dangerouslySetInnerHTML={{ __html: t('signIn.scanQRCode') }}
                 className={styles.guide}
@@ -35,10 +35,10 @@ export default function ({ url, close }) {
                 dangerouslySetInnerHTML={{ __html: t('signIn.pleaseWait') }}
                 className={styles.notion}
               />
-            </div>
-          </div>
-        </div>
-      </div>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
     </div>
   );
 }

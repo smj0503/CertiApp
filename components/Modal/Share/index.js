@@ -24,7 +24,7 @@ export default function ({ close }) {
 
   return (
     <div className={styles.dim}>
-      <Flex vertical align='center' gap={24} className={styles.popup}>
+      <Flex vertical align='center' gap={24} className={styles.modal}>
         {isCopied && <Toast show={isCopied} setIsCopied={setIsCopied} />}
         <Flex vertical align='center' gap={20}>
           <Flex
