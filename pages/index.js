@@ -60,6 +60,7 @@ export default function () {
 
   const certiLogin = async () => {
     const { data } = await login(address, requestKey);
+    LocalStorage.shared.setItem('address', address);
     LocalStorage.shared.setItem('accessToken', data.result.token);
     await router.replace({ pathname: `/${address}` });
   };

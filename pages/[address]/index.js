@@ -73,7 +73,7 @@ export default function () {
             </button>
           </Flex>
           <Flex vertical style={{ position: 'relative' }}>
-            <div style={{ position: 'relative' }}>
+            <div style={{position: 'relative'}}>
               {certificates.length > 0 &&
                 certificates.map((certificate, index) => {
                   return (
