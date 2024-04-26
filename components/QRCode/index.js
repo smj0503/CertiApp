@@ -5,11 +5,11 @@ import styles from './QRCode.module.css';
 import Klip from '../../public/assets/logo/logo-klip.svg';
 import IconClose from '../../public/assets/icon-close.svg';
 
-export default function ({ url, close, isOpened }) {
+export default function ({ url, close }) {
   const { t } = useTranslation('common');
 
   return (
-    <div className={styles.dim} data-show={isOpened}>
+    <div className={styles.dim}>
       <div className={styles.container}>
         <div className={styles.head}>
           <span>{t('signIn.signIn')}</span>

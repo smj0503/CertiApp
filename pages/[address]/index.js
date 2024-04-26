@@ -5,7 +5,7 @@ import LocalStorage from '@/common/localstorage.manager';
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
-import SharePopup from '@/components/Modal/Share';
+import ShareModal from '@/components/Modal/Share';
 import CertificateInfo from '@/components/CertificateInfo';
 import BlockchainInfo from '@/components/BlockchainInfo';
 
@@ -60,7 +60,7 @@ export default function () {
 
   return (
     <>
-      {open && <SharePopup close={close} />}
+      {open && <ShareModal close={close} />}
       <MobileContainer justify='flex-start'>
         <Flex vertical className={styles.container}>
           <Flex

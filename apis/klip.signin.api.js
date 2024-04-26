@@ -1,33 +1,33 @@
-import axios from 'axios';
+import { klipApi } from '@/apis/index';
 
-const getKlipAccessUrl = (request_key) => {
-  // For Mobile Login
-  return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
-  // For PC Login
-  // return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+const getKlipAccessUrl = (isMobile, request_key) => {
+  if (isMobile) {
+    return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+  }
+  return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
 };
 
-export const getAddress = (setUrl, callback) => {
-  axios
-    .post('https://a2a-api.klipwallet.com/v2/a2a/prepare', {
+export const getAddress = async (setUrl, callback, isMobile) => {
+  klipApi
+    .post('/prepare', {
       bapp: { name: process.env.NEXT_PUBLIC_KLIP_BAPP_NAME },
       type: 'auth',
     })
     .then((response) => {
       const { request_key } = response.data;
-      setUrl(getKlipAccessUrl(request_key));
+      setUrl(getKlipAccessUrl(isMobile, request_key));
 
       let timerId = setInterval(() => {
-        axios
-          .get(
-            `https://a2a-api.klipwallet.com/v2/a2a/result?request_key=${request_key}`
-          )
-          .then((res) => {
-            if (res.data.result) {
-              callback(res.data.result.klaytn_address, res.data.status);
-              clearInterval(timerId);
-            }
-          });
+        klipApi.get(`/result?request_key=${request_key}`).then((res) => {
+          if (res.data.result) {
+            callback(
+              res.data.result.klaytn_address,
+              res.data.status,
+              request_key
+            );
+            clearInterval(timerId);
+          }
+        });
       }, 1000);
     });
 };
