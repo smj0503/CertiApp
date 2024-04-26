@@ -94,7 +94,6 @@ export default function () {
                 className={styles.description}
             />
           </Flex>
-          <span>{`token : ${token}`}</span>
           {isMobile ? (
               <Link
                   href={url}
