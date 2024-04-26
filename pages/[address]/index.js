@@ -12,7 +12,7 @@ import BlockchainInfo from '@/components/BlockchainInfo';
 import styles from '@/styles/MyWallet.module.css';
 import IconShare from '@/public/assets/icon-share.svg';
 
-const top = 100;
+const TOP_POSITION = 100;
 
 export default function () {
   const { t } = useTranslation('common');
@@ -20,7 +20,6 @@ export default function () {
 
   const [position, setPosition] = useState(0);
 
-  const [hasSession, setSession] = useState(false);
   const [myCertificates, setMyCertificates] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -85,7 +84,7 @@ export default function () {
                       style={{
                         top:
                           item === -1
-                            ? top * index
+                            ? TOP_POSITION * index
                             : item === index
                               ? 0
                               : position + 526 + 30 * index,
