@@ -61,7 +61,8 @@ export default function () {
   const certiLogin = async () => {
     const { data } = await login(address, requestKey);
     LocalStorage.shared.setItem('accessToken', data.result.token);
-    await router.replace({ pathname: `/${address}` });
+    setIsOpened(true);
+    // await router.replace({ pathname: `/${address}` });
   };
 
   const closeModal = () => {
