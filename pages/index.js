@@ -28,8 +28,6 @@ export default function () {
   const [status, setStatus] = useState('');
   const [requestKey, setKey] = useState('');
 
-  const [token, setToken] = useState('');
-
   useEffect(() => {
     (async () => {
       if (isMobile) {
@@ -41,8 +39,8 @@ export default function () {
   useEffect(() => {
     (async () => {
       if (address && requestKey && status === 'completed') {
-        // await certiLogin();
-        setToken('486');
+        await certiLogin();
+        await router.replace({ pathname: `/${address}` });
       }
     })();
   }, [address, status, requestKey]);
@@ -66,9 +64,7 @@ export default function () {
     LocalStorage.shared.setItem('address', address);
     LocalStorage.shared.setItem('accessToken', data.result.token);
 
-    setToken(data.result.token);
-
-    await router.replace({ pathname: `/${address}` });
+    // await router.replace({ pathname: `/${address}` });
   };
 
   const closeModal = () => {
