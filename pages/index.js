@@ -40,7 +40,6 @@ export default function () {
     (async () => {
       if (address && requestKey && status === 'completed') {
         await certiLogin();
-        await router.replace({ pathname: `/${address}` });
       }
     })();
   }, [address, status, requestKey]);
@@ -64,7 +63,7 @@ export default function () {
     LocalStorage.shared.setItem('address', address);
     LocalStorage.shared.setItem('accessToken', data.result.token);
 
-    // await router.replace({ pathname: `/${address}` });
+    await router.replace({ pathname: `/${address}` });
   };
 
   const closeModal = () => {
