@@ -49,7 +49,7 @@
 
 .certificateInfo {
   color: #000;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 100%;
 }
@@ -58,7 +58,7 @@
   color: rgba(0, 0, 0, 0.4);
   font-size: 14px;
   font-weight: 400;
-  line-height: 200%;
+  line-height: normal;
 }
 
 .detail {
