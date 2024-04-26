@@ -28,6 +28,8 @@ export default function () {
   const [status, setStatus] = useState('');
   const [requestKey, setKey] = useState('');
 
+  const [token, setToken] = useState('');
+
   useEffect(() => {
     (async () => {
       if (isMobile) {
@@ -62,6 +64,9 @@ export default function () {
     const { data } = await login(address, requestKey);
     LocalStorage.shared.setItem('address', address);
     LocalStorage.shared.setItem('accessToken', data.result.token);
+
+    setToken(data.result.token);
+
     await router.replace({ pathname: `/${address}` });
   };
 
@@ -92,8 +97,7 @@ export default function () {
                 className={styles.description}
             />
           </Flex>
-          <span>{`address : ${address}`}</span>
-          <span>{`requestKey : ${requestKey}`}</span>
+          <span>{`token : ${token}`}</span>
           {isMobile ? (
               <Link
                   href={url}
