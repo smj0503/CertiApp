@@ -75,45 +75,47 @@ export default function () {
     <>
       <MobileContainer>
         <Flex
-          vertical
-          align='center'
-          justify='center'
-          className={styles.loginContainer}
+            vertical
+            align='center'
+            justify='center'
+            className={styles.loginContainer}
         >
-          <Logo />
+          <Logo/>
           <Flex vertical align='center' className={styles.slogan}>
             <h1>{t('signIn.recordYourAchievement')}</h1>
             <h1>{t('signIn.rememberThatMoment')}</h1>
           </Flex>
           <Flex vertical align='center' gap={8}>
-            <IconCheck />
+            <IconCheck/>
             <p
-              dangerouslySetInnerHTML={{ __html: t('signIn.opengraph') }}
-              className={styles.description}
+                dangerouslySetInnerHTML={{__html: t('signIn.opengraph')}}
+                className={styles.description}
             />
           </Flex>
+          <span>{`address : ${address}`}</span>
+          <span>{`requestKey : ${requestKey}`}</span>
           {isMobile ? (
-            <Link
-              href={url}
-              data-button-animation={true}
-              className={styles.loginButton}
-            >
-              <IconKlip />
-              <label className={styles.buttonTitle}>
-                {t('signIn.signInWithKlip')}
-              </label>
-            </Link>
+              <Link
+                  href={url}
+                  data-button-animation={true}
+                  className={styles.loginButton}
+              >
+                <IconKlip/>
+                <label className={styles.buttonTitle}>
+                  {t('signIn.signInWithKlip')}
+                </label>
+              </Link>
           ) : (
-            <button
-              data-button-animation={true}
-              className={styles.loginButton}
-              onClick={klipLogin}
-            >
-              <IconKlip />
-              <label className={styles.buttonTitle}>
-                {t('signIn.signInWithKlip')}
-              </label>
-            </button>
+              <button
+                  data-button-animation={true}
+                  className={styles.loginButton}
+                  onClick={klipLogin}
+              >
+                <IconKlip/>
+                <label className={styles.buttonTitle}>
+                  {t('signIn.signInWithKlip')}
+                </label>
+              </button>
           )}
         </Flex>
       </MobileContainer>
