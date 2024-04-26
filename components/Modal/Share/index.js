@@ -24,14 +24,10 @@ export default function ({ close }) {
 
   return (
     <div className={styles.dim}>
-      <Flex vertical align='center' gap={24} className={styles.modal}>
+      <Flex vertical align='center' gap={36} className={styles.modal}>
         {isCopied && <Toast show={isCopied} setIsCopied={setIsCopied} />}
         <Flex vertical align='center' gap={20}>
-          <Flex
-            align='center'
-            justify='space-between'
-            className={styles.header}
-          >
+          <Flex align='center' justify='center'>
             <div className={styles.closeButton} />
             <span className={styles.title}>
               {t('shareModal.shareCertificate')}

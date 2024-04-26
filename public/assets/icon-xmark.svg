@@ -1,4 +1,8 @@
-<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.9872 3.90601L3.78204 11.1112" stroke="black" stroke-width="0.900641" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M3.78204 3.90601L10.9872 11.1112" stroke="black" stroke-width="0.900641" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="xmark 1">
+<g id="Group">
+<path id="Vector" d="M15.001 4.99805L5.00098 14.9981" stroke="black" stroke-width="1.14107" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M5.00098 4.99805L15.001 14.9981" stroke="black" stroke-width="1.14107" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>
