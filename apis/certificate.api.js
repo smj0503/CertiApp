@@ -1,33 +1,31 @@
-import axios from 'axios';
+import { api } from '@/apis/index';
+import LocalStorage from '@/common/localstorage.manager';
 
-export default function useCertificateModule() {
-  const apis = {};
-  apis.getCertificateList = async () => {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_SERVER_HOST}/certificate/list`
-    );
-    return data;
-  };
+const accessToken = LocalStorage.shared.getItem('accessToken');
 
-  apis.getMyCertificateList = async (address) => {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_SERVER_HOST}/certificate/list?wallet_address=${address}`
-    );
-    return data;
-  };
+export const getCertificateList = async () => {
+  return await api.get('/client/certificate/list', {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
 
-  apis.getCertificateInfo = async (id, address) => {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_SERVER_HOST}/user/certificate?id=${id}&wallet_address=${address}`
-    );
-    return data;
-  };
+export const getCertificateInfo = async (certificateUserId) => {
+  return await api.get(
+    `/client/certificate?certificateUserId=${certificateUserId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+};
 
-  apis.editCertificate = async () => {
-    const { data } = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_SERVER_HOST}/competency/info`
-    );
-  };
-
-  return apis;
-}
+export const registerCertificateInfo = async (data) => {
+  return await api.post('/client/certificate/info', data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};

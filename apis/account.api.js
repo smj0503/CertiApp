@@ -1,13 +1,24 @@
-import axios from 'axios';
+import { api } from '@/apis/index';
+import LocalStorage from '@/common/localstorage.manager';
 
-export default function useAccountModule() {
-  const apis = {};
-  apis.getUsername = async (address) => {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_SERVER_HOST}/user/info?wallet_address=${address}`
-    );
-    return data;
-  };
+const accessToken = LocalStorage.shared.getItem('accessToken');
 
-  return apis;
-}
+export const getAccountInfo = async () => {
+  return await api.get('/client/info', {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+export const setUsername = async (userName) => {
+  return await api.post(
+    '/client/username',
+    { userName },
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+};
