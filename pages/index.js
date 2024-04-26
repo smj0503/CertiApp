@@ -40,8 +40,9 @@ export default function () {
 
   useEffect(() => {
     (async () => {
-      if (address && requestKey) {
-        await certiLogin();
+      if (address && requestKey && status === 'completed') {
+        // await certiLogin();
+        setToken('486');
       }
     })();
   }, [address, status, requestKey]);
