@@ -5,8 +5,6 @@ export default function ({ checkSession, children }) {
   const router = useRouter();
   const accessToken = LocalStorage.shared.getItem('accessToken');
 
-  console.log('accessToken : ', accessToken);
-
   if (checkSession) {
     if (!accessToken) {
       (async () => {
