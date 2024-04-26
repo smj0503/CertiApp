@@ -8,8 +8,8 @@ export default function ({ name, logo, onClick }) {
       onClick={onClick}
       data-button-animation={true}
     >
-      <Flex vertical align='center' gap={7}>
-        <div className={styles.logo}>{logo}</div>
+      <Flex vertical align='center' gap={10}>
+        {logo}
         <span className={styles.name}>{name}</span>
       </Flex>
     </button>
