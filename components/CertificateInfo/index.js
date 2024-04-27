@@ -20,9 +20,9 @@ export default function ({ item }) {
       </Flex>
       <Flex align='center' gap={8}>
         {/*사진*/}
-          <Flex align='center' justify='center'>
-            {/*<img src={} alt={}/>*/}
-          </Flex>
+      <Flex align='center' justify='center' className={styles.companyImage}>
+        {/*<img src={} alt={}/>*/}
+      </Flex>
         <Flex vertical gap={4} style={{ marginBottom: 24 }}>
           <label className={styles.label}>{t('certificate.company')}</label>
           <span className={styles.companyName}>{item.companyName}</span>
