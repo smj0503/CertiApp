@@ -24,7 +24,7 @@ export default function () {
   const [myCertificates, setMyCertificates] = useState([]);
   const [open, setOpen] = useState(false);
 
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState({});
   const [index, setIndex] = useState(-1);
 
   // const myCertificates = [
@@ -66,7 +66,7 @@ export default function () {
       setItem(item);
     } else {
       setIndex(-1);
-      setItem(null);
+      setItem({});
     }
   };
 

@@ -32,6 +32,19 @@
   line-height: 20px;
 }
 
+.companyImage {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 36px;
+  border: 0.692px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.companyImage > img {
+  object-fit: cover;
+}
+
 .label,
 .companyName {
   font-weight: 500;
@@ -66,4 +79,9 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 100%;
+  text-align: left;
+}
+
+.detail:hover {
+  text-decoration: underline;
 }
