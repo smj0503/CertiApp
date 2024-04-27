@@ -2,6 +2,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
+import { getCertificateList } from "@/apis/certificate.api";
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
@@ -32,6 +33,15 @@ export default function () {
     'https://mblogthumb-phinf.pstatic.net/20091027_14/mimoffllffll_1256603384691rgPk8_jpg/%C1%F8%C1%D6_mimoffllffll.jpg?type=w800',
     'https://www.penews.co.kr/news/photo/202105/19511_18138_1814.jpg',
   ];
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await getCertificateList();
+      setMyCertificates(data.result);
+    })();
+  }, []);
+
+  console.log('myCertificates : ', myCertificates);
 
   useEffect(() => {
     if (isMobile) {

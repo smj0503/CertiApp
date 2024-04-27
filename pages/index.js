@@ -19,7 +19,10 @@ import IconKlip from '../public/assets/icon-klip.svg';
 export default function () {
   const { t } = useTranslation('common');
   const router = useRouter();
+
   const isMobile = useMediaQuery({ query: '(max-width:500px)' });
+  const token = LocalStorage.shared.getItem('accessToken');
+  const walletAddress = LocalStorage.shared.getItem('address');
 
   const [isOpened, setIsOpened] = useState(false);
 
@@ -38,9 +41,7 @@ export default function () {
 
   useEffect(() => {
     (async () => {
-      if (address && requestKey && status === 'completed') {
-        await certiLogin();
-      }
+      await certiLogin();
     })();
   }, [address, status, requestKey]);
 
@@ -59,11 +60,13 @@ export default function () {
   };
 
   const certiLogin = async () => {
-    const { data } = await login(address, requestKey);
-    LocalStorage.shared.setItem('address', address);
-    LocalStorage.shared.setItem('accessToken', data.result.token);
+    if (address && requestKey && status === 'completed') {
+      const { data } = await login(address, requestKey);
+      LocalStorage.shared.setItem('address', address);
+      LocalStorage.shared.setItem('accessToken', data.result.token);
 
-    await router.replace({ pathname: `/${address}` });
+      await router.replace({ pathname: `/${address}` });
+    }
   };
 
   const closeModal = () => {
@@ -71,6 +74,10 @@ export default function () {
   };
 
   console.log('url', url);
+
+  if (token) {
+    router.replace({ pathname: `/${walletAddress}` });
+  }
 
   return (
     <>

@@ -9,10 +9,9 @@ export default function ({ checkSession, children }) {
   if (checkSession) {
     if (!accessToken) {
       console.log('session 없음');
-      // (async () => {
-      //   console.log('session 없음');
-      //   await router.replace('/');
-      // })();
+      (async () => {
+        await router.replace('/');
+      })();
     }
   }
 
