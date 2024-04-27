@@ -5,7 +5,7 @@ import styles from './BlockchainInfo.module.css';
 import IconBlockchain from '@/public/assets/icon-blockchain.svg';
 import IconCertified from '@/public/assets/icon-certified.svg';
 
-export default function ({ certificate }) {
+export default function ({ item }) {
   const { t } = useTranslation('common');
 
   const openKlaytnScope = (tx) => {
@@ -32,11 +32,13 @@ export default function ({ certificate }) {
       <Flex vertical gap={16}>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.transaction')}</span>
-          <Link href={'https://klaytnscope.com/tx/'} className={styles.blue}>{'transaction hash'}</Link>
+          <button onClick={() => openKlaytnScope(item.txHash)} className={`${styles.button} ${styles.blue}`}>
+            {item.txHash}
+          </button>
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.createdAt')}</span>
-          <span className={styles.value}>{'created at'}</span>
+          <span className={styles.value}>{item.certificateIssueDate}</span>
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.to')}</span>
@@ -44,7 +46,7 @@ export default function ({ certificate }) {
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.from')}</span>
-          <span className={styles.blue}>{'company name'}</span>
+          <button className={`${styles.button} ${styles.blue}`}>{item.companyName}</button>
         </Flex>
       </Flex>
     </Flex>

@@ -2,7 +2,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
-import { getCertificateList } from "@/apis/certificate.api";
+import { getCertificateList } from '@/apis/certificate.api';
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
@@ -24,15 +24,16 @@ export default function () {
   const [myCertificates, setMyCertificates] = useState([]);
   const [open, setOpen] = useState(false);
 
-  const [item, setItem] = useState(-1);
+  const [item, setItem] = useState(null);
+  const [index, setIndex] = useState(-1);
 
-  const certificates = [
-    'https://m.picturemall.co.kr/web/product/big/202011/9c418fbb88f4aa60a9780c7c871378db.jpg',
-    'https://newsteacher.chosun.com/site/data/img_dir/2023/08/16/2023081603077_0.jpg',
-    'https://m.picturemall.co.kr/web/product/big/202305/b5500a98457584ef495c9165d49fc0f6.jpg',
-    'https://mblogthumb-phinf.pstatic.net/20091027_14/mimoffllffll_1256603384691rgPk8_jpg/%C1%F8%C1%D6_mimoffllffll.jpg?type=w800',
-    'https://www.penews.co.kr/news/photo/202105/19511_18138_1814.jpg',
-  ];
+  // const myCertificates = [
+  //   'https://m.picturemall.co.kr/web/product/big/202011/9c418fbb88f4aa60a9780c7c871378db.jpg',
+  //   'https://newsteacher.chosun.com/site/data/img_dir/2023/08/16/2023081603077_0.jpg',
+  //   'https://m.picturemall.co.kr/web/product/big/202305/b5500a98457584ef495c9165d49fc0f6.jpg',
+  //   'https://mblogthumb-phinf.pstatic.net/20091027_14/mimoffllffll_1256603384691rgPk8_jpg/%C1%F8%C1%D6_mimoffllffll.jpg?type=w800',
+  //   'https://www.penews.co.kr/news/photo/202105/19511_18138_1814.jpg',
+  // ];
 
   useEffect(() => {
     (async () => {
@@ -59,11 +60,13 @@ export default function () {
     setOpen(false);
   };
 
-  const onSelect = (index) => {
-    if (item === -1) {
-      setItem(index);
+  const onSelect = (item, i) => {
+    if (index === -1) {
+      setIndex(i);
+      setItem(item);
     } else {
-      setItem(-1);
+      setIndex(-1);
+      setItem(null);
     }
   };
 
@@ -84,42 +87,42 @@ export default function () {
           </Flex>
           <Flex vertical style={{ position: 'relative' }}>
             <div style={{ position: 'relative' }}>
-              {certificates.length > 0 &&
-                certificates.map((certificate, index) => {
+              {myCertificates.length > 0 &&
+                myCertificates.map((certificate, i) => {
                   return (
                     <div
-                      key={index}
+                      key={i}
                       className={styles.card}
-                      onClick={() => onSelect(index)}
+                      onClick={() => onSelect(certificate, i)}
                       style={{
                         top:
-                          item === -1
-                            ? TOP_POSITION * index
-                            : item === index
+                          index === -1
+                            ? TOP_POSITION * i
+                            : index === i
                               ? 0
-                              : position + 526 + 30 * index,
+                              : position + 526 + 30 * i,
                       }}
                     >
                       <div
                         className={styles.imageContainer}
                         data-button-animation={true}
                       >
-                        <img src={certificate} alt='test image' />
+                        <img src={certificate.certificateImageLink} alt={certificate.certificateName} />
                       </div>
                     </div>
                   );
                 })}
             </div>
-            {certificates.length > 0 && (
+            {!!item && myCertificates.length > 0 && (
               <Flex
                 vertical
                 gap={36}
                 className={styles.information}
-                style={{ top: item !== -1 ? position : '100vh' }}
-                data-shown={item !== -1}
+                style={{ top: index !== -1 ? position : '100vh' }}
+                data-shown={index !== -1}
               >
-                <CertificateInfo />
-                <BlockchainInfo />
+                <CertificateInfo item={item}/>
+                <BlockchainInfo item={item} />
               </Flex>
             )}
           </Flex>

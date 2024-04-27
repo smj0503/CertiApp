@@ -2,7 +2,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { Flex } from 'antd';
 import styles from './CertificateInfo.module.css';
 
-export default function () {
+export default function ({ item }) {
   const { t } = useTranslation('common');
 
   return (
@@ -29,9 +29,9 @@ export default function () {
         <span className={styles.certificateInfo}>
           {t('certificate.certificateInfo')}
         </span>
-        <p className={styles.description}>{'certificate description'}</p>
+        <p className={styles.description}>{item.certificateDescription}</p>
       </Flex>
-      <span className={styles.detail}>{t('certificate.detail')}</span>
+      <button className={styles.detail}>{t('certificate.detail')}</button>
     </Flex>
   );
 }
