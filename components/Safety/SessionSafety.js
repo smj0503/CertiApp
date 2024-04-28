@@ -12,7 +12,7 @@ export default function ({ checkSession, children }) {
         await router.replace('/');
       })();
     }
-  } else {
-    return <>{children}</>;
   }
+
+  return <>{children}</>;
 }
