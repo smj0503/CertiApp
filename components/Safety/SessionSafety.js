@@ -4,16 +4,15 @@ import LocalStorage from '@/common/localstorage.manager';
 export default function ({ checkSession, children }) {
   const router = useRouter();
   const accessToken = LocalStorage.shared.getItem('accessToken');
-  console.log('accessToken : ', accessToken);
 
   if (checkSession) {
     if (!accessToken) {
-      console.log('session 없음');
+      console.log('accessToken 없음');
       (async () => {
         await router.replace('/');
       })();
     }
+  } else {
+    return <>{children}</>;
   }
-
-  return <>{children}</>;
 }

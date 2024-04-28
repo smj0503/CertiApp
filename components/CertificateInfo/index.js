@@ -5,6 +5,10 @@ import styles from './CertificateInfo.module.css';
 export default function ({ item }) {
   const { t } = useTranslation('common');
 
+  const openCompanyWebsite = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <Flex vertical className={styles.container}>
       <Flex vertical gap={12} style={{ marginBottom: 24 }}>
@@ -13,17 +17,20 @@ export default function ({ item }) {
             {'category'}
           </Flex>
           <Flex align='center' className={styles.createdAt}>
-            {'created at'}
+            {item.certificateIssueDate}
           </Flex>
         </Flex>
         <h1 className={styles.title}>{'certificate name'}</h1>
       </Flex>
-      <Flex align='center' gap={8}>
-        {/*사진*/}
-        <div className={styles.companyImage}>
+      <Flex align='center' gap={8} style={{ marginBottom: 24 }}>
+        <button
+          onClick={() => openCompanyWebsite(item.companyWebsite)}
+          data-button-animation={true}
+          className={styles.companyImage}
+        >
           <img src={item.companyImage} alt={item.companyName} />
-        </div>
-        <Flex vertical gap={4} style={{ marginBottom: 24 }}>
+        </button>
+        <Flex vertical gap={4}>
           <label className={styles.label}>{t('certificate.company')}</label>
           <span className={styles.companyName}>{item.companyName}</span>
         </Flex>

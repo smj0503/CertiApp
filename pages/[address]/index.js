@@ -18,6 +18,7 @@ const TOP_POSITION = 100;
 export default function () {
   const { t } = useTranslation('common');
   const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
+  const address = LocalStorage.shared.getItem('address');
 
   const [position, setPosition] = useState(0);
 
@@ -41,8 +42,6 @@ export default function () {
       setMyCertificates(data.result);
     })();
   }, []);
-
-  console.log('myCertificates : ', myCertificates);
 
   useEffect(() => {
     if (isMobile) {
@@ -69,6 +68,8 @@ export default function () {
       setItem({});
     }
   };
+
+  console.log('myCertificates : ', myCertificates);
 
   return (
     <>
@@ -125,7 +126,7 @@ export default function () {
                 data-shown={index !== -1}
               >
                 <CertificateInfo item={item} />
-                <BlockchainInfo item={item} />
+                <BlockchainInfo item={item} address={address} />
               </Flex>
             )}
           </Flex>

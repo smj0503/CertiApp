@@ -4,7 +4,7 @@ import styles from './BlockchainInfo.module.css';
 import IconBlockchain from '@/public/assets/icon-blockchain.svg';
 import IconCertified from '@/public/assets/icon-certified.svg';
 
-export default function ({ item }) {
+export default function ({ item, address }) {
   const { t } = useTranslation('common');
 
   const openKlaytnScope = (tx) => {
@@ -44,7 +44,7 @@ export default function ({ item }) {
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.to')}</span>
-          <span className={styles.value}>{'user name'}</span>
+          <span className={styles.value}>{address}</span>
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.from')}</span>
