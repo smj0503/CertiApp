@@ -107,7 +107,10 @@ export default function () {
                         className={styles.imageContainer}
                         data-button-animation={true}
                       >
-                        <img src={certificate.certificateImageLink} alt={certificate.certificateName} />
+                        <img
+                          src={certificate.certificateImageLink}
+                          alt={certificate.certificateName}
+                        />
                       </div>
                     </div>
                   );
@@ -121,7 +124,7 @@ export default function () {
                 style={{ top: index !== -1 ? position : '100vh' }}
                 data-shown={index !== -1}
               >
-                <CertificateInfo item={item}/>
+                <CertificateInfo item={item} />
                 <BlockchainInfo item={item} />
               </Flex>
             )}

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import { Flex } from 'antd';
 import styles from './BlockchainInfo.module.css';
@@ -32,7 +31,10 @@ export default function ({ item }) {
       <Flex vertical gap={16}>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.transaction')}</span>
-          <button onClick={() => openKlaytnScope(item.txHash)} className={`${styles.button} ${styles.blue}`}>
+          <button
+            onClick={() => openKlaytnScope(item.txHash)}
+            className={`${styles.button} ${styles.blue}`}
+          >
             {item.txHash}
           </button>
         </Flex>
@@ -46,7 +48,12 @@ export default function ({ item }) {
         </Flex>
         <Flex align='center' justify='space-between'>
           <span className={styles.label}>{t('blockchain.from')}</span>
-          <button className={`${styles.button} ${styles.blue}`}>{item.companyName}</button>
+          <button
+            onClick={() => openCompanyWebsite(item.companyWebsite)}
+            className={`${styles.button} ${styles.blue}`}
+          >
+            {item.companyName}
+          </button>
         </Flex>
       </Flex>
     </Flex>
