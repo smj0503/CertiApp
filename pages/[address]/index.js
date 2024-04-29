@@ -76,7 +76,7 @@ export default function () {
   return (
     <>
       {open && <ShareModal close={close} />}
-      <MobileContainer justify='flex-start' checkSession={true}>
+      <MobileContainer justify='flex-start'>
         <Flex vertical className={styles.container}>
           <Flex
             align='center'
