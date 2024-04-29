@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
 import { getCertificateList } from '@/apis/certificate.api';
+import { getCertificateListFromShareLink } from "@/apis/share.api";
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
@@ -22,9 +23,10 @@ export default function () {
 
   const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
   const address = router.query.address;
+  const accessToken = LocalStorage.shared.getItem('accessToken');
 
   const [open, setOpen] = useState(false);
-  const [myCertificates, setMyCertificates] = useState([]);
+  const [certificates, setCertificates] = useState([]);
 
   const [position, setPosition] = useState(0);
   const [item, setItem] = useState({});
@@ -39,19 +41,24 @@ export default function () {
   // ];
 
   useEffect(() => {
-    (async () => {
-      const { data } = await getCertificateList();
-      setMyCertificates(data.result);
-    })();
-  }, []);
-
-  useEffect(() => {
     if (isMobile) {
       setPosition((window.innerWidth - 32) * 0.7 + 36);
     } else {
       setPosition(468 * 0.7 + 36);
     }
   });
+
+  useEffect(() => {
+    (async () => {
+      if (!!accessToken) {
+        const { data } = await getCertificateList();
+        setCertificates(data.result);
+      } else {
+        const { data } = await getCertificateListFromShareLink(address);
+        setCertificates(data.result);
+      }
+    })();
+  }, []);
 
   const openShareModal = async () => {
     setOpen(true);
@@ -71,7 +78,7 @@ export default function () {
     }
   };
 
-  console.log('myCertificates : ', myCertificates);
+  console.log('certificates : ', certificates);
 
   return (
     <>
@@ -90,8 +97,8 @@ export default function () {
           </Flex>
           <Flex vertical style={{ position: 'relative' }}>
             <div style={{ position: 'relative' }}>
-              {myCertificates.length > 0 &&
-                myCertificates.map((certificate, i) => {
+              {certificates.length > 0 &&
+                certificates.map((certificate, i) => {
                   return (
                     <div
                       key={i}
@@ -119,7 +126,7 @@ export default function () {
                   );
                 })}
             </div>
-            {!!item && myCertificates.length > 0 && (
+            {!!item && certificates.length > 0 && (
               <Flex
                 vertical
                 gap={36}
