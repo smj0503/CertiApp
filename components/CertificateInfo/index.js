@@ -5,7 +5,7 @@ import styles from './CertificateInfo.module.css';
 export default function ({ item }) {
   const { t } = useTranslation('common');
 
-  const openCompanyWebsite = (url) => {
+  const moveToPage = (url) => {
     window.open(url, '_blank');
   };
 
@@ -14,17 +14,17 @@ export default function ({ item }) {
       <Flex vertical gap={12} style={{ marginBottom: 24 }}>
         <Flex align='center' gap={12}>
           <Flex align='center' className={styles.category}>
-            {'category'}
+            {item.certificateImageCategory}
           </Flex>
           <Flex align='center' className={styles.createdAt}>
             {item.certificateIssueDate}
           </Flex>
         </Flex>
-        <h1 className={styles.title}>{'certificate name'}</h1>
+        <h1 className={styles.title}>{item.certificateName}</h1>
       </Flex>
       <Flex align='center' gap={8} style={{ marginBottom: 24 }}>
         <button
-          onClick={() => openCompanyWebsite(item.companyWebsite)}
+          onClick={() => moveToPage(item.companyWebsite)}
           data-button-animation={true}
           className={styles.companyImage}
         >
@@ -41,7 +41,12 @@ export default function ({ item }) {
         </span>
         <p className={styles.description}>{item.certificateDescription}</p>
       </Flex>
-      <button className={styles.detail}>{t('certificate.detail')}</button>
+      <button
+        onClick={() => moveToPage(item.certificateWebsite)}
+        className={styles.detail}
+      >
+        {t('certificate.detail')}
+      </button>
     </Flex>
   );
 }

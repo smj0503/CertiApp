@@ -1,4 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
@@ -17,14 +18,15 @@ const TOP_POSITION = 100;
 
 export default function () {
   const { t } = useTranslation('common');
+  const router = useRouter();
+
   const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
-  const address = LocalStorage.shared.getItem('address');
+  const address = router.query.address;
+
+  const [open, setOpen] = useState(false);
+  const [myCertificates, setMyCertificates] = useState([]);
 
   const [position, setPosition] = useState(0);
-
-  const [myCertificates, setMyCertificates] = useState([]);
-  const [open, setOpen] = useState(false);
-
   const [item, setItem] = useState({});
   const [index, setIndex] = useState(-1);
 
