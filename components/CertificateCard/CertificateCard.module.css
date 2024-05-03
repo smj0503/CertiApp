@@ -1,0 +1,27 @@
+.card {
+  width: 100%;
+  position: absolute;
+  transition: top 800ms var(--animation-function);
+  z-index: 1;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 0;
+  padding-top: 70%;
+  position: relative;
+
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.25);
+}
+
+.imageContainer > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
