@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import LocalStorage from '@/common/localstorage.manager';
 import { getCertificateList } from '@/apis/certificate.api';
-import { getCertificateListFromShareLink } from "@/apis/share.api";
+import { getCertificateListFromShareLink } from '@/apis/share.api';
 
 import { Flex } from 'antd';
 import MobileContainer from '@/components/MobileContainer';
 import ShareModal from '@/components/Modal/Share';
 import CertificateInfo from '@/components/CertificateInfo';
 import BlockchainInfo from '@/components/BlockchainInfo';
+import EmptyContainer from '@/components/EmptyContainer';
 
 import styles from '@/styles/MyWallet.module.css';
 import IconShare from '@/public/assets/icon-share.svg';
@@ -97,7 +98,7 @@ export default function () {
           </Flex>
           <Flex vertical style={{ position: 'relative' }}>
             <div style={{ position: 'relative' }}>
-              {certificates.length > 0 &&
+              {certificates.length > 0 ? (
                 certificates.map((certificate, i) => {
                   return (
                     <div
@@ -124,7 +125,10 @@ export default function () {
                       </div>
                     </div>
                   );
-                })}
+                })
+              ) : (
+                <EmptyContainer />
+              )}
             </div>
             {!!item && certificates.length > 0 && (
               <Flex
