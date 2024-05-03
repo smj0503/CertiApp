@@ -2,7 +2,6 @@ import styles from './CertificateCard.module.css';
 const TOP_POSITION = 100;
 
 export default function ({ certificate, idx, index, position, onClick }) {
-
   return (
     <div
       className={styles.card}
