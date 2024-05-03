@@ -76,7 +76,7 @@ export default function () {
     <>
       {open && <ShareModal close={close} />}
       <MobileContainer justify='flex-start'>
-        <Flex vertical className={styles.container}>
+        <Flex vertical className={styles.container} data-shown={index !== -1}>
           <Flex
             align='center'
             justify='space-between'
