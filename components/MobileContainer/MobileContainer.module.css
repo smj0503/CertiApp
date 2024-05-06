@@ -14,3 +14,11 @@
   position: relative;
   background-color: #f3f2f7;
 }
+
+.slogan {
+  height: 100vh;
+  position: absolute;
+
+  top: 0;
+  left: -500px;
+}

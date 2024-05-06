@@ -73,10 +73,14 @@ export default function () {
     setIsOpened(false);
   };
 
-  console.log('url', url);
+  // console.log('url : ', url);
+  // console.log('token : ', token);
+  // console.log('address : ', walletAddress);
 
-  if (token) {
-    router.replace({ pathname: `/${walletAddress}` });
+  if (token && walletAddress) {
+    (async () => {
+      await router.replace({ pathname: `/${walletAddress}` });
+    })();
   }
 
   return (
