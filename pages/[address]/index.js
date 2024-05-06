@@ -70,58 +70,56 @@ export default function () {
     }
   };
 
-  // console.log('certificates : ', certificates);
-
   return (
-      <>
-        {open && <ShareModal close={close}/>}
-        <MobileContainer justify='flex-start'>
-          <Flex vertical className={styles.container} data-shown={index !== -1}>
-            <Flex
-                align='center'
-                justify='space-between'
-                className={styles.header}
-            >
-              <h1 className={styles.title}>{t('certificate.digitalBadge')}</h1>
-              <button onClick={openShareModal} data-button-animation={true}>
-                <IconShare/>
-              </button>
-            </Flex>
-            <Flex vertical style={{position: 'relative'}}>
-              <div style={{position: 'relative'}}>
-                {certificates.length > 0 ? (
-                    certificates.map((certificate, i) => {
-                      return (
-                          <CertificateCard
-                              key={i}
-                              certificate={certificate}
-                              idx={i}
-                              index={index}
-                              position={position}
-                              onClick={onSelect}
-                          />
-                      );
-                    })
-                ) : (
-                    <EmptyContainer/>
-                )}
-              </div>
-              {!!item && certificates.length > 0 && (
-                  <Flex
-                      vertical
-                      gap={36}
-                      className={styles.information}
-                      style={{top: index !== -1 ? position : '100vh'}}
-                      data-shown={index !== -1}
-                  >
-                    <CertificateInfo item={item}/>
-                    <BlockchainInfo item={item} address={address}/>
-                  </Flex>
-              )}
-            </Flex>
+    <>
+      {open && <ShareModal close={close} />}
+      <MobileContainer justify='flex-start'>
+        <Flex vertical className={styles.container} data-shown={index !== -1}>
+          <Flex
+            align='center'
+            justify='space-between'
+            className={styles.header}
+          >
+            <h1 className={styles.title}>{t('certificate.digitalBadge')}</h1>
+            <button onClick={openShareModal} data-button-animation={true}>
+              <IconShare />
+            </button>
           </Flex>
-          {index === -1 && <span className={styles.license}>@ 2024 Certi</span>}
-        </MobileContainer>
-      </>
+          <Flex vertical style={{ position: 'relative' }}>
+            <div style={{ position: 'relative' }}>
+              {certificates.length > 0 ? (
+                certificates.map((certificate, i) => {
+                  return (
+                    <CertificateCard
+                      key={i}
+                      certificate={certificate}
+                      idx={i}
+                      index={index}
+                      position={position}
+                      onClick={onSelect}
+                    />
+                  );
+                })
+              ) : (
+                <EmptyContainer />
+              )}
+            </div>
+            {!!item && certificates.length > 0 && (
+              <Flex
+                vertical
+                gap={36}
+                className={styles.information}
+                style={{ top: index !== -1 ? position : '100vh' }}
+                data-shown={index !== -1}
+              >
+                <CertificateInfo item={item} />
+                <BlockchainInfo item={item} address={address} />
+              </Flex>
+            )}
+          </Flex>
+        </Flex>
+        {index === -1 && <span className={styles.license}>@ 2024 Certi</span>}
+      </MobileContainer>
+    </>
   );
 }
