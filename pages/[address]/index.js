@@ -118,7 +118,9 @@ export default function () {
             )}
           </Flex>
         </Flex>
-        {index === -1 && <span className={styles.license}>@ 2024 Certi</span>}
+        {isMobile && index === -1 && (
+          <span className={styles.license}>@ 2024 Certi</span>
+        )}
       </MobileContainer>
     </>
   );
