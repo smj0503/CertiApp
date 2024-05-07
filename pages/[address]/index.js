@@ -74,7 +74,7 @@ export default function () {
     <>
       {open && <ShareModal close={close} />}
       <MobileContainer justify='flex-start'>
-        <Flex vertical className={styles.container} data-shown={index !== -1}>
+        <Flex vertical className={styles.container}>
           <Flex
             align='center'
             justify='space-between'
@@ -104,7 +104,7 @@ export default function () {
                 <EmptyContainer />
               )}
             </div>
-            {!!item && certificates.length > 0 && (
+            {certificates.length > 0 && (
               <Flex
                 vertical
                 gap={36}

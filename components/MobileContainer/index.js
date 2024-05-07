@@ -16,7 +16,12 @@ export default function ({ align = 'center', justify = 'center', children }) {
       >
         {!isMobile && (
           <Flex align='center' className={styles.slogan}>
-            <Slogan />
+            <button
+              onClick={() => window.open('https://www.certi.world/', '_blank')}
+              data-button-animation={true}
+            >
+              <Slogan />
+            </button>
           </Flex>
         )}
         {children}
