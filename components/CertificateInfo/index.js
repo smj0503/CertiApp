@@ -1,4 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
+import dayjs from 'dayjs';
 import { Flex } from 'antd';
 import styles from './CertificateInfo.module.css';
 
@@ -9,6 +10,11 @@ export default function ({ item }) {
     window.open(url, '_blank');
   };
 
+  const renderDate = (date) => {
+    const tempDate = new Date(date * 1000);
+    return dayjs(tempDate).format('YYYY.MM.DD');
+  };
+
   return (
     <Flex vertical className={styles.container}>
       <Flex vertical gap={12} style={{ marginBottom: 24 }}>
@@ -17,7 +23,7 @@ export default function ({ item }) {
             {item.certificateImageCategory}
           </Flex>
           <Flex align='center' className={styles.createdAt}>
-            {item.certificateIssueDate}
+            {renderDate(item.certificateIssueDate)}
           </Flex>
         </Flex>
         <h1 className={styles.title}>{item.certificateName}</h1>
