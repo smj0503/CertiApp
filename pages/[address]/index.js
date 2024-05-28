@@ -117,10 +117,8 @@ export default function () {
               </Flex>
             )}
           </Flex>
+          <div className={styles.gnb}></div>
         </Flex>
-        {isMobile && index === -1 && (
-          <span className={styles.license}>@ 2024 Certi</span>
-        )}
       </MobileContainer>
     </>
   );
