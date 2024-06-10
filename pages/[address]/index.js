@@ -13,6 +13,7 @@ import CertificateCard from '@/components/CertificateCard';
 import CertificateInfo from '@/components/CertificateInfo';
 import BlockchainInfo from '@/components/BlockchainInfo';
 import EmptyContainer from '@/components/EmptyContainer';
+import GNB from '@/components/GNB';
 
 import styles from '@/styles/MyWallet.module.css';
 import IconShare from '@/public/assets/icon-share.svg';
@@ -117,7 +118,7 @@ export default function () {
               </Flex>
             )}
           </Flex>
-          <div className={styles.gnb}></div>
+          <GNB />
         </Flex>
       </MobileContainer>
     </>
