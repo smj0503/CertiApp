@@ -13,7 +13,9 @@ import IconJobPostingEmpty from '@/public/assets/icon-job-posting-empty.svg';
 export default function () {
   const { t } = useTranslation('common');
   const router = useRouter();
+
   const address = router.query.address;
+  const current = router.asPath.includes('jobs') && 'jobs';
 
   const moveToHome = async () => {
     await router.push(`/${address}`);
@@ -33,7 +35,7 @@ export default function () {
         data-button-animation={true}
         onClick={moveToHome}
       >
-        <IconHomeFill />
+        {current === 'jobs' ? <IconHomeEmpty /> : <IconHomeFill />}
         <label>{t('gnb.home')}</label>
       </Flex>
       <Flex
@@ -44,7 +46,7 @@ export default function () {
         data-button-animation={true}
         onClick={moveToJobPosting}
       >
-        <IconJobPostingFill />
+        {current === 'jobs' ? <IconJobPostingFill /> : <IconJobPostingEmpty />}
         <label>{t('gnb.jobPosting')}</label>
       </Flex>
       {/*<Flex*/}

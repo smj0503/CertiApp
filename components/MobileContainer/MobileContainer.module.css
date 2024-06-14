@@ -17,8 +17,8 @@
 
 .slogan {
   height: 100vh;
-  position: absolute;
+  position: fixed;
 
   top: 0;
-  left: -420px;
+  left: 140px;
 }

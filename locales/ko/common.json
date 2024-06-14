@@ -80,5 +80,9 @@
     "cancel": "취소",
     "confirm": "확인",
     "company": "발행기관"
+  },
+  "jobPosting": {
+    "title": "추천 채용공고",
+    "subTitle": "보유하고 있는 디지털 증명서들을 분석해서<br/>딱 맞는 포지션을 골라봤어요!"
   }
 }

@@ -15,11 +15,11 @@
   flex-shrink: 0;
 
   border-radius: 6px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(102, 102, 102, 0) 27%
-  );
+  /*background: linear-gradient(*/
+  /*  180deg,*/
+  /*  rgba(0, 0, 0, 0.1) 0%,*/
+  /*  rgba(102, 102, 102, 0) 27%*/
+  /*);*/
 }
 
 .position {
