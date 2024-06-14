@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 20px 25px 0;
+    overflow: scroll;
+}
+
+.title {
+    color: #111;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 167%;
+}
+
+.subTitle {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
