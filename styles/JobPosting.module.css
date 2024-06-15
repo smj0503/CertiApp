@@ -44,3 +44,41 @@
 
   margin-bottom: 100px;
 }
+
+.post {
+  width: 156px;
+  padding: 15px 13px 18px;
+
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  width: 130px;
+  height: 95px;
+
+  object-fit: cover;
+  flex-shrink: 0;
+
+  border-radius: 6px;
+  /*background: linear-gradient(*/
+  /*  180deg,*/
+  /*  rgba(0, 0, 0, 0.1) 0%,*/
+  /*  rgba(102, 102, 102, 0) 27%*/
+  /*);*/
+}
+
+.position {
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.company {
+  color: #939393;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+}
