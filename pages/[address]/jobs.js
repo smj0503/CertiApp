@@ -13,7 +13,7 @@ export default function () {
   return (
     <MobileContainer justify='flex-start'>
       <Flex vertical className={styles.container}>
-        <Flex vertical gap={4}>
+        <Flex vertical gap={4} className={styles.header}>
           <h1 className={styles.title}>{t('jobPosting.title')}</h1>
           <p
             className={styles.subTitle}
@@ -21,9 +21,12 @@ export default function () {
           />
         </Flex>
         <div className={styles.postings}>
-          <JobPosting />
-          <JobPosting />
-          <JobPosting />
+          <Flex justify='flex-start'>
+            <JobPosting />
+          </Flex>
+          <Flex justify='flex-end'>
+            <JobPosting />
+          </Flex>
         </div>
         <GNB />
       </Flex>

@@ -4,7 +4,7 @@ import styles from './MobileContainer.module.css';
 import Slogan from '@/public/assets/certi_slogan.svg';
 
 export default function ({ align = 'center', justify = 'center', children }) {
-  const isMobile = useMediaQuery({ query: '(max-width:500px)' });
+  const isDesktop = useMediaQuery({ query: '(max-width:1400px)' });
 
   return (
     <Flex justify='center' align='center' className={styles.container}>
@@ -14,7 +14,7 @@ export default function ({ align = 'center', justify = 'center', children }) {
         justify={justify}
         className={styles.mobileContainer}
       >
-        {!isMobile && (
+        {!isDesktop && (
           <Flex align='center' className={styles.slogan}>
             <button
               onClick={() => window.open('https://www.certi.world/', '_blank')}
