@@ -10,5 +10,4 @@ export const klipApi = axios.create({
 
 export const wantedApi = axios.create({
   baseURL: process.env.NEXT_PUBLIC_WANTED_DEV_SERVER_HOST,
-  // baseURL: process.env.NEXT_PUBLIC_WANTED_API_SERVER_HOST,
 });
