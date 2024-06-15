@@ -1,4 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
+import { useEffect, useState } from "react";
+import { getJobPostings } from "@/apis/wanted.openapi";
 import { Flex } from 'antd';
 
 import MobileContainer from '@/components/MobileContainer';
@@ -9,6 +11,14 @@ import styles from '@/styles/JobPosting.module.css';
 
 export default function () {
   const { t } = useTranslation('common');
+  const [] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await getJobPostings();
+      console.log('머꼬 : ', res);
+    })();
+  }, []);
 
   return (
     <MobileContainer justify='flex-start'>
