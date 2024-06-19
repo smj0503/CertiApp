@@ -1,7 +1,7 @@
 import { Flex } from 'antd';
 import styles from './JobPosting.module.css';
 
-export default function (job) {
+export default function ({ job }) {
   const moveToPage = (page) => {
     window.open(page, '_blank');
   };
@@ -19,8 +19,8 @@ export default function (job) {
         alt={`${job.company?.name} - ${job.name}`}
         className={styles.thumbnail}
       />
-      <Flex vertical gap={4}>
-        <span className={styles.position}>{job.id}</span>
+      <Flex vertical gap={8}>
+        <span className={styles.position}>{job.name}</span>
         <span className={styles.company}>{job.company?.name}</span>
       </Flex>
     </Flex>

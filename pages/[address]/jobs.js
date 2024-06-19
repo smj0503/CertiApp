@@ -32,6 +32,8 @@ export default function () {
     window.open(page, '_blank');
   };
 
+  console.log('jobs : ', jobs);
+
   return (
     <MobileContainer justify='flex-start'>
       <Flex vertical className={styles.container}>
@@ -46,26 +48,8 @@ export default function () {
           {jobs.length > 0 &&
             jobs.map((job, i) => {
               return (
-                <Flex key={i} justify={i % 2 === 0 ? 'flex-start' : 'flex-end'}>
-                  <Flex
-                    vertical
-                    gap={16}
-                    data-button-animation={true}
-                    className={styles.post}
-                    onClick={() => moveToPage(job.url)}
-                  >
-                    <img
-                      src={job.title_img?.thumb}
-                      alt={`${job.company?.name} - ${job.name}`}
-                      className={styles.thumbnail}
-                    />
-                    <Flex vertical gap={4}>
-                      <span className={styles.position}>{job.id}</span>
-                      <span className={styles.company}>
-                        {job.company?.name}
-                      </span>
-                    </Flex>
-                  </Flex>
+                <Flex key={i} justify={i % 2 === 0 ? 'flex-end' : 'flex-start'}>
+                  <JobPosting job={job} />
                 </Flex>
               );
             })}
