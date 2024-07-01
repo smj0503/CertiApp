@@ -28,10 +28,6 @@ export default function () {
     })();
   }, []);
 
-  const moveToPage = (page) => {
-    window.open(page, '_blank');
-  };
-
   console.log('jobs : ', jobs);
 
   return (
