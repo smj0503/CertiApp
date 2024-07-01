@@ -1,0 +1,8 @@
+<svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<path id="Vector" d="M11 5V1H21V5" stroke="black" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_2" d="M12.5 21H1V7C1 5.8955 1.8955 5 3 5H29C30.1045 5 31 5.8955 31 7V21H19.5" stroke="black" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_3" d="M29 23.5V27C29 28.1045 28.1045 29 27 29H5C3.8955 29 3 28.1045 3 27V23.5" stroke="black" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_4" d="M19.5 18.5H12.5V23.5H19.5V18.5Z" stroke="black" stroke-miterlimit="10" stroke-linecap="square"/>
+</g>
+</svg>
